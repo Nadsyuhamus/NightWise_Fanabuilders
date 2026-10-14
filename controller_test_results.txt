@@ -1,0 +1,18 @@
+test_config_validation_and_custom_hold (test_controller.ControllerTests) ... ok
+test_day_to_night (test_controller.ControllerTests) ... ok
+test_edge_and_corridor (test_controller.ControllerTests) ... ok
+test_empty (test_controller.ControllerTests) ... ok
+test_fault_and_recovery (test_controller.ControllerTests) ... ok
+test_fault_priority (test_controller.ControllerTests) ... ok
+test_hold_and_fade (test_controller.ControllerTests) ... ok
+test_independent_lamps (test_controller.ControllerTests) ... ok
+test_invalid_inputs (test_controller.ControllerTests) ... ok
+test_irregular_interval (test_controller.ControllerTests) ... ok
+test_repeated_motion (test_controller.ControllerTests) ... ok
+test_time_and_reset (test_controller.ControllerTests) ... ok
+test_zone_change (test_controller.ControllerTests) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.002s
+
+OK
