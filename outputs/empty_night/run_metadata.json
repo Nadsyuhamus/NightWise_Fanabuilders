@@ -1,0 +1,199 @@
+{
+  "model_version": "nightwise-simulation-v1",
+  "data_source": "simulated",
+  "scenario": {
+    "name": "empty_night",
+    "description": "Empty environment with nighttime idle lighting.",
+    "duration_s": 120,
+    "agents": [],
+    "night_windows": [
+      [
+        0,
+        120
+      ]
+    ],
+    "fault_windows": [],
+    "stale_windows": []
+  },
+  "environment": {
+    "name": "NightWise Demo Township",
+    "width_m": 60,
+    "height_m": 40,
+    "sensor_stale_timeout_s": 3,
+    "zones": [
+      {
+        "zone_id": "walking_path",
+        "label": "Walking Path",
+        "bounds_m": [
+          0,
+          0,
+          60,
+          15
+        ]
+      },
+      {
+        "zone_id": "habitat_edge",
+        "label": "Habitat Edge",
+        "bounds_m": [
+          0,
+          15,
+          60,
+          25
+        ]
+      },
+      {
+        "zone_id": "habitat_corridor",
+        "label": "Habitat Corridor",
+        "bounds_m": [
+          0,
+          25,
+          60,
+          40
+        ]
+      }
+    ],
+    "lamps": [
+      {
+        "lamp_id": "P1",
+        "zone": "walking_path",
+        "x_m": 10,
+        "y_m": 10,
+        "sensor_radius_m": 8,
+        "rated_power_w": 40,
+        "height_m": 4,
+        "full_output_lux_below": 20,
+        "habitat_spill_factor": 0.15
+      },
+      {
+        "lamp_id": "P2",
+        "zone": "walking_path",
+        "x_m": 30,
+        "y_m": 10,
+        "sensor_radius_m": 8,
+        "rated_power_w": 40,
+        "height_m": 4,
+        "full_output_lux_below": 20,
+        "habitat_spill_factor": 0.15
+      },
+      {
+        "lamp_id": "P3",
+        "zone": "walking_path",
+        "x_m": 50,
+        "y_m": 10,
+        "sensor_radius_m": 8,
+        "rated_power_w": 40,
+        "height_m": 4,
+        "full_output_lux_below": 20,
+        "habitat_spill_factor": 0.15
+      },
+      {
+        "lamp_id": "E1",
+        "zone": "habitat_edge",
+        "x_m": 30,
+        "y_m": 20,
+        "sensor_radius_m": 8,
+        "rated_power_w": 40,
+        "height_m": 4,
+        "full_output_lux_below": 20,
+        "habitat_spill_factor": 0.15
+      }
+    ],
+    "measurement_points": [
+      {
+        "point_id": "PATH_1",
+        "zone": "walking_path",
+        "x_m": 10,
+        "y_m": 10
+      },
+      {
+        "point_id": "PATH_2",
+        "zone": "walking_path",
+        "x_m": 30,
+        "y_m": 10
+      },
+      {
+        "point_id": "PATH_3",
+        "zone": "walking_path",
+        "x_m": 50,
+        "y_m": 10
+      },
+      {
+        "point_id": "HABITAT_1",
+        "zone": "habitat_corridor",
+        "x_m": 10,
+        "y_m": 30
+      },
+      {
+        "point_id": "HABITAT_2",
+        "zone": "habitat_corridor",
+        "x_m": 30,
+        "y_m": 30
+      },
+      {
+        "point_id": "HABITAT_3",
+        "zone": "habitat_corridor",
+        "x_m": 50,
+        "y_m": 30
+      }
+    ]
+  },
+  "controller_config": {
+    "hold_seconds": 30,
+    "fade_pct_per_second": 10,
+    "zones": {
+      "walking_path": {
+        "idle": 30,
+        "occupied": 70,
+        "fallback": 50,
+        "cap": 70
+      },
+      "habitat_edge": {
+        "idle": 10,
+        "occupied": 30,
+        "fallback": 20,
+        "cap": 30
+      },
+      "habitat_corridor": {
+        "idle": 0,
+        "occupied": 0,
+        "fallback": 0,
+        "cap": 0
+      }
+    }
+  },
+  "time_step_s": 1.0,
+  "interval_convention": "Each frame applies over [time_s, time_s + dt_s).",
+  "baseline": {
+    "nighttime": "Fixed brightness at each zone's cap.",
+    "daytime": "Off according to scenario schedule.",
+    "sensor_dependency": "None; sensor inputs are shared for comparison only.",
+    "fixture_and_shielding": "Identical to NightWise."
+  },
+  "assumptions": {
+    "power": "power_w = rated_power_w * brightness_pct / 100",
+    "lux": "Sum over lamps: full_output_lux_below * (brightness_pct / 100) * height_m^2 / (height_m^2 + horizontal_distance_m^2) * directional_factor",
+    "directional_factor": "habitat_spill_factor for habitat_edge and habitat_corridor points; otherwise 1.",
+    "sensor_geometry": "Ideal circular detection range; active agents move continuously. Agent type is not used.",
+    "stale_rule": "Unhealthy when no sample exists or sample age exceeds sensor_stale_timeout_s.",
+    "agent_logging": "Only active agents have position rows. An absent row means the agent is outside the environment.",
+    "exclusions": [
+      "Standby, sensor and communication power",
+      "Ambient daylight and other light sources",
+      "Calibrated fixture photometry",
+      "Spectrum and species-specific effects"
+    ]
+  },
+  "limitations": [
+    "Illustrative estimates, not field measurements.",
+    "Energy results apply only to the simulated duration.",
+    "Lower habitat lux does not demonstrate wildlife recovery.",
+    "Visibility and safety compliance have not been validated.",
+    "NightWise sensor-fault fallback takes priority over daytime."
+  ],
+  "row_counts": {
+    "sensor_inputs": 480,
+    "agent_positions": 0,
+    "lamp_outputs": 960,
+    "lux_readings": 1440
+  }
+}

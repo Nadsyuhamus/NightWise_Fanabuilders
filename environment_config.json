@@ -1,0 +1,107 @@
+{
+  "name": "NightWise Demo Township",
+  "width_m": 60,
+  "height_m": 40,
+  "sensor_stale_timeout_s": 3,
+  "zones": [
+    {
+      "zone_id": "walking_path",
+      "label": "Walking Path",
+      "bounds_m": [0, 0, 60, 15]
+    },
+    {
+      "zone_id": "habitat_edge",
+      "label": "Habitat Edge",
+      "bounds_m": [0, 15, 60, 25]
+    },
+    {
+      "zone_id": "habitat_corridor",
+      "label": "Habitat Corridor",
+      "bounds_m": [0, 25, 60, 40]
+    }
+  ],
+  "lamps": [
+    {
+      "lamp_id": "P1",
+      "zone": "walking_path",
+      "x_m": 10,
+      "y_m": 10,
+      "sensor_radius_m": 8,
+      "rated_power_w": 40,
+      "height_m": 4,
+      "full_output_lux_below": 20,
+      "habitat_spill_factor": 0.15
+    },
+    {
+      "lamp_id": "P2",
+      "zone": "walking_path",
+      "x_m": 30,
+      "y_m": 10,
+      "sensor_radius_m": 8,
+      "rated_power_w": 40,
+      "height_m": 4,
+      "full_output_lux_below": 20,
+      "habitat_spill_factor": 0.15
+    },
+    {
+      "lamp_id": "P3",
+      "zone": "walking_path",
+      "x_m": 50,
+      "y_m": 10,
+      "sensor_radius_m": 8,
+      "rated_power_w": 40,
+      "height_m": 4,
+      "full_output_lux_below": 20,
+      "habitat_spill_factor": 0.15
+    },
+    {
+      "lamp_id": "E1",
+      "zone": "habitat_edge",
+      "x_m": 30,
+      "y_m": 20,
+      "sensor_radius_m": 8,
+      "rated_power_w": 40,
+      "height_m": 4,
+      "full_output_lux_below": 20,
+      "habitat_spill_factor": 0.15
+    }
+  ],
+  "measurement_points": [
+    {
+      "point_id": "PATH_1",
+      "zone": "walking_path",
+      "x_m": 10,
+      "y_m": 10
+    },
+    {
+      "point_id": "PATH_2",
+      "zone": "walking_path",
+      "x_m": 30,
+      "y_m": 10
+    },
+    {
+      "point_id": "PATH_3",
+      "zone": "walking_path",
+      "x_m": 50,
+      "y_m": 10
+    },
+    {
+      "point_id": "HABITAT_1",
+      "zone": "habitat_corridor",
+      "x_m": 10,
+      "y_m": 30
+    },
+    {
+      "point_id": "HABITAT_2",
+      "zone": "habitat_corridor",
+      "x_m": 30,
+      "y_m": 30
+    },
+    {
+      "point_id": "HABITAT_3",
+      "zone": "habitat_corridor",
+      "x_m": 50,
+      "y_m": 30
+    }
+  ]
+}

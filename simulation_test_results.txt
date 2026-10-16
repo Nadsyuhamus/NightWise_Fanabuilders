@@ -1,0 +1,27 @@
+test_config_validation_and_custom_hold (test_controller.ControllerTests.test_config_validation_and_custom_hold) ... ok
+test_day_to_night (test_controller.ControllerTests.test_day_to_night) ... ok
+test_edge_and_corridor (test_controller.ControllerTests.test_edge_and_corridor) ... ok
+test_empty (test_controller.ControllerTests.test_empty) ... ok
+test_fault_and_recovery (test_controller.ControllerTests.test_fault_and_recovery) ... ok
+test_fault_priority (test_controller.ControllerTests.test_fault_priority) ... ok
+test_hold_and_fade (test_controller.ControllerTests.test_hold_and_fade) ... ok
+test_independent_lamps (test_controller.ControllerTests.test_independent_lamps) ... ok
+test_invalid_inputs (test_controller.ControllerTests.test_invalid_inputs) ... ok
+test_irregular_interval (test_controller.ControllerTests.test_irregular_interval) ... ok
+test_repeated_motion (test_controller.ControllerTests.test_repeated_motion) ... ok
+test_time_and_reset (test_controller.ControllerTests.test_time_and_reset) ... ok
+test_zone_change (test_controller.ControllerTests.test_zone_change) ... ok
+test_agent_entry_position_and_departure (test_simulation.SimulationTests.test_agent_entry_position_and_departure) ... ok
+test_all_scenarios_have_matched_inputs_and_duration (test_simulation.SimulationTests.test_all_scenarios_have_matched_inputs_and_duration) ... ok
+test_explicit_fault_and_recovery (test_simulation.SimulationTests.test_explicit_fault_and_recovery) ... ok
+test_independent_lamps_and_daylight (test_simulation.SimulationTests.test_independent_lamps_and_daylight) ... ok
+test_lux_zero_and_multiple_lamp_contributions (test_simulation.SimulationTests.test_lux_zero_and_multiple_lamp_contributions) ... ok
+test_missing_stale_and_recovered_samples (test_simulation.SimulationTests.test_missing_stale_and_recovered_samples) ... ok
+test_power_and_energy_units (test_simulation.SimulationTests.test_power_and_energy_units) ... ok
+test_reset_replays_identically (test_simulation.SimulationTests.test_reset_replays_identically) ... ok
+test_sensor_range_and_agent_type_independence (test_simulation.SimulationTests.test_sensor_range_and_agent_type_independence) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.293s
+
+OK
