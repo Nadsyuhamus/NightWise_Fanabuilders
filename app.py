@@ -2,7 +2,6 @@
 
 Run with:  streamlit run app.py
 Needs:     pip install streamlit plotly pandas
-Theme:     copy streamlit_config.toml to .streamlit/config.toml (forces the light theme)
 
 All data shown here is simulated.
 """
