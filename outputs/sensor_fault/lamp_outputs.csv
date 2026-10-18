@@ -1,0 +1,961 @@
+scenario,data_source,policy,time_s,dt_s,lamp_id,zone,brightness_pct,mode,reason,power_w,interval_energy_kwh
+sensor_fault,simulated,fixed_baseline,0,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,0,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,0,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,0,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,1,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,1,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,1,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,1,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,2,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,2,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,2,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,2,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,3,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,3,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,3,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,3,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,4,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,4,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,4,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,4,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,5,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,5,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,5,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,5,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,6,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,6,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,6,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,6,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,7,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,7,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,7,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,7,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,8,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,8,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,8,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,8,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,9,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,9,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,9,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,9,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,10,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,10,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,10,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,10,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,11,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,11,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,11,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,11,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,12,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,12,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,12,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,12,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,13,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,13,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,13,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,13,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,14,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,14,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,14,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,14,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,15,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,15,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,15,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,15,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,16,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,16,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,16,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,16,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,17,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,17,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,17,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,17,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,18,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,18,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,18,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,18,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,19,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,19,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,19,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,19,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,20,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,20,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,20,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,20,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,21,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,21,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,21,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,21,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,22,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,22,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,22,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,22,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,23,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,23,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,23,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,23,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,24,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,24,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,24,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,24,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,25,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,25,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,25,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,25,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,26,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,26,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,26,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,26,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,27,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,27,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,27,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,27,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,28,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,28,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,28,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,28,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,29,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,29,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,29,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,29,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,30,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,30,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,30,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,30,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,31,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,31,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,31,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,31,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,32,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,32,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,32,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,32,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,33,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,33,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,33,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,33,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,34,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,34,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,34,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,34,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,35,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,35,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,35,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,35,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,36,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,36,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,36,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,36,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,37,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,37,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,37,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,37,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,38,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,38,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,38,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,38,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,39,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,39,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,39,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,39,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,40,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,40,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,40,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,40,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,41,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,41,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,41,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,41,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,42,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,42,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,42,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,42,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,43,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,43,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,43,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,43,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,44,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,44,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,44,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,44,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,45,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,45,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,45,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,45,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,46,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,46,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,46,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,46,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,47,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,47,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,47,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,47,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,48,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,48,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,48,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,48,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,49,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,49,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,49,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,49,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,50,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,50,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,50,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,50,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,51,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,51,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,51,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,51,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,52,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,52,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,52,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,52,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,53,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,53,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,53,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,53,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,54,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,54,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,54,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,54,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,55,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,55,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,55,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,55,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,56,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,56,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,56,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,56,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,57,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,57,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,57,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,57,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,58,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,58,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,58,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,58,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,59,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,59,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,59,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,59,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,60,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,60,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,60,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,60,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,61,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,61,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,61,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,61,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,62,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,62,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,62,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,62,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,63,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,63,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,63,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,63,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,64,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,64,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,64,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,64,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,65,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,65,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,65,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,65,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,66,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,66,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,66,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,66,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,67,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,67,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,67,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,67,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,68,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,68,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,68,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,68,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,69,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,69,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,69,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,69,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,70,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,70,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,70,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,70,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,71,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,71,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,71,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,71,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,72,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,72,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,72,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,72,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,73,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,73,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,73,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,73,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,74,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,74,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,74,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,74,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,75,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,75,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,75,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,75,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,76,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,76,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,76,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,76,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,77,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,77,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,77,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,77,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,78,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,78,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,78,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,78,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,79,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,79,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,79,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,79,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,80,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,80,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,80,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,80,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,81,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,81,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,81,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,81,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,82,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,82,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,82,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,82,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,83,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,83,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,83,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,83,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,84,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,84,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,84,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,84,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,85,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,85,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,85,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,85,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,86,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,86,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,86,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,86,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,87,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,87,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,87,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,87,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,88,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,88,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,88,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,88,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,89,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,89,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,89,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,89,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,90,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,90,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,90,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,90,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,91,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,91,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,91,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,91,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,92,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,92,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,92,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,92,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,93,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,93,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,93,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,93,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,94,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,94,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,94,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,94,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,95,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,95,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,95,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,95,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,96,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,96,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,96,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,96,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,97,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,97,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,97,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,97,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,98,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,98,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,98,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,98,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,99,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,99,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,99,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,99,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,100,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,100,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,100,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,100,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,101,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,101,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,101,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,101,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,102,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,102,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,102,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,102,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,103,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,103,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,103,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,103,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,104,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,104,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,104,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,104,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,105,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,105,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,105,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,105,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,106,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,106,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,106,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,106,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,107,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,107,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,107,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,107,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,108,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,108,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,108,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,108,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,109,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,109,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,109,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,109,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,110,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,110,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,110,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,110,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,111,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,111,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,111,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,111,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,112,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,112,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,112,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,112,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,113,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,113,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,113,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,113,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,114,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,114,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,114,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,114,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,115,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,115,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,115,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,115,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,116,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,116,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,116,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,116,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,117,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,117,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,117,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,117,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,118,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,118,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,118,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,118,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,fixed_baseline,119,1.0,P1,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,119,1.0,P2,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,119,1.0,P3,walking_path,70.0,fixed_night,Fixed nighttime baseline; motion does not affect output,28.0,7.777777777777777e-06
+sensor_fault,simulated,fixed_baseline,119,1.0,E1,habitat_edge,30.0,fixed_night,Fixed nighttime baseline; motion does not affect output,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,0,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,0,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,0,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,0,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,1,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,1,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,1,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,1,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,2,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,2,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,2,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,2,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,3,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,3,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,3,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,3,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,4,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,4,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,4,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,4,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,5,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,5,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,5,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,5,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,6,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,6,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,6,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,6,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,7,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,7,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,7,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,7,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,8,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,8,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,8,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,8,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,9,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,9,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,9,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,9,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,10,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,10,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,10,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,10,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,11,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,11,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,11,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,11,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,12,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,12,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,12,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,12,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,13,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,13,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,13,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,13,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,14,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,14,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,14,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,14,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,15,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,15,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,15,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,15,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,16,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,16,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,16,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,16,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,17,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,17,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,17,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,17,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,18,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,18,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,18,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,18,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,19,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,19,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,19,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,19,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,20,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,20,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,20,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,20,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,21,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,21,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,21,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,21,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,22,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,22,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,22,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,22,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,23,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,23,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,23,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,23,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,24,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,24,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,24,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,24,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,25,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,25,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,25,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,25,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,26,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,26,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,26,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,26,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,27,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,27,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,27,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,27,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,28,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,28,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,28,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,28,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,29,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,29,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,29,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,29,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,30,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,30,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,30,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,30,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,31,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,31,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,31,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,31,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,32,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,32,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,32,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,32,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,33,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,33,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,33,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,33,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,34,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,34,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,34,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,34,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,35,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,35,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,35,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,35,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,36,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,36,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,36,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,36,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,37,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,37,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,37,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,37,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,38,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,38,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,38,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,38,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,39,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,39,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,39,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,39,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,40,1.0,P1,walking_path,50.0,fallback,Sensor fault,20.0,5.555555555555556e-06
+sensor_fault,simulated,nightwise,40,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,40,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,40,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,41,1.0,P1,walking_path,50.0,fallback,Sensor fault,20.0,5.555555555555556e-06
+sensor_fault,simulated,nightwise,41,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,41,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,41,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,42,1.0,P1,walking_path,50.0,fallback,Sensor fault,20.0,5.555555555555556e-06
+sensor_fault,simulated,nightwise,42,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,42,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,42,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,43,1.0,P1,walking_path,50.0,fallback,Sensor fault,20.0,5.555555555555556e-06
+sensor_fault,simulated,nightwise,43,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,43,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,43,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,44,1.0,P1,walking_path,50.0,fallback,Sensor fault,20.0,5.555555555555556e-06
+sensor_fault,simulated,nightwise,44,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,44,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,44,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,45,1.0,P1,walking_path,40.0,fading,Gradual dimming,16.0,4.444444444444444e-06
+sensor_fault,simulated,nightwise,45,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,45,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,45,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,46,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,46,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,46,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,46,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,47,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,47,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,47,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,47,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,48,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,48,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,48,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,48,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,49,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,49,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,49,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,49,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,50,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,50,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,50,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,50,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,51,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,51,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,51,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,51,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,52,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,52,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,52,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,52,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,53,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,53,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,53,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,53,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,54,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,54,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,54,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,54,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,55,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,55,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,55,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,55,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,56,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,56,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,56,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,56,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,57,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,57,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,57,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,57,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,58,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,58,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,58,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,58,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,59,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,59,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,59,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,59,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,60,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,60,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,60,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,60,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,61,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,61,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,61,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,61,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,62,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,62,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,62,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,62,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,63,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,63,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,63,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,63,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,64,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,64,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,64,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,64,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,65,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,65,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,65,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,65,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,66,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,66,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,66,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,66,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,67,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,67,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,67,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,67,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,68,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,68,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,68,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,68,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,69,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,69,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,69,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,69,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,70,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,70,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,70,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,70,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,71,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,71,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,71,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,71,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,72,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,72,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,72,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,72,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,73,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,73,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,73,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,73,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,74,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,74,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,74,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,74,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,75,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,75,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,75,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,75,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,76,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,76,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,76,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,76,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,77,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,77,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,77,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,77,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,78,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,78,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,78,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,78,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,79,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,79,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,79,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,79,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,80,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,80,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,80,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,80,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,81,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,81,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,81,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,81,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,82,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,82,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,82,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,82,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,83,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,83,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,83,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,83,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,84,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,84,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,84,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,84,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,85,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,85,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,85,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,85,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,86,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,86,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,86,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,86,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,87,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,87,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,87,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,87,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,88,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,88,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,88,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,88,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,89,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,89,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,89,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,89,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,90,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,90,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,90,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,90,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,91,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,91,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,91,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,91,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,92,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,92,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,92,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,92,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,93,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,93,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,93,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,93,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,94,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,94,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,94,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,94,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,95,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,95,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,95,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,95,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,96,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,96,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,96,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,96,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,97,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,97,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,97,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,97,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,98,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,98,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,98,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,98,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,99,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,99,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,99,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,99,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,100,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,100,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,100,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,100,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,101,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,101,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,101,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,101,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,102,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,102,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,102,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,102,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,103,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,103,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,103,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,103,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,104,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,104,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,104,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,104,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,105,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,105,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,105,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,105,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,106,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,106,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,106,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,106,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,107,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,107,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,107,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,107,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,108,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,108,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,108,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,108,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,109,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,109,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,109,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,109,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,110,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,110,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,110,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,110,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,111,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,111,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,111,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,111,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,112,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,112,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,112,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,112,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,113,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,113,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,113,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,113,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,114,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,114,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,114,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,114,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,115,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,115,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,115,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,115,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,116,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,116,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,116,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,116,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,117,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,117,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,117,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,117,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,118,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,118,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,118,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,118,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
+sensor_fault,simulated,nightwise,119,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,119,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,119,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
+sensor_fault,simulated,nightwise,119,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
