@@ -308,16 +308,18 @@ Example output:
 
 The controller applies rules in this order:
 
-1. Sensor fault → zone-specific fallback
-2. Healthy daytime input → lamp off
+1. Scheduled daytime → lamp off, regardless of motion-sensor health
+2. Nighttime motion-sensor fault or unavailable sample → zone-specific fallback
 3. Healthy nighttime habitat corridor → remain unlit
 4. Movement or active hold → occupied brightness
 5. Otherwise → gradually return to idle brightness
 
 All outputs are bounded by the zone's brightness cap.
 
-Fault handling takes priority over daytime. Therefore, an unhealthy reading
-uses the fallback even if `is_night=False`.
+The simulation assumes its day/night schedule is trustworthy and
+independent of motion-sensor health. Daytime motion faults remain
+reported but do not activate lighting. A fault that persists into
+nighttime activates the configured fallback.
 
 Daytime and fault operation clear the previous movement history.
 

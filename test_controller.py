@@ -112,13 +112,37 @@ class ControllerTests(unittest.TestCase):
             70,
         )
 
-    def test_fault_priority(self):
-        result = self.send(
-            0,
-            night=False,
-            healthy=False,
-        )
+    def test_daytime_overrides_motion_fault(self):
+        for zone in self.c.profiles:
+            with self.subTest(zone=zone):
+                result = self.send(
+                    0,
+                    motion=True,
+                    zone=zone,
+                    lamp=zone,
+                    night=False,
+                    healthy=False,
+                )
+                self.assertEqual(result.mode, "daylight")
+                self.assertEqual(result.brightness_pct, 0)
+                self.assertIn("unhealthy", result.reason)
+
+    def test_fault_persists_into_night(self):
+        self.send(0, night=False, healthy=False)
+
+        result = self.send(1, healthy=False)
+
         self.assertEqual(result.mode, "fallback")
+        self.assertEqual(result.brightness_pct, 50)
+
+    def test_daytime_clears_motion_history(self):
+        self.send(0, motion=True)
+        self.send(1, night=False, healthy=False)
+
+        result = self.send(2)
+
+        self.assertEqual(result.mode, "idle")
+        self.assertEqual(result.brightness_pct, 30)
 
     def test_edge_and_corridor(self):
         self.assertEqual(

@@ -413,7 +413,7 @@ def lamp_timeline(frames, t, lamp_ids, day):
     if day:
         shapes.append(dict(type="rect", x0=0, x1=len(frames) - 1, y0=0, y1=118, layer="below",
                            line=dict(width=0), fillcolor="rgba(243,156,107,0.14)"))
-        notes.append(dict(x=len(frames) / 2, y=108, text="Daylight: all lamps stay off", showarrow=False,
+        notes.append(dict(x=len(frames) / 2, y=108, text="Scheduled daytime: lamps off; motion faults remain reportable", showarrow=False,
                           font=dict(size=11, color="#b4541a")))
     for agent_id, label, fill, ypos in (
             ("PERSON_1", "Resident walks", "rgba(38,20,71,0.08)", 112),
@@ -498,17 +498,37 @@ def render_live(frames, env, baseline_w, zone_labels, lamp_ids, day):
 
                 for r in frame["lamps"]:
                     if r["sensor_status"] != "healthy":
-                        st.markdown(f'<div class="alert"><b>{r["lamp_id"]}</b>: sensor {r["sensor_status"]}, '
-                                    f'safe mode at {r["brightness_pct"]:.2f}%</div>', unsafe_allow_html=True)
+                        st.markdown(
+                            f'<div class="alert">'
+                            f'<b>{r["lamp_id"]}</b>: motion sensor '
+                            f'{r["sensor_status"]}; mode: {r["mode"]}; '
+                            f'brightness: {r["brightness_pct"]:.2f}%; '
+                            f'power: {r["power_w"]:.2f} W.'
+                            f'</div>',
+                            unsafe_allow_html=True,
+                        )
 
                 with st.expander("Lights lit: which lamps and how bright"):
                     if day:
-                        st.markdown('<div class="note">It is daylight, so every lamp is off. '
-                                    'No power is used and nothing needs saving.</div>', unsafe_allow_html=True)
-                    cards = "".join(lamp_card(r, zone_labels.get(r["zone"], r["zone"])) for r in frame["lamps"])
-                    st.markdown(f'<div class="lamp-grid">{cards}</div>', unsafe_allow_html=True)
-                    card_title("Brightness timeline", "How each lamp reacts while the resident or animal moves")
-                    show(lamp_timeline(frames, t, lamp_ids, day))
+                        lit_count = sum(
+                            r["brightness_pct"] > 0
+                            for r in frame["lamps"]
+                        )
+                        unhealthy_count = sum(
+                            r["sensor_status"] != "healthy"
+                            for r in frame["lamps"]
+                        )
+
+                        st.markdown(
+                            '<div class="note">'
+                            f'Scheduled daytime: {lit_count} lamp(s) lit; '
+                            f'modelled lamp power: '
+                            f'{frame["total_power_w"]:.2f} W. '
+                            f'Motion sensors requiring attention: '
+                            f'{unhealthy_count}.'
+                            '</div>',
+                            unsafe_allow_html=True,
+                        )
 
                 pings = ss.get("sightings", [])
                 with st.expander("Resident pings"):

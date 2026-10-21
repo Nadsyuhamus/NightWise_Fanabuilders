@@ -211,9 +211,13 @@ motion sensors.
 Both policies share the same agents, timestamps, sensor inputs,
 fixtures and shielding.
 
-NightWise uses Person 1's controller. Its fault fallback takes priority
-over daytime, so daytime sensor faults may consume power.
+NightWise uses Person 1's controller. Scheduled daytime keeps lamps off,
+including during motion-sensor faults. Faults remain visible in the
+simulation output. During nighttime, unhealthy motion inputs activate
+the configured zone fallback.
 
+This assumes a trustworthy day/night schedule independent of motion
+sensors. Day/night-input failure is not currently simulated.
 This comparison isolates adaptive brightness with unchanged fixtures
 and shielding.
 
