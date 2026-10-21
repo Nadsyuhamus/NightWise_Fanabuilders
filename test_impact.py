@@ -95,6 +95,65 @@ class ImpactTests(unittest.TestCase):
                 ["H1", "H2"],
             )
 
+    def test_per_point_mean_peak_and_exposure(self):
+        frames = [
+            {
+                "time_s": 0,
+                "dt_s": 10,
+                "lamps": [{"is_night": True}],
+                "lux_readings": [
+                    {"point_id": "H1", "artificial_lux": 2},
+                    {"point_id": "H2", "artificial_lux": 8},
+                ],
+            },
+            {
+                "time_s": 10,
+                "dt_s": 30,
+                "lamps": [{"is_night": True}],
+                "lux_readings": [
+                    {"point_id": "H1", "artificial_lux": 6},
+                    {"point_id": "H2", "artificial_lux": 0},
+                ],
+            },
+        ]
+
+        summary = habitat_summary(frames, ["H1", "H2"])
+        points = {
+            point["point_id"]: point
+            for point in summary["points"]
+        }
+
+        # H1: (2*10 + 6*30) / 40 = 5 lux.
+        self.assertAlmostEqual(points["H1"]["mean_lux"], 5)
+        self.assertAlmostEqual(points["H1"]["peak_lux"], 6)
+        self.assertAlmostEqual(points["H1"]["exposure_lux_s"], 200)
+        self.assertAlmostEqual(
+            points["H1"]["exposure_lux_h"], 200 / 3600
+        )
+
+        # H2: (8*10 + 0*30) / 40 = 2 lux.
+        self.assertAlmostEqual(points["H2"]["mean_lux"], 2)
+        self.assertAlmostEqual(points["H2"]["peak_lux"], 8)
+        self.assertAlmostEqual(points["H2"]["exposure_lux_s"], 80)
+
+        self.assertAlmostEqual(summary["mean_lux"], 3.5)
+        self.assertAlmostEqual(summary["peak_lux"], 8)
+        self.assertAlmostEqual(
+            summary["mean_point_exposure_lux_s"], 140
+        )
+
+    def test_no_eligible_readings_have_no_peak_or_exposure(self):
+        summary = habitat_summary(
+            [lux_frame(0, 10, False, 4)],
+            ["H1"],
+            night_only=True,
+        )
+
+        self.assertIsNone(summary["peak_lux"])
+        self.assertIsNone(summary["mean_point_exposure_lux_s"])
+        self.assertIsNone(summary["points"][0]["peak_lux"])
+        self.assertIsNone(summary["points"][0]["exposure_lux_s"])
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -101,6 +101,7 @@ def habitat_summary(frames, point_ids, night_only=True):
         raise ValueError("Habitat point IDs must be unique")
 
     exposure = {point_id: 0.0 for point_id in point_ids}
+    peak_lux = {point_id: None for point_id in point_ids}
     duration_s = 0.0
 
     for frame in frames:
@@ -137,7 +138,14 @@ def habitat_summary(frames, point_ids, night_only=True):
         duration_s += dt_s
 
         for point_id in point_ids:
-            exposure[point_id] += readings[point_id] * dt_s
+            lux = readings[point_id]
+
+            exposure[point_id] += lux * dt_s
+
+            if peak_lux[point_id] is None:
+                peak_lux[point_id] = lux
+            else:
+                peak_lux[point_id] = max(peak_lux[point_id], lux)
 
     point_means = {
         point_id: (
@@ -166,10 +174,29 @@ def habitat_summary(frames, point_ids, night_only=True):
             if duration_s > 0
             else None
         ),
+        # Highest modelled interval lux across selected points.
+        "peak_lux": (
+            max(peak_lux.values())
+            if duration_s > 0
+            else None
+        ),
+        # Equal-weight average of individual point exposures.
+        # This is not exposure integrated over habitat area.
+        "mean_point_exposure_lux_s": (
+            sum(exposure.values()) / len(point_ids)
+            if duration_s > 0
+            else None
+        ),
         "points": [
             {
                 "point_id": point_id,
                 "mean_lux": point_means[point_id],
+                "peak_lux": peak_lux[point_id],
+                "exposure_lux_s": (
+                    exposure[point_id]
+                    if duration_s > 0
+                    else None
+                ),
                 "exposure_lux_h": (
                     exposure[point_id] / 3600
                     if duration_s > 0

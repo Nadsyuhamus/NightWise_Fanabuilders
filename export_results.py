@@ -63,6 +63,12 @@ def export_scenario(scenario_name, output_root):
     )
 
     habitat_rows = []
+    habitat_point_rows = []
+
+    points_by_id = {
+        point["point_id"]: point
+        for point in comparison["environment"]["measurement_points"]
+    }
     for zone in ("habitat_edge", "habitat_corridor"):
         point_ids = [
             point["point_id"]
@@ -94,9 +100,28 @@ def export_scenario(scenario_name, output_root):
                     },
                 })
 
+                for point_summary in summary["points"]:
+                    point = points_by_id[point_summary["point_id"]]
+
+                    habitat_point_rows.append({
+                        "scenario": scenario_name,
+                        "data_source": "simulated",
+                        "policy": policy,
+                        "zone": zone,
+                        "scope": summary["scope"],
+                        "duration_s": summary["duration_s"],
+                        "x_m": point["x_m"],
+                        "y_m": point["y_m"],
+                        **point_summary,
+                    })
+
     write_csv(
         output_dir / "habitat_summary.csv",
         habitat_rows,
+    )
+    write_csv(
+        output_dir / "habitat_point_summary.csv",
+        habitat_point_rows,
     )
 
     sensor_rows = []
@@ -222,6 +247,15 @@ def export_scenario(scenario_name, output_root):
             "fixture_and_shielding": "Identical to NightWise.",
         },
         "assumptions": {
+            "habitat_summary": (
+                "Mean lux is weighted by interval duration. "
+                "Exposure_lux_s = sum(artificial_lux * dt_s). "
+                "Exposure_lux_h = exposure_lux_s / 3600. "
+                "Peak lux is the maximum eligible interval reading. "
+                "Zone means use equal weights per configured point; "
+                "they are not area-weighted habitat estimates. "
+                "Edge and corridor are summarised separately."
+            ),
             "power": (
                 "power_w = rated_power_w * brightness_pct / 100"
             ),
@@ -271,6 +305,8 @@ def export_scenario(scenario_name, output_root):
             "agent_positions": len(agent_rows),
             "lamp_outputs": len(lamp_rows),
             "lux_readings": len(lux_rows),
+            "habitat_summary": len(habitat_rows),
+            "habitat_point_summary": len(habitat_point_rows),
         },
     }
 
@@ -284,6 +320,7 @@ def export_scenario(scenario_name, output_root):
 
     for name, count in metadata["row_counts"].items():
         print(f"  {name}: {count} rows")
+        
 
 
 def main():

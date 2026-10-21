@@ -86,6 +86,24 @@
       "y_m": 10
     },
     {
+      "point_id": "EDGE_1",
+      "zone": "habitat_edge",
+      "x_m": 10,
+      "y_m": 20
+    },
+    {
+      "point_id": "EDGE_2",
+      "zone": "habitat_edge",
+      "x_m": 30,
+      "y_m": 20
+    },
+    {
+      "point_id": "EDGE_3",
+      "zone": "habitat_edge",
+      "x_m": 50,
+      "y_m": 20
+    },
+    {
       "point_id": "HABITAT_1",
       "zone": "habitat_corridor",
       "x_m": 10,

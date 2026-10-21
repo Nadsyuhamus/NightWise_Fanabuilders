@@ -764,17 +764,27 @@ with tab_more:
             "Energy and savings apply only to this simulated replay."
         )
 
-    points = [
-        point
-        for point in env["measurement_points"]
-        if point["zone"] == "habitat_corridor"
-    ]
-
     with st.container(border=True):
         card_title(
-            "Light reaching the habitat corridor",
+            "Light reaching habitat",
             "Modelled artificial illuminance and exposure",
         )
+
+        habitat_zone = st.selectbox(
+            "Habitat measurement zone",
+            ["habitat_edge", "habitat_corridor"],
+            format_func=lambda zone: {
+                "habitat_edge": "Habitat edge",
+                "habitat_corridor": "Habitat corridor",
+            }[zone],
+            key="habitat_measurement_zone",
+        )
+
+        points = [
+            point
+            for point in env["measurement_points"]
+            if point["zone"] == habitat_zone
+        ]
 
         scope_label = st.selectbox(
             "Habitat averaging period",
@@ -785,7 +795,7 @@ with tab_more:
         night_only = scope_label == "Nighttime only"
 
         if not points:
-            st.info("No habitat-corridor measurement points are configured.")
+            st.info("No measurement points in this habitat zone.")
 
         else:
             point_ids = [point["point_id"] for point in points]
@@ -882,6 +892,33 @@ with tab_more:
                 )
 
                 show(style_fig(fig, 300))
+
+                point_rows = []
+
+                for policy_label, summary in (
+                    ("Fixed baseline", baseline_habitat),
+                    ("NightWise", adaptive_habitat),
+                ):
+                    for point in summary["points"]:
+                        point_rows.append({
+                            "Policy": policy_label,
+                            "Point": point["point_id"],
+                            "Mean lux": point["mean_lux"],
+                            "Peak lux": point["peak_lux"],
+                            "Exposure (lux·s)": point["exposure_lux_s"],
+                            "Exposure (lux·h)": point["exposure_lux_h"],
+                        })
+
+                st.dataframe(
+                    pd.DataFrame(point_rows),
+                    hide_index=True,
+                    use_container_width=True,
+                )
+
+                st.caption(
+                    "Peak lux is the highest modelled interval reading. "
+                    "Exposure is integrated separately at each point."
+                )
 
                 st.caption(
                     f"Period: {scope_label}. "
