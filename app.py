@@ -7,7 +7,7 @@ All data shown here is simulated.
 """
 import random
 from datetime import datetime
-
+import sqlite3
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
@@ -23,7 +23,7 @@ from impact import (
 
 import json
 from dataclasses import asdict
-
+from report_store import load_reports, save_report
 from comparison import run_comparison
 from scenarios import get_scenario, get_scenarios
 
@@ -605,8 +605,8 @@ st.download_button(
 
 ss.setdefault("t", 0)
 ss.setdefault("playing", False)
-ss.setdefault("sightings", [])
-ss.setdefault("feedback", [])
+ss.sightings = load_reports("sighting")
+ss.feedback = load_reports("feedback")
 
 if ss.get("cfg_applied") != scenario_name:
     ss.cfg_applied = scenario_name
@@ -662,12 +662,22 @@ with tab_map:
 
 # ---- Community
 with tab_comm:
+    pending_count = sum(
+    report.get("status") == "Pending review"
+    for report in ss.sightings + ss.feedback
+    )
+
     kpi_grid([
         ("Wildlife pings", str(len(ss.sightings)), "shown on the Live map"),
         ("Lighting feedback", str(len(ss.feedback)), "too dark or too bright"),
-        ("Reviewed by", "Operator", "reports never control lamps"),
-        ("Data", "Simulated", "demo entries only"),
+        ("Pending review", str(pending_count), "no operator review recorded"),
+        ("Data", "Demo reports", "reports never control lamps"),
     ], wide=True)
+
+    st.caption(
+        "Submissions are saved locally and marked Pending review. "
+        "This prototype does not yet include an operator review screen."
+    )
     col_a, col_b = st.columns(2, gap="large")
     labels = {label: zid for zid, label in zone_labels.items()}
     centres = {z["zone_id"]: (z["bounds_m"][1] + z["bounds_m"][3]) / 2 for z in env.get("zones", [])}
@@ -682,12 +692,28 @@ with tab_comm:
                 if st.form_submit_button("Send ping", type="primary"):
                     zid = labels[where]
                     n = len(ss.sightings)
-                    ss.sightings.append({
-                        "reported_at": datetime.now().strftime("%H:%M:%S"), "species": species,
-                        "zone": zid, "x": float(along), "y": centres.get(zid, 20) + ((n % 3) - 1) * 2.0,
-                        "note": detail})
+
+                    try:
+                        save_report("sighting", {
+                            "species": species,
+                            "zone": zid,
+                            "x": float(along),
+                            "y": centres.get(zid, 20) + ((n % 3) - 1) * 2.0,
+                            "note": detail,
+                        })
+                    except (OSError, sqlite3.Error):
+                        st.error("The wildlife report could not be saved. Please try again.")
+                    else:
+                        st.rerun()
             if ss.sightings:
-                sdf = pd.DataFrame(ss.sightings)[["reported_at", "species", "zone", "note"]]
+                sdf = pd.DataFrame(ss.sightings)[[
+                    "report_id",
+                    "reported_at",
+                    "species",
+                    "zone",
+                    "note",
+                    "status",
+                ]]
                 st.dataframe(sdf, hide_index=True)
                 st.download_button("Download pings CSV", sdf.to_csv(index=False), "pings.csv", "text/csv")
     with col_b:
@@ -698,8 +724,16 @@ with tab_comm:
                 issue = st.radio("How does it feel?", ["Too dark", "Too bright"], horizontal=True)
                 note = st.text_input("Comment (optional)")
                 if st.form_submit_button("Send feedback", type="primary"):
-                    ss.feedback.append({"reported_at": datetime.now().strftime("%H:%M:%S"),
-                                        "lamp_id": lamp, "issue": issue, "comment": note})
+                    try:
+                        save_report("feedback", {
+                            "lamp_id": lamp,
+                            "issue": issue,
+                            "comment": note,
+                        })
+                    except (OSError, sqlite3.Error):
+                        st.error("The lighting feedback could not be saved. Please try again.")
+                    else:
+                        st.rerun()
             if ss.feedback:
                 fdf = pd.DataFrame(ss.feedback)
                 st.dataframe(fdf, hide_index=True)
@@ -830,7 +864,7 @@ with tab_more:
             "glare performance, or safety compliance. Energy savings "
             "must be considered alongside lighting service."
         )
-        
+
     with st.container(border=True):
         card_title(
             "Light reaching habitat",

@@ -8,3 +8,11 @@ __pycache__/
 # Temporary editor files
 *.tmp
 *.swp
+
+# Local community-report database
+data/*.sqlite3
+data/*.sqlite3-*
+
+# Local Python environment and caches
+.venv/
+__pycache__/
