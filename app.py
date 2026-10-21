@@ -168,7 +168,7 @@ def run(resident, animal, day, faulty, stale, window):
     frames = []
 
     for t in range(STEPS):
-        in_window = window[0] <= t <= window[1]
+        in_window = window[0] <= t < window[1]
 
         frame = sim.step(
             t,
@@ -719,14 +719,43 @@ with tab_more:
             st.caption("Modelled artificial light only, from illustrative formulas. Not measured data.")
 
     with st.container(border=True):
-        card_title("Lamp summary", "Totals for the whole replay")
-        df = pd.DataFrame([r for f in frames for r in f["lamps"]])
+        df = pd.DataFrame([
+            {
+                **row,
+                "interval_wh": row["power_w"] * frame["dt_s"] / 3600,
+                "brightness_seconds": (
+                    row["brightness_pct"] * frame["dt_s"]
+                ),
+                "dt_s": frame["dt_s"],
+                "occupied_seconds": (
+                    frame["dt_s"] if row["mode"] == "occupied" else 0.0
+                ),
+                "fallback_seconds": (
+                    frame["dt_s"] if row["mode"] == "fallback" else 0.0
+                ),
+            }
+            for frame in frames
+            for row in frame["lamps"]
+        ])
+
         summary = df.groupby("lamp_id").agg(
-            zone=("zone", "first"), avg=("brightness_pct", "mean"), peak=("brightness_pct", "max"),
-            wh=("power_w", lambda s: s.sum() / 3600),
-            active=("mode", lambda s: int((s == "occupied").sum())),
-            safe=("mode", lambda s: int((s == "fallback").sum())),
+            zone=("zone", "first"),
+            brightness_seconds=("brightness_seconds", "sum"),
+            duration_s=("dt_s", "sum"),
+            peak=("brightness_pct", "max"),
+            wh=("interval_wh", "sum"),
+            active=("occupied_seconds", "sum"),
+            safe=("fallback_seconds", "sum"),
         ).reindex(lamp_ids)
+
+        summary["avg"] = (
+            summary.pop("brightness_seconds")
+            / summary.pop("duration_s")
+        )
+
+        summary = summary[
+            ["zone", "avg", "peak", "wh", "active", "safe"]
+        ]
         summary.insert(0, "Lamp", summary.index)
         summary["zone"] = summary["zone"].map(lambda z: zone_labels.get(z, z))
         st.dataframe(
@@ -747,6 +776,8 @@ with tab_more:
         f1, f2 = st.columns(2)
         f1.multiselect("Break the sensor on", lamp_ids, key="faulty")
         f1.multiselect("Cut the connection to", lamp_ids, key="stale")
-        f2.slider("Problems last between (seconds)", 0, STEPS - 1, (30, 50), key="fault_window")
+        f2.slider( "Problem window: start included, end excluded (seconds)",
+            0, STEPS, (30, 50), key="fault_window",
+        )
 
 st.caption("Simulated data. Illustrative settings, not real-world lighting standards.")
