@@ -1,7 +1,7 @@
 """Validate simulation inputs before calculating impact."""
 
 import math
-
+from copy import deepcopy
 
 TIME_TOLERANCE_S = 1e-9
 
@@ -213,3 +213,170 @@ def validate_run(
                 point.get("artificial_lux"),
                 f"{label} {point_id} artificial_lux",
             )
+
+def validate_fair_comparison(adaptive_frames, baseline_frames):
+    """Require matched conditions while allowing policy outputs to differ."""
+    if not adaptive_frames or not baseline_frames:
+        raise ValueError("Comparison requires two non-empty runs")
+
+    if len(adaptive_frames) != len(baseline_frames):
+        raise ValueError("Comparison frame counts differ")
+
+    context = adaptive_frames[0].get("comparison_context")
+
+    if not isinstance(context, dict):
+        raise ValueError("Missing comparison context; regenerate the runs")
+
+    # Snapshot so every subsequent frame is checked against one reference.
+    context = deepcopy(context)
+
+    required_context = (
+        "schema_version",
+        "model_version",
+        "interval_convention",
+        "baseline_definition",
+        "environment",
+        "controller",
+    )
+
+    for key in required_context:
+        if key not in context:
+            raise ValueError(f"Missing comparison context field: {key}")
+
+    if context["baseline_definition"] != "fixed_nighttime_zone_cap":
+        raise ValueError("Unsupported baseline definition")
+
+    if context["interval_convention"] != "[time_s, time_s + dt_s)":
+        raise ValueError("Unsupported interval convention")
+
+    environment = context["environment"]
+    controller = context["controller"]
+
+    fixtures = _records_by_id(
+        environment["lamps"], "lamp_id", "Environment lamps"
+    )
+    points = _records_by_id(
+        environment["measurement_points"],
+        "point_id",
+        "Environment points",
+    )
+
+    if not fixtures or not points:
+        raise ValueError("Comparison requires fixtures and measurement points")
+
+    # Validate each complete sequence before comparing individual frames.
+    validate_intervals(adaptive_frames)
+    validate_intervals(baseline_frames)
+
+    expected_start = adaptive_frames[0]["time_s"]
+    expected_end = (
+        adaptive_frames[-1]["time_s"] + adaptive_frames[-1]["dt_s"]
+    )
+
+    for frames in (adaptive_frames, baseline_frames):
+        validate_run(
+            frames,
+            environment,
+            expected_start_s=expected_start,
+            expected_end_s=expected_end,
+        )
+
+    input_fields = (
+        "zone",
+        "time_s",
+        "motion",
+        "is_night",
+        "sensor_ok",
+        "daylight_ok",
+        "sensor_status",
+        "sample_age_s",
+    )
+
+    for index, (adaptive, baseline) in enumerate(
+        zip(adaptive_frames, baseline_frames)
+    ):
+        for field in ("time_s", "dt_s"):
+            if adaptive[field] != baseline[field]:
+                raise ValueError(
+                    f"Frame {index}: comparison {field} differs"
+                )
+
+        for field in ("scenario", "agents"):
+            if field not in adaptive or field not in baseline:
+                raise ValueError(f"Frame {index}: missing {field}")
+
+            if adaptive[field] != baseline[field]:
+                raise ValueError(
+                    f"Frame {index}: comparison {field} differs"
+                )
+
+        lamp_sets = []
+
+        for frame in (adaptive, baseline):
+            if frame.get("data_source") != "simulated":
+                raise ValueError(
+                    f"Frame {index}: expected simulated data"
+                )
+
+            if frame.get("comparison_context") != context:
+                raise ValueError(
+                    f"Frame {index}: comparison configuration differs"
+                )
+
+            lamps = _records_by_id(
+                frame["lamps"], "lamp_id", f"Frame {index} lamps"
+            )
+            readings = _records_by_id(
+                frame["lux_readings"],
+                "point_id",
+                f"Frame {index} points",
+            )
+
+            for lamp_id, lamp in lamps.items():
+                if lamp.get("zone") != fixtures[lamp_id]["zone"]:
+                    raise ValueError(
+                        f"Frame {index}: fixture zone differs for {lamp_id}"
+                    )
+
+            for point_id, reading in readings.items():
+                for field in ("zone", "x_m", "y_m"):
+                    if reading.get(field) != points[point_id][field]:
+                        raise ValueError(
+                            f"Frame {index}: measurement geometry differs "
+                            f"for {point_id}.{field}"
+                        )
+
+            lamp_sets.append(lamps)
+
+        adaptive_lamps, baseline_lamps = lamp_sets
+
+        for lamp_id, fixture in fixtures.items():
+            adaptive_lamp = adaptive_lamps[lamp_id]
+            baseline_lamp = baseline_lamps[lamp_id]
+
+            for field in input_fields:
+                if (
+                    field not in adaptive_lamp
+                    or field not in baseline_lamp
+                ):
+                    raise ValueError(
+                        f"Frame {index}: missing {lamp_id}.{field}"
+                    )
+
+                if adaptive_lamp[field] != baseline_lamp[field]:
+                    raise ValueError(
+                        f"Frame {index}: input differs for "
+                        f"{lamp_id}.{field}"
+                    )
+
+            zone = fixture["zone"]
+            expected_brightness = (
+                controller["zones"][zone]["cap"]
+                if baseline_lamp["is_night"]
+                else 0.0
+            )
+
+            if baseline_lamp["brightness_pct"] != expected_brightness:
+                raise ValueError(
+                    f"Frame {index}: baseline policy differs for {lamp_id}"
+                )

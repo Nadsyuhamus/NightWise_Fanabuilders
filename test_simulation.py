@@ -55,6 +55,7 @@ class SimulationTests(unittest.TestCase):
         self.assertEqual(estimate_power_w(40, 70), 28)
 
         one_hour = [{
+            "time_s": 0.0,
             "total_power_w": 40,
             "dt_s": 3600,
         }]

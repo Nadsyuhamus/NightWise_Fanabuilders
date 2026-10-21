@@ -253,6 +253,27 @@ Configuration changes affect the simulation assumptions and may change compariso
 
 Brightness percentage is not a direct measurement of electrical power or illuminance. Those quantities depend on the models and their assumptions.
 
+### Fair comparison checks
+
+The fixed and adaptive policies use matching fixtures, fixture
+specifications, shielding, measurement points, controller configuration,
+agents, sensor inputs and simulation intervals.
+
+The fixed baseline uses each zone's configured cap during scheduled
+nighttime and switches off during scheduled daytime.
+
+Comparison validation rejects mismatched configurations, measurement
+geometry, inputs, incomplete records and inconsistent intervals.
+The named scenario runner also checks the expected scenario start
+and end times.
+
+Brightness, power, lux and controller modes may differ because they
+are policy outputs.
+
+Matched conditions do not establish equivalent pedestrian visibility
+or lighting-standard compliance. Energy, lux and exposure are simulated;
+energy represents lamp-only consumption.
+
 ## Limitations
 
 - Results are simulated estimates, not physical measurements.

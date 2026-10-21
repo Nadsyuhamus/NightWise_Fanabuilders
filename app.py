@@ -388,22 +388,8 @@ def lamp_timeline(frames, t, lamp_ids, day):
 
 
 # ------------------------------------------------- live map + properties
-def dashboard_energy(frames, baseline_w):
-    """Calculate energy savings using matched simulation intervals."""
-    if len(frames) != len(baseline_w):
-        raise ValueError(
-            "Baseline power count differs from frame count"
-        )
-
-    baseline_frames = [
-        {
-            "time_s": frame["time_s"],
-            "dt_s": frame["dt_s"],
-            "total_power_w": power_w,
-        }
-        for frame, power_w in zip(frames, baseline_w)
-    ]
-
+def dashboard_energy(frames, baseline_frames):
+    """Calculate dashboard metrics from complete matched records."""
     return compare_energy(frames, baseline_frames)
 
 def render_live(frames, env, baseline_w, zone_labels, lamp_ids):
@@ -476,9 +462,9 @@ def render_live(frames, env, baseline_w, zone_labels, lamp_ids):
             with st.container(border=True):
                 card_title("Properties", "Live numbers for this moment")
                 live_impact = dashboard_energy(
-                    frames[: t + 1],
-                    baseline_w[: t + 1],
-                )
+                frames[: t + 1],
+                baseline_frames[: t + 1],
+            )
                 saved = live_impact["savings_pct"]
                 lit = sum(1 for r in frame["lamps"] if r["brightness_pct"] > 0)
                 raised = sum(1 for r in frame["lamps"] if r["mode"] == "occupied")
@@ -741,7 +727,7 @@ with tab_comm:
 
 # ---- Analysis (everything else)
 with tab_more:
-    impact = dashboard_energy(frames, baseline_w)
+    impact = dashboard_energy(frames, baseline_frames)
 
     adaptive_wh = impact["adaptive_kwh"] * 1000
     baseline_wh = impact["baseline_kwh"] * 1000

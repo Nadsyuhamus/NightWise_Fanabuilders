@@ -2,7 +2,7 @@
 from controller import SensorInput
 from models import estimate_power_w, estimate_point_lux
 from dataclasses import asdict
-
+from copy import deepcopy
 from agents import Agent
 from controller import LightingController
 from environment import load_environment
@@ -190,6 +190,22 @@ class Simulation:
 
         return {
             "data_source": "simulated",
+            "comparison_context": {
+                "schema_version": 1,
+                "model_version": "illustrative-linear-power-lux-v1",
+                "interval_convention": "[time_s, time_s + dt_s)",
+                "baseline_definition": "fixed_nighttime_zone_cap",
+                "environment": deepcopy(self.environment),
+                "controller": {
+                    "hold_seconds": self.controller.hold_seconds,
+                    "fade_pct_per_second": self.controller.fade_rate,
+                    "zones": {
+                        zone: asdict(profile)
+                        for zone, profile
+                        in self.controller.profiles.items()
+                    },
+                },
+            },
             "time_s": time_s,
             "agents": agent_positions,
             "lamps": lamp_results,

@@ -2,7 +2,10 @@
 
 from copy import deepcopy
 from models import estimate_power_w, estimate_point_lux
-from validation import validate_intervals
+from validation import (
+    validate_intervals,
+    validate_fair_comparison,
+)
 
 def build_baseline_frame(adaptive_frame, environment, profiles):
     """Apply fixed nighttime brightness to the same scenario frame."""
@@ -211,16 +214,8 @@ def habitat_summary(frames, point_ids, night_only=True):
     }
 
 def compare_energy(adaptive_frames, baseline_frames):
-    """Calculate energy metrics for matching simulation intervals."""
-    if len(adaptive_frames) != len(baseline_frames):
-        raise ValueError("Comparison frame counts differ")
-
-    for adaptive, fixed in zip(adaptive_frames, baseline_frames):
-        adaptive_interval = (adaptive["time_s"], adaptive["dt_s"])
-        fixed_interval = (fixed["time_s"], fixed["dt_s"])
-
-        if adaptive_interval != fixed_interval:
-            raise ValueError("Comparison intervals differ")
+    """Calculate savings only for validated matched runs."""
+    validate_fair_comparison(adaptive_frames, baseline_frames)
 
     adaptive = total_energy_kwh(adaptive_frames)
     baseline = total_energy_kwh(baseline_frames)

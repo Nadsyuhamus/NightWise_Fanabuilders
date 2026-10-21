@@ -4,6 +4,8 @@ from impact import (
     compare_energy,
     format_reduction_pct,
     habitat_summary,
+    total_energy_kwh,
+    reduction_pct,
 )
 
 
@@ -28,33 +30,29 @@ def lux_frame(time_s, dt_s, is_night, lux):
 
 class ImpactTests(unittest.TestCase):
     def test_zero_baseline_with_no_consumption(self):
-        result = compare_energy(
-            [energy_frame(0)],
-            [energy_frame(0)],
-        )
-        self.assertIsNone(result["savings_pct"])
-        self.assertEqual(result["saved_kwh"], 0)
-        self.assertEqual(
-            format_reduction_pct(result["savings_pct"]),
-            "N/A",
-        )
+        adaptive = total_energy_kwh([energy_frame(0)])
+        baseline = total_energy_kwh([energy_frame(0)])
+
+        self.assertEqual(baseline - adaptive, 0)
+        self.assertIsNone(reduction_pct(baseline, adaptive))
+        self.assertEqual(format_reduction_pct(None), "N/A")
 
     def test_zero_baseline_with_extra_consumption(self):
-        result = compare_energy(
-            [energy_frame(1)],
-            [energy_frame(0)],
-        )
-        self.assertIsNone(result["savings_pct"])
-        self.assertAlmostEqual(result["saved_kwh"], -0.001)
+        adaptive = total_energy_kwh([energy_frame(1)])
+        baseline = total_energy_kwh([energy_frame(0)])
+
+        self.assertAlmostEqual(baseline - adaptive, -0.001)
+        self.assertIsNone(reduction_pct(baseline, adaptive))
 
     def test_negative_savings_are_preserved(self):
-        result = compare_energy(
-            [energy_frame(1.2)],
-            [energy_frame(1)],
-        )
-        self.assertAlmostEqual(result["savings_pct"], -20)
-        self.assertAlmostEqual(result["saved_kwh"], -0.0002)
+        adaptive = total_energy_kwh([energy_frame(1.2)])
+        baseline = total_energy_kwh([energy_frame(1)])
 
+        self.assertAlmostEqual(baseline - adaptive, -0.0002)
+        self.assertAlmostEqual(
+            reduction_pct(baseline, adaptive), -20
+        )
+        
     def test_scope_and_duration_weighting(self):
         frames = [
             lux_frame(0, 10, True, 2),
