@@ -14,8 +14,13 @@ import streamlit as st
 
 from agents import Agent
 from environment import load_environment
-from models import estimate_point_lux
 from simulation import Simulation
+from impact import (
+    build_baseline_frame,
+    compare_energy,
+    mean_point_lux,
+    reduction_pct,
+)
 
 # ------------------------------------------------------------------ palette
 SAGE, TAUPE, TANG, FUCH, AMETH = "#c0bda5", "#cc978e", "#f39c6b", "#ff3864", "#261447"
@@ -158,25 +163,62 @@ def build_agents(resident, animal):
 
 @st.cache_data
 def run(resident, animal, day, faulty, stale, window):
-    """Precompute every frame once. Simulation.step() needs time to increase,
-    so it is never stepped live inside Streamlit reruns."""
+    """Precompute adaptive frames and their matched fixed baseline."""
     sim = Simulation(agents=build_agents(resident, animal))
     frames = []
+
     for t in range(STEPS):
         in_window = window[0] <= t <= window[1]
-        frames.append(sim.step(
-            t, is_night=not day,
+
+        frame = sim.step(
+            t,
+            is_night=not day,
             faulty_lamp_ids=faulty if in_window else None,
-            stale_lamp_ids=stale if in_window else None))
+            stale_lamp_ids=stale if in_window else None,
+        )
+
+        # Each frame represents one second of operation.
+        frame["dt_s"] = 1.0
+        frames.append(frame)
+
     env = sim.environment
-    lamps = env["lamps"]
-    full = {lamp["lamp_id"]: 100 for lamp in lamps}
-    baseline_lux = {p["point_id"]: estimate_point_lux(lamps, full, p) for p in env["measurement_points"]}
-    full_power_w = sum(lamp["rated_power_w"] for lamp in lamps)
-    # Fixed baseline: every lamp at 100% all night, off in daylight.
-    baseline_w = [0.0 if day else full_power_w for _ in range(STEPS)]
+
+    baseline_frames = [
+        build_baseline_frame(
+            adaptive_frame=frame,
+            environment=env,
+            profiles=sim.controller.profiles,
+        )
+        for frame in frames
+    ]
+
+    baseline_w = [
+        frame["total_power_w"] for frame in baseline_frames
+    ]
+
+    baseline_lux = mean_point_lux(
+        baseline_frames,
+        [point["point_id"] for point in env["measurement_points"]],
+        night_only=True,
+    )
+
     return frames, env, baseline_w, baseline_lux
 
+def dashboard_energy(frames, baseline_w):
+    """Adapt dashboard baseline power values to shared energy inputs."""
+    if len(frames) != len(baseline_w):
+        raise ValueError("Baseline power count differs from frame count")
+
+    baseline_frames = [
+        {
+            "time_s": frame["time_s"],
+            "dt_s": frame["dt_s"],
+            "total_power_w": power_w,
+        }
+        for frame, power_w in zip(frames, baseline_w)
+    ]
+
+    return compare_energy(frames, baseline_frames)
 
 # ---------------------------------------------------------------- helpers
 def kpi_grid(items, wide=False):
@@ -203,8 +245,8 @@ def lamp_card(row, zone_label):
         f'<span class="pill" style="background:{bg};color:{fg}">{label}</span></div>'
         f'<div class="lamp-zone">{zone_label}</div>'
         f'<div class="bar"><div class="bar-fill" style="width:{row["brightness_pct"]}%"></div></div>'
-        f'<div class="lamp-meta"><span>{row["brightness_pct"]:.0f}% brightness</span>'
-        f'<span>{row["power_w"]:.0f} W</span></div>'
+        f'<div class="lamp-meta"><span>{row["brightness_pct"]:.2f}% brightness</span>'
+        f'<span>{row["power_w"]:.2f} W</span></div>'
         f'<div class="lamp-reason">{row["reason"]}</div>{warn}</div>')
 
 
@@ -326,13 +368,13 @@ def make_map(env, frame, day, pings):
         x=[lamp_cfg[r["lamp_id"]]["x_m"] for r in frame["lamps"]],
         y=[lamp_cfg[r["lamp_id"]]["y_m"] for r in frame["lamps"]],
         mode="markers+text",
-        text=[f"{r['lamp_id']}  {r['brightness_pct']:.0f}%" for r in frame["lamps"]],
+        text=[f"{r['lamp_id']}  {r['brightness_pct']:.2f}%" for r in frame["lamps"]],
         textposition="bottom center", textfont=dict(size=11, color=AMETH),
         marker=dict(size=18, line=dict(color="white", width=2.5),
                     color=[FUCH if r["mode"] == "fallback" else (TANG if r["brightness_pct"] > 0 else SAGE)
                            for r in frame["lamps"]]),
         hovertext=[f"<b>{r['lamp_id']}</b><br>{MODE_LABEL.get(r['mode'], r['mode'])}: {r['reason']}"
-                   f"<br>{r['brightness_pct']:.0f}% brightness, {r['power_w']:.0f} W" for r in frame["lamps"]],
+                   f"<br>{r['brightness_pct']:.2f}% brightness, {r['power_w']:.2f} W" for r in frame["lamps"]],
         hoverinfo="text", showlegend=False))
 
     if pings:
@@ -437,17 +479,19 @@ def render_live(frames, env, baseline_w, zone_labels, lamp_ids, day):
         with col_props:
             with st.container(border=True):
                 card_title("Properties", "Live numbers for this moment")
-                adaptive = sum(f["total_power_w"] for f in frames[: t + 1])
-                baseline = sum(baseline_w[: t + 1])
-                saved = None if baseline == 0 else 100 * (1 - adaptive / baseline)
+                live_impact = dashboard_energy(
+                    frames[: t + 1],
+                    baseline_w[: t + 1],
+                )
+                saved = live_impact["savings_pct"]
                 lit = sum(1 for r in frame["lamps"] if r["brightness_pct"] > 0)
                 raised = sum(1 for r in frame["lamps"] if r["mode"] == "occupied")
                 n = len(frame["lamps"])
                 kpi_grid([
-                    ("Power used", f"{frame['total_power_w']:.0f} W",
-                     "lamps off in daylight" if day else f"always-on lamps: {baseline_w[t]:.0f} W"),
-                    ("Energy saved", "n/a" if saved is None else f"{saved:.0f}%",
-                     "nothing to save by day" if day else "vs always-on, so far"),
+                    ("Power used", f"{frame['total_power_w']:.2f} W",
+                     "lamps off in daylight" if day else f"fixed baseline: {baseline_w[t]:.2f} W"),
+                    ("Energy saved", "n/a" if saved is None else f"{saved:.2f}%",
+                     "nothing to save by day" if day else "vs fixed baseline, so far"),
                     ("Lights lit", f"{lit} of {n}", "none, it is daylight" if day else f"{raised} brightened for movement"),
                     ("Resident pings", str(len(ss.get("sightings", []))), "wild animal reports"),
                 ])
@@ -455,7 +499,7 @@ def render_live(frames, env, baseline_w, zone_labels, lamp_ids, day):
                 for r in frame["lamps"]:
                     if r["sensor_status"] != "healthy":
                         st.markdown(f'<div class="alert"><b>{r["lamp_id"]}</b>: sensor {r["sensor_status"]}, '
-                                    f'safe mode at {r["brightness_pct"]:.0f}%</div>', unsafe_allow_html=True)
+                                    f'safe mode at {r["brightness_pct"]:.2f}%</div>', unsafe_allow_html=True)
 
                 with st.expander("Lights lit: which lamps and how bright"):
                     if day:
@@ -599,20 +643,22 @@ with tab_comm:
 
 # ---- Analysis (everything else)
 with tab_more:
-    adaptive_wh = sum(f["total_power_w"] for f in frames) / 3600
-    baseline_wh = sum(baseline_w) / 3600
-    saved_all = None if baseline_wh == 0 else 100 * (1 - adaptive_wh / baseline_wh)
+    impact = dashboard_energy(frames, baseline_w)
+
+    adaptive_wh = impact["adaptive_kwh"] * 1000
+    baseline_wh = impact["baseline_kwh"] * 1000
+    saved_all = impact["savings_pct"]
     kpi_grid([
-        ("Energy saved", "n/a" if saved_all is None else f"{saved_all:.0f}%", "whole replay"),
+        ("Energy saved", "n/a" if saved_all is None else f"{saved_all:.2f}%", "whole replay"),
         ("Smart lamps used", f"{adaptive_wh:.2f} Wh", "adaptive system"),
-        ("Always-on lamps", f"{baseline_wh:.2f} Wh", "every lamp at 100% all night"),
-        ("Peak power", f"{max(f['total_power_w'] for f in frames):.0f} W", "highest moment, adaptive"),
+        ("Fixed baseline", f"{baseline_wh:.2f} Wh", "walking path 70%; habitat edge 30%; daytime off"),
+        ("Peak power", f"{max(f['total_power_w'] for f in frames):.2f} W", "highest moment, adaptive"),
     ], wide=True)
 
     with st.container(border=True):
-        card_title("Power over time", "Smart lamps compared with always-on lamps")
+        card_title("Power over time", "Smart lamps compared with fixed lighting.")
         fig = go.Figure()
-        fig.add_trace(go.Scatter(x=list(range(len(frames))), y=baseline_w, name="Always-on lamps",
+        fig.add_trace(go.Scatter(x=list(range(len(frames))), y=baseline_w, name="Fixed baseline",
                                  line=dict(color=DSAGE, width=2), fill="tozeroy",
                                  fillcolor="rgba(192,189,165,0.30)"))
         fig.add_trace(go.Scatter(x=list(range(len(frames))), y=[f["total_power_w"] for f in frames],
@@ -621,8 +667,12 @@ with tab_more:
         fig.update_xaxes(title="Simulated seconds")
         fig.update_yaxes(title="Watts")
         show(style_fig(fig, 330))
-        st.caption("The percentage saved is the meaningful result. Watt-hours only cover the short replay. "
-                   "Confirm the always-on baseline definition with whoever owns the impact calculations.")
+        st.caption(
+            "Fixed baseline: walking-path lamps at 70% and the habitat-edge "
+            "lamp at 30% throughout nighttime; off during scheduled daytime. "
+            "Both policies use identical fixtures and shielding. "
+            "Energy and savings apply only to this simulated replay."
+        )
 
     points = [p for p in env["measurement_points"] if p["zone"] == "habitat_corridor"]
     night_idx = [i for i, f in enumerate(frames) if f["lamps"][0]["is_night"]]
@@ -632,19 +682,36 @@ with tab_more:
             st.markdown('<div class="note">No night-time readings. Switch Daytime off on the Live map.</div>',
                         unsafe_allow_html=True)
         else:
-            avg = {p["point_id"]: sum(
-                next(r["artificial_lux"] for r in frames[i]["lux_readings"] if r["point_id"] == p["point_id"])
-                for i in night_idx) / len(night_idx) for p in points}
-            base = {p["point_id"]: baseline_lux[p["point_id"]] for p in points}
-            cut = 100 * (1 - sum(avg.values()) / sum(base.values())) if sum(base.values()) else 0
+            point_ids = [point["point_id"] for point in points]
+
+            avg = mean_point_lux(
+                frames,
+                point_ids,
+                night_only=True,
+            )
+
+            base = {
+                point_id: baseline_lux[point_id]
+                for point_id in point_ids
+            }
+
+            cut = reduction_pct(
+                sum(base.values()),
+                sum(avg.values()),
+            )
+
             kpi_grid([
-                ("Light spill reduced", f"{cut:.0f}%", "in the dark corridor"),
+                (
+                    "Light spill reduced",
+                    "n/a" if cut is None else f"{cut:.2f}%",
+                    "mean across corridor measurement points",
+                ),
                 ("Smart lamps", f"{sum(avg.values()) / len(avg):.3f} lux", "average at corridor points"),
-                ("Always-on lamps", f"{sum(base.values()) / len(base):.3f} lux", "average at corridor points"),
+                ("Fixed baseline", f"{sum(base.values()) / len(base):.3f} lux", "average at corridor points"),
                 ("Corridor lamps", "0", "none installed"),
             ], wide=True)
             fig = go.Figure()
-            fig.add_trace(go.Bar(x=list(base), y=list(base.values()), name="Always-on lamps", marker_color=SAGE))
+            fig.add_trace(go.Bar(x=list(base), y=list(base.values()), name="Fixed baseline", marker_color=SAGE))
             fig.add_trace(go.Bar(x=list(avg), y=list(avg.values()), name="Smart lamps", marker_color=TANG))
             fig.update_layout(barmode="group")
             fig.update_yaxes(title="Lux")
