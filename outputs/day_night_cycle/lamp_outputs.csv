@@ -479,86 +479,86 @@ day_night_cycle,simulated,fixed_baseline,119,1.0,P1,walking_path,0.0,daylight,Sc
 day_night_cycle,simulated,fixed_baseline,119,1.0,P2,walking_path,0.0,daylight,Scheduled daytime: lamp off,0.0,0.0
 day_night_cycle,simulated,fixed_baseline,119,1.0,P3,walking_path,0.0,daylight,Scheduled daytime: lamp off,0.0,0.0
 day_night_cycle,simulated,fixed_baseline,119,1.0,E1,habitat_edge,0.0,daylight,Scheduled daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,0,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,0,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,0,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,0,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,1,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,1,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,1,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,1,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,2,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,2,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,2,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,2,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,3,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,3,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,3,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,3,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,4,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,4,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,4,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,4,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,5,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,5,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,5,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,5,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,6,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,6,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,6,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,6,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,7,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,7,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,7,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,7,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,8,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,8,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,8,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,8,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,9,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,9,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,9,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,9,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,10,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,10,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,10,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,10,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,11,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,11,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,11,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,11,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,12,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,12,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,12,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,12,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,13,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,13,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,13,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,13,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,14,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,14,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,14,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,14,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,15,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,15,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,15,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,15,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,16,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,16,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,16,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,16,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,17,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,17,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,17,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,17,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,18,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,18,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,18,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,18,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,19,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,19,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,19,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,19,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,0,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,0,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,0,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,0,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,1,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,1,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,1,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,1,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,2,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,2,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,2,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,2,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,3,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,3,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,3,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,3,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,4,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,4,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,4,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,4,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,5,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,5,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,5,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,5,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,6,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,6,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,6,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,6,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,7,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,7,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,7,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,7,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,8,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,8,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,8,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,8,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,9,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,9,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,9,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,9,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,10,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,10,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,10,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,10,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,11,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,11,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,11,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,11,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,12,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,12,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,12,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,12,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,13,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,13,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,13,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,13,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,14,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,14,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,14,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,14,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,15,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,15,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,15,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,15,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,16,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,16,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,16,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,16,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,17,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,17,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,17,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,17,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,18,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,18,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,18,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,18,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,19,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,19,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,19,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,19,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
 day_night_cycle,simulated,nightwise,20,1.0,P1,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
 day_night_cycle,simulated,nightwise,20,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
 day_night_cycle,simulated,nightwise,20,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
@@ -839,123 +839,123 @@ day_night_cycle,simulated,nightwise,89,1.0,P1,walking_path,30.0,idle,No recent m
 day_night_cycle,simulated,nightwise,89,1.0,P2,walking_path,40.0,fading,Gradual dimming,16.0,4.444444444444444e-06
 day_night_cycle,simulated,nightwise,89,1.0,P3,walking_path,70.0,occupied,Motion or hold period,28.0,7.777777777777777e-06
 day_night_cycle,simulated,nightwise,89,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
-day_night_cycle,simulated,nightwise,90,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,90,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,90,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,90,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,91,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,91,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,91,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,91,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,92,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,92,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,92,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,92,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,93,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,93,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,93,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,93,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,94,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,94,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,94,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,94,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,95,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,95,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,95,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,95,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,96,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,96,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,96,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,96,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,97,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,97,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,97,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,97,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,98,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,98,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,98,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,98,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,99,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,99,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,99,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,99,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,100,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,100,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,100,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,100,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,101,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,101,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,101,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,101,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,102,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,102,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,102,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,102,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,103,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,103,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,103,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,103,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,104,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,104,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,104,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,104,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,105,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,105,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,105,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,105,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,106,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,106,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,106,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,106,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,107,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,107,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,107,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,107,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,108,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,108,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,108,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,108,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,109,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,109,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,109,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,109,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,110,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,110,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,110,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,110,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,111,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,111,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,111,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,111,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,112,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,112,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,112,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,112,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,113,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,113,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,113,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,113,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,114,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,114,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,114,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,114,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,115,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,115,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,115,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,115,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,116,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,116,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,116,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,116,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,117,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,117,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,117,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,117,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,118,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,118,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,118,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,118,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,119,1.0,P1,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,119,1.0,P2,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,119,1.0,P3,walking_path,0,daylight,Daytime: lamp off,0.0,0.0
-day_night_cycle,simulated,nightwise,119,1.0,E1,habitat_edge,0,daylight,Daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,90,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,90,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,90,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,90,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,91,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,91,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,91,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,91,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,92,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,92,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,92,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,92,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,93,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,93,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,93,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,93,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,94,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,94,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,94,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,94,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,95,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,95,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,95,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,95,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,96,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,96,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,96,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,96,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,97,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,97,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,97,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,97,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,98,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,98,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,98,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,98,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,99,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,99,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,99,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,99,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,100,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,100,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,100,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,100,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,101,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,101,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,101,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,101,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,102,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,102,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,102,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,102,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,103,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,103,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,103,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,103,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,104,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,104,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,104,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,104,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,105,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,105,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,105,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,105,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,106,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,106,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,106,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,106,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,107,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,107,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,107,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,107,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,108,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,108,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,108,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,108,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,109,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,109,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,109,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,109,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,110,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,110,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,110,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,110,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,111,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,111,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,111,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,111,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,112,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,112,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,112,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,112,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,113,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,113,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,113,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,113,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,114,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,114,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,114,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,114,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,115,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,115,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,115,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,115,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,116,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,116,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,116,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,116,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,117,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,117,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,117,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,117,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,118,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,118,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,118,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,118,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,119,1.0,P1,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,119,1.0,P2,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,119,1.0,P3,walking_path,0,daylight,Scheduled daytime: lamp off,0.0,0.0
+day_night_cycle,simulated,nightwise,119,1.0,E1,habitat_edge,0,daylight,Scheduled daytime: lamp off,0.0,0.0

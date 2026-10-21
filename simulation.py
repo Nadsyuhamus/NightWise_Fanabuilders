@@ -26,7 +26,7 @@ class Simulation:
         self.last_time_s = None
         self.sensor_samples.clear()
 
-    def step(self, time_s, is_night=True, faulty_lamp_ids=None, stale_lamp_ids=None,):
+    def step(self, time_s, is_night=True, faulty_lamp_ids=None, stale_lamp_ids=None, daylight_ok=True):
         """Advance the simulation and return this frame's data."""
         # Validate before updating any lamp.
         import math
@@ -44,6 +44,9 @@ class Simulation:
 
         if type(is_night) is not bool:
             raise ValueError("is_night must be a Boolean.")
+
+        if type(daylight_ok) is not bool:
+            raise ValueError("daylight_ok must be a Boolean.")
 
         faulty_lamp_ids = (
             set() if faulty_lamp_ids is None
@@ -100,6 +103,7 @@ class Simulation:
                     agents=self.agents,
                     time_s=time_s,
                     is_night=is_night,
+                    daylight_ok=daylight_ok,
                 )
 
                 self.sensor_samples[lamp_id] = {
@@ -141,6 +145,7 @@ class Simulation:
                 motion=sample["motion"] if sensor_ok else False,
                 is_night=is_night,
                 sensor_ok=sensor_ok,
+                daylight_ok=daylight_ok,
             )
 
             decision = self.controller.update(reading)

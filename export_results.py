@@ -72,6 +72,7 @@ def export_scenario(scenario_name, output_root):
                 "motion": lamp["motion"],
                 "is_night": lamp["is_night"],
                 "sensor_ok": lamp["sensor_ok"],
+                "daylight_ok": lamp["daylight_ok"],
                 "sensor_status": lamp["sensor_status"],
                 "sample_age_s": lamp["sample_age_s"],
             })
@@ -209,7 +210,12 @@ def export_scenario(scenario_name, output_root):
             "Energy results apply only to the simulated duration.",
             "Lower habitat lux does not demonstrate wildlife recovery.",
             "Visibility and safety compliance have not been validated.",
-            "NightWise sensor-fault fallback takes priority over daytime.",
+            "sensor_ok describes motion input health only.",
+            "daylight_ok describes availability of the shared day/night input.",
+            "Reliable daytime keeps lamps off despite motion faults.",
+            "Unavailable day/night input activates configured zone fallback.",
+            "The fixed baseline retains an independent scenario schedule; "
+            "daylight-input-fault runs compare different input availability.",
         ],
         "row_counts": {
             "sensor_inputs": len(sensor_rows),

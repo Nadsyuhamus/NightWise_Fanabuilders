@@ -14,13 +14,18 @@ class Scenario:
     night_windows: tuple[tuple[int, int], ...] = ((0, 120),)
     fault_windows: tuple[tuple[str, int, int], ...] = ()
     stale_windows: tuple[tuple[str, int, int], ...] = ()
+    daylight_fault_windows: tuple[tuple[int, int], ...] = ()
 
     def conditions_at(self, time_s):
-        """Return conditions for intervals with start <= time < end."""
+        """Return conditions using start-inclusive, end-exclusive windows."""
         return {
             "is_night": any(
                 start <= time_s < end
                 for start, end in self.night_windows
+            ),
+            "daylight_ok": not any(
+                start <= time_s < end
+                for start, end in self.daylight_fault_windows
             ),
             "faulty_lamp_ids": {
                 lamp_id
@@ -33,7 +38,7 @@ class Scenario:
                 if start <= time_s < end
             },
         }
-
+    
 
 def pedestrian(agent_id="PERSON_1", start_time_s=5.0):
     return Agent(

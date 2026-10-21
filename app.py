@@ -12,21 +12,23 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from agents import Agent
 from environment import load_environment
-from simulation import Simulation
 from impact import (
-    build_baseline_frame,
     compare_energy,
     mean_point_lux,
     reduction_pct,
 )
 
+import json
+from dataclasses import asdict
+
+from comparison import run_comparison
+from scenarios import get_scenario, get_scenarios
+
 # ------------------------------------------------------------------ palette
 SAGE, TAUPE, TANG, FUCH, AMETH = "#c0bda5", "#cc978e", "#f39c6b", "#ff3864", "#261447"
 DSAGE = "#8d8a6e"  # darker sage for lines and rings
 
-STEPS = 91  # one controller update per simulated second, 0 to 90 s
 TICK_S = 0.6  # real seconds per simulated second while playing
 SPECIES = ["Monkey", "Wild boar", "Civet", "Bat", "Bird", "Other"]
 LAMP_COLOURS = [TANG, TAUPE, DSAGE, AMETH, FUCH]
@@ -151,74 +153,31 @@ st.markdown(CSS, unsafe_allow_html=True)
 
 
 # ------------------------------------------------------------- simulation
-def build_agents(resident, animal):
-    agents = []
-    if resident:  # walks the whole path, left to right
-        agents.append(Agent("PERSON_1", "person", ((0.0, 10.0), (60.0, 10.0)), 1.2, 5.0))
-    if animal:  # comes out of the corridor, crosses the edge and enters the walking zone
-        agents.append(Agent("ANIMAL_1", "animal",
-                            ((36.0, 38.0), (32.0, 22.0), (28.0, 10.0), (12.0, 5.0)), 1.0, 6.0))
-    return agents
-
 
 @st.cache_data
-def run(resident, animal, day, faulty, stale, window):
-    """Precompute adaptive frames and their matched fixed baseline."""
-    sim = Simulation(agents=build_agents(resident, animal))
-    frames = []
+def run(scenario_name):
+    """Use the same scenario and comparison runner as the exporter."""
+    comparison = run_comparison(scenario_name)
 
-    for t in range(STEPS):
-        in_window = window[0] <= t < window[1]
-
-        frame = sim.step(
-            t,
-            is_night=not day,
-            faulty_lamp_ids=faulty if in_window else None,
-            stale_lamp_ids=stale if in_window else None,
-        )
-
-        # Each frame represents one second of operation.
-        frame["dt_s"] = 1.0
-        frames.append(frame)
-
-    env = sim.environment
-
-    baseline_frames = [
-        build_baseline_frame(
-            adaptive_frame=frame,
-            environment=env,
-            profiles=sim.controller.profiles,
-        )
-        for frame in frames
-    ]
+    frames = comparison["nightwise"]
+    env = comparison["environment"]
+    baseline_frames = comparison["fixed_baseline"]
 
     baseline_w = [
-        frame["total_power_w"] for frame in baseline_frames
+        frame["total_power_w"]
+        for frame in baseline_frames
     ]
 
     baseline_lux = mean_point_lux(
         baseline_frames,
-        [point["point_id"] for point in env["measurement_points"]],
+        [
+            point["point_id"]
+            for point in env["measurement_points"]
+        ],
         night_only=True,
     )
 
     return frames, env, baseline_w, baseline_lux
-
-def dashboard_energy(frames, baseline_w):
-    """Adapt dashboard baseline power values to shared energy inputs."""
-    if len(frames) != len(baseline_w):
-        raise ValueError("Baseline power count differs from frame count")
-
-    baseline_frames = [
-        {
-            "time_s": frame["time_s"],
-            "dt_s": frame["dt_s"],
-            "total_power_w": power_w,
-        }
-        for frame, power_w in zip(frames, baseline_w)
-    ]
-
-    return compare_energy(frames, baseline_frames)
 
 # ---------------------------------------------------------------- helpers
 def kpi_grid(items, wide=False):
@@ -436,7 +395,25 @@ def lamp_timeline(frames, t, lamp_ids, day):
 
 
 # ------------------------------------------------- live map + properties
-def render_live(frames, env, baseline_w, zone_labels, lamp_ids, day):
+def dashboard_energy(frames, baseline_w):
+    """Calculate energy savings using matched simulation intervals."""
+    if len(frames) != len(baseline_w):
+        raise ValueError(
+            "Baseline power count differs from frame count"
+        )
+
+    baseline_frames = [
+        {
+            "time_s": frame["time_s"],
+            "dt_s": frame["dt_s"],
+            "total_power_w": power_w,
+        }
+        for frame, power_w in zip(frames, baseline_w)
+    ]
+
+    return compare_energy(frames, baseline_frames)
+
+def render_live(frames, env, baseline_w, zone_labels, lamp_ids):
     """Map and properties panel. A fragment, so Play only refreshes this part."""
     ss = st.session_state
     last = len(frames) - 1
@@ -454,15 +431,34 @@ def render_live(frames, env, baseline_w, zone_labels, lamp_ids, day):
         state_text = "Finished. Press Replay or drag the timeline"
     elif t > 0:
         state_text = "Paused"
-    clock = f"{t // 60:02d}:{t % 60:02d}"
-    time_of_day = "Daylight" if day else "Night"
-    top_l.markdown(
-        f'<div class="status"><span class="dot{state_dot}"></span>{state_text} &nbsp;|&nbsp; '
-        f'{time_of_day} &nbsp;|&nbsp; Simulation clock {clock}</div>', unsafe_allow_html=True)
+    st.slider(
+        "Timeline: drag to jump to any moment",
+        0,
+        last,
+        key="t",
+    )
 
-    st.slider("Timeline: drag to jump to any moment", 0, last, key="t")
     t = ss.t
     frame = frames[t]
+
+    day = not frame["lamps"][0]["is_night"]
+    daylight_ok = frame["lamps"][0]["daylight_ok"]
+
+    seconds = int(frame["time_s"])
+    clock = f"{seconds // 60:02d}:{seconds % 60:02d}"
+
+    time_of_day = (
+        ("Daylight" if day else "Night")
+        if daylight_ok
+        else "Day/night input unavailable"
+    )
+
+    top_l.markdown(
+        f'<div class="status">'
+        f'<span class="dot{state_dot}"></span>{state_text} &nbsp;|&nbsp; '
+        f'{time_of_day} &nbsp;|&nbsp; Simulation clock {clock}</div>',
+        unsafe_allow_html=True,
+    )
 
     if show_props:
         col_map, col_props = st.columns([5, 3], gap="large")
@@ -472,7 +468,14 @@ def render_live(frames, env, baseline_w, zone_labels, lamp_ids, day):
     with col_map:
         with st.container(border=True):
             card_title("Township map", "Hover over a lamp or point for details")
-            show(make_map(env, frame, day, ss.get("sightings", [])))
+            show(
+                make_map(
+                    env,
+                    frame,
+                    day and daylight_ok,
+                    ss.get("sightings", []),
+                )
+            )
             st.markdown(LEGEND, unsafe_allow_html=True)
 
     if col_props is not None:
@@ -488,13 +491,45 @@ def render_live(frames, env, baseline_w, zone_labels, lamp_ids, day):
                 raised = sum(1 for r in frame["lamps"] if r["mode"] == "occupied")
                 n = len(frame["lamps"])
                 kpi_grid([
-                    ("Power used", f"{frame['total_power_w']:.2f} W",
-                     "lamps off in daylight" if day else f"fixed baseline: {baseline_w[t]:.2f} W"),
-                    ("Energy saved", "n/a" if saved is None else f"{saved:.2f}%",
-                     "nothing to save by day" if day else "vs fixed baseline, so far"),
-                    ("Lights lit", f"{lit} of {n}", "none, it is daylight" if day else f"{raised} brightened for movement"),
-                    ("Resident pings", str(len(ss.get("sightings", []))), "wild animal reports"),
+                    (
+                        "Power used",
+                        f"{frame['total_power_w']:.2f} W",
+                        f"fixed baseline: {baseline_w[t]:.2f} W",
+                    ),
+                    (
+                        "Energy saved",
+                        "n/a" if saved is None else f"{saved:.2f}%",
+                        "vs fixed baseline, so far",
+                    ),
+                    (
+                        "Lights lit",
+                        f"{lit} of {n}",
+                        f"{raised} brightened for movement",
+                    ),
+                    (
+                        "Resident pings",
+                        str(len(ss.get("sightings", []))),
+                        "wild animal reports",
+                    ),
                 ])
+
+                if not daylight_ok:
+                    st.warning(
+                        "Day/night input unavailable: lamps use "
+                        "configured zone fallback."
+                    )
+
+                for r in frame["lamps"]:
+                    if r["sensor_status"] != "healthy":
+                        st.markdown(
+                            f'<div class="alert">'
+                            f'<b>{r["lamp_id"]}</b>: motion sensor '
+                            f'{r["sensor_status"]}; mode: {r["mode"]}; '
+                            f'brightness: {r["brightness_pct"]:.2f}%; '
+                            f'power: {r["power_w"]:.2f} W.'
+                            f'</div>',
+                            unsafe_allow_html=True,
+                        )
 
                 for r in frame["lamps"]:
                     if r["sensor_status"] != "healthy":
@@ -572,7 +607,34 @@ if ss.get("cfg_applied") != cfg:  # any change to the scenario restarts the repl
     ss.t = 0
     ss.playing = False
 
-frames, env, baseline_w, baseline_lux = run(*cfg)
+scenario_name = st.selectbox(
+    "Scenario",
+    options=list(get_scenarios()),
+    index=list(get_scenarios()).index("one_pedestrian"),
+    key="scenario_name",
+)
+
+scenario = get_scenario(scenario_name)
+st.caption(scenario.description)
+
+st.download_button(
+    "Download scenario definition",
+    data=json.dumps(asdict(scenario), indent=2),
+    file_name=f"{scenario_name}_scenario.json",
+    mime="application/json",
+)
+
+ss.setdefault("t", 0)
+ss.setdefault("playing", False)
+ss.setdefault("sightings", [])
+ss.setdefault("feedback", [])
+
+if ss.get("cfg_applied") != scenario_name:
+    ss.cfg_applied = scenario_name
+    ss.t = 0
+    ss.playing = False
+
+frames, env, baseline_w, baseline_lux = run(scenario_name)
 zone_labels = {z["zone_id"]: z["label"] for z in env.get("zones", [])}
 
 tab_map, tab_comm, tab_more = st.tabs(["Live map", "Community", "Analysis"])
@@ -586,11 +648,11 @@ with tab_map:
         unsafe_allow_html=True)
 
     with st.container(border=True):
-        card_title("Scenario switches", "Switch things on or off. Changing a switch resets the replay to the start.")
-        c1, c2, c3, c4, c5 = st.columns([2.2, 2.8, 1.8, 1.8, 1.4], vertical_alignment="center")
-        c1.toggle("Resident walking", value=True, key="sw_resident")
-        c2.toggle("Wild animal enters the walking zone", value=False, key="sw_animal")
-        c3.toggle("Daytime", value=False, key="sw_day")
+        card_title(
+            "Scenario replay",
+            "Choose a scenario above, then start the replay.",
+        )
+        c4, c5 = st.columns(2)
         last = len(frames) - 1
         if ss.playing:
             label = "Pause"
@@ -613,8 +675,11 @@ with tab_map:
             ss.playing = False
             st.rerun()
 
-    live = st.fragment(render_live, run_every=TICK_S if ss.playing else None)
-    live(frames, env, baseline_w, zone_labels, lamp_ids, day)
+    live = st.fragment(
+        render_live,
+        run_every=TICK_S if ss.playing else None,
+    )
+    live(frames, env, baseline_w, zone_labels, lamp_ids)
 
 # ---- Community
 with tab_comm:
@@ -790,14 +855,9 @@ with tab_more:
                 "Energy (Wh)": st.column_config.NumberColumn("Energy (Wh)", format="%.2f"),
             })
 
-    with st.expander("Test sensor problems (optional)"):
-        st.markdown('<div class="note">Break a sensor or cut its connection for a period to see the '
-                    'lamp switch to safe mode. Changing this resets the replay.</div>', unsafe_allow_html=True)
-        f1, f2 = st.columns(2)
-        f1.multiselect("Break the sensor on", lamp_ids, key="faulty")
-        f1.multiselect("Cut the connection to", lamp_ids, key="stale")
-        f2.slider( "Problem window: start included, end excluded (seconds)",
-            0, STEPS, (30, 50), key="fault_window",
-        )
+    st.info(
+        "Use sensor_fault or stale_sensor in the scenario selector "
+        "to test motion-input problems."
+    )
 
 st.caption("Simulated data. Illustrative settings, not real-world lighting standards.")
