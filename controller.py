@@ -261,20 +261,22 @@ class LightingController:
         previous = self._validate(reading)
         profile = self.profiles[reading.zone]
 
-        # Fault handling takes priority over daytime.
-        if not reading.sensor_ok:
-            result = (
-                profile.fallback,
-                "fallback",
-                "Sensor fault",
-                None,
-            )
-
-        elif not reading.is_night:
+        # The simulation schedule is independent of motion-sensor health.
+        if not reading.is_night:
             result = (
                 0,
                 "daylight",
-                "Daytime: lamp off",
+                "Scheduled daytime: lamp off"
+                if reading.sensor_ok
+                else "Scheduled daytime: lamp off; motion sensor unhealthy",
+                None,
+            )
+
+        elif not reading.sensor_ok:
+            result = (
+                profile.fallback,
+                "fallback",
+                "Motion sensor fault or unavailable sample",
                 None,
             )
 

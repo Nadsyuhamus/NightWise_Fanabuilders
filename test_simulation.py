@@ -260,6 +260,32 @@ class SimulationTests(unittest.TestCase):
                             expected_baseline,
                         )
 
+    def test_daytime_faults_remain_visible_without_lighting(self):
+        for conditions, status in (
+            ({"faulty_lamp_ids": {"P1"}}, "fault"),
+            ({"stale_lamp_ids": {"P1"}}, "missing"),
+        ):
+            with self.subTest(status=status):
+                simulation = Simulation([])
+                frame = simulation.step(
+                    0,
+                    is_night=False,
+                    **conditions,
+                )
+                p1 = next(
+                    r for r in frame["lamps"]
+                    if r["lamp_id"] == "P1"
+                )
+
+                self.assertEqual(p1["sensor_status"], status)
+                self.assertFalse(p1["sensor_ok"])
+                self.assertEqual(p1["mode"], "daylight")
+                self.assertEqual(p1["brightness_pct"], 0)
+                self.assertEqual(frame["total_power_w"], 0)
+                self.assertTrue(all(
+                    p["artificial_lux"] == 0
+                    for p in frame["lux_readings"]
+                ))
 
 if __name__ == "__main__":
     unittest.main()
