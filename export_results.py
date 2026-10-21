@@ -12,6 +12,7 @@ from impact import (
     compare_energy,
     format_reduction_pct,
     habitat_summary,
+    path_visibility_summary,
 )
 
 def write_csv(path, rows):
@@ -34,6 +35,26 @@ def export_scenario(scenario_name, output_root):
 
     output_dir = Path(output_root) / scenario_name
     output_dir.mkdir(parents=True, exist_ok=True)
+
+    visibility_rows = []
+
+    for policy in ("fixed_baseline", "nightwise"):
+        summary = path_visibility_summary(
+            comparison[policy],
+            comparison["environment"],
+        )
+
+        visibility_rows.append({
+            "scenario": scenario_name,
+            "data_source": "simulated",
+            "policy": policy,
+            **summary,
+        })
+
+    write_csv(
+        output_dir / "path_visibility_summary.csv",
+        visibility_rows,
+    )
 
     energy_summary = compare_energy(
     comparison["nightwise"],

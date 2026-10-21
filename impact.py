@@ -261,3 +261,93 @@ def mean_point_lux(frames, point_ids, night_only=True):
         )
         for point_id in exposure
     }
+
+def path_visibility_summary(frames, environment):
+    """Exploratory artificial illuminance along the demo pedestrian route.
+
+    Samples x=0..60 m at y=10 m, using equal spatial weights.
+    Includes scheduled nighttime only; time means are duration-weighted.
+    This is not a lighting-standard compliance assessment.
+    """
+    import math
+
+    points = [
+        {
+            "point_id": f"ROUTE_{x:02d}",
+            "zone": "walking_path",
+            "x_m": float(x),
+            "y_m": 10.0,
+        }
+        for x in range(61)
+    ]
+
+    duration_s = 0.0
+    mean_lux_seconds = 0.0
+    minimum_lux = None
+    worst_uniformity = None
+
+    for frame in frames:
+        dt_s = frame["dt_s"]
+
+        if not math.isfinite(dt_s) or dt_s <= 0:
+            raise ValueError("Frame duration must be finite and positive")
+
+        night_states = {lamp["is_night"] for lamp in frame["lamps"]}
+
+        if len(night_states) != 1:
+            raise ValueError("Expected one shared day/night state per frame")
+
+        if not next(iter(night_states)):
+            continue
+
+        brightness_by_id = {
+            lamp["lamp_id"]: lamp["brightness_pct"]
+            for lamp in frame["lamps"]
+        }
+
+        readings = [
+            estimate_point_lux(
+                environment["lamps"],
+                brightness_by_id,
+                point,
+            )
+            for point in points
+        ]
+
+        interval_mean = sum(readings) / len(readings)
+        interval_minimum = min(readings)
+
+        duration_s += dt_s
+        mean_lux_seconds += interval_mean * dt_s
+
+        minimum_lux = (
+            interval_minimum
+            if minimum_lux is None
+            else min(minimum_lux, interval_minimum)
+        )
+
+        # Uniformity is undefined when every sampled point is unlit.
+        # The minimum and mean lux still report that darkness.
+        if interval_mean > 0:
+            uniformity = interval_minimum / interval_mean
+            worst_uniformity = (
+                uniformity
+                if worst_uniformity is None
+                else min(worst_uniformity, uniformity)
+            )
+
+    return {
+        "scope": "nighttime_only",
+        "route": "x=0..60 m; y=10 m",
+        "sample_spacing_m": 1.0,
+        "point_count": len(points),
+        "duration_s": duration_s,
+        "mean_route_lux": (
+            mean_lux_seconds / duration_s
+            if duration_s > 0
+            else None
+        ),
+        "minimum_sampled_lux": minimum_lux,
+        "worst_sampled_uniformity": worst_uniformity,
+        "validation_status": "exploratory_not_compliance_validated",
+    }

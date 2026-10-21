@@ -18,6 +18,7 @@ from impact import (
     format_reduction_pct,
     habitat_summary,
     reduction_pct,
+    path_visibility_summary,
 )
 
 import json
@@ -47,7 +48,7 @@ MODE_STYLE = {  # mode: (pill background, pill text)
 }
 MODE_LABEL = {
     "idle": "Dim (idle)", "occupied": "Brightened", "fading": "Dimming down",
-    "fallback": "Safe mode", "daylight": "Off (daylight)", "protected": "Protected",
+    "fallback": "Fault fallback", "daylight": "Off (daylight)", "protected": "Protected",
 }
 
 st.set_page_config(page_title="NightWise", layout="wide", initial_sidebar_state="collapsed")
@@ -234,7 +235,7 @@ LEGEND = (
     '<div class="legend">'
     f'<span>{svg(f"<circle cx=8 cy=8 r=6 fill={TANG} stroke=white stroke-width=2 />")}Lamp, lit (glow grows with brightness)</span>'
     f'<span>{svg(f"<circle cx=8 cy=8 r=6 fill={SAGE} stroke=white stroke-width=2 />")}Lamp, off</span>'
-    f'<span>{svg(f"<circle cx=8 cy=8 r=6 fill={FUCH} stroke=white stroke-width=2 />")}Lamp in safe mode (sensor problem)</span>'
+    f'<span>{svg(f"<circle cx=8 cy=8 r=6 fill={FUCH} stroke=white stroke-width=2 />")}Lamp in fault fallback (sensor problem) (sensor problem)</span>'
     f'<span>{svg(f"<circle cx=8 cy=8 r=6.5 fill=none stroke={DSAGE} stroke-width=1.4 stroke-dasharray=2,2 />")}Motion sensor range</span>'
     f'<span>{svg(f"<circle cx=8 cy=8 r=6 fill={AMETH} stroke=white stroke-width=2 />")}Resident</span>'
     f'<span>{svg(f"<polygon points=8,1 10,6 15,6.3 11,9.6 12.3,15 8,12 3.7,15 5,9.6 1,6.3 6,6 fill={FUCH} />")}Wild animal</span>'
@@ -766,6 +767,72 @@ with tab_more:
 
     with st.container(border=True):
         card_title(
+            "Pedestrian-route lighting",
+            "Exploratory modelled artificial illuminance",
+        )
+
+        visibility_rows = []
+
+        for label, policy_frames in (
+            ("Fixed baseline", baseline_frames),
+            ("NightWise", frames),
+        ):
+            result = path_visibility_summary(policy_frames, env)
+
+            visibility_rows.append({
+                "Policy": label,
+                "Nighttime duration (s)": result["duration_s"],
+                "Mean route lux": result["mean_route_lux"],
+                "Lowest sampled lux": result["minimum_sampled_lux"],
+                "Worst min/mean ratio": result["worst_sampled_uniformity"],
+            })
+
+        visibility_df = pd.DataFrame(visibility_rows)
+
+        st.dataframe(
+            visibility_df,
+            hide_index=True,
+            column_config={
+                "Mean route lux": st.column_config.NumberColumn(
+                    format="%.3f"
+                ),
+                "Lowest sampled lux": st.column_config.NumberColumn(
+                    format="%.3f"
+                ),
+                "Worst min/mean ratio": st.column_config.NumberColumn(
+                    format="%.3f"
+                ),
+            },
+        )
+
+        st.download_button(
+            "Download route-lighting comparison",
+            visibility_df.to_csv(index=False),
+            "path_visibility_summary.csv",
+            "text/csv",
+            key="path_visibility_download",
+        )
+
+        st.caption(
+            "61 equally weighted samples at 1 m spacing along "
+            "(0, 10) to (60, 10). Scheduled nighttime only. "
+            "Mean route lux is weighted by interval duration. "
+            "Lowest sampled lux includes route entrances and lamp gaps. "
+            "Worst min/mean ratio is calculated separately for each "
+            "interval, then the lowest defined ratio is reported. "
+            "No nighttime data produces unavailable metrics."
+        )
+
+        st.info(
+            "Exploratory results: no pedestrian-lighting target has "
+            "been justified or validated. These centreline samples "
+            "exclude ambient light and do not establish visibility, "
+            "glare performance, or safety compliance. Energy savings "
+            "must be considered alongside lighting service."
+        )
+        
+    with st.container(border=True):
+        card_title(
             "Light reaching habitat",
             "Modelled artificial illuminance and exposure",
         )
@@ -975,7 +1042,7 @@ with tab_more:
         st.dataframe(
             summary.rename(columns={"zone": "Zone", "avg": "Average brightness", "peak": "Peak brightness",
                                     "wh": "Energy (Wh)", "active": "Seconds brightened",
-                                    "safe": "Seconds in safe mode"}),
+                                    "safe": "Seconds in fault fallback"}),
             hide_index=True,
             column_config={
                 "Average brightness": st.column_config.ProgressColumn(
@@ -987,6 +1054,12 @@ with tab_more:
     st.info(
         "Use sensor_fault or stale_sensor in the scenario selector "
         "to test motion-input problems."
+    )
+
+    st.caption(
+        "Fault fallback applies a configured brightness when required "
+        "sensor inputs are unavailable or stale. This setting has not "
+        "been validated for pedestrian visibility or safety compliance."
     )
 
 st.caption("Simulated data. Illustrative settings, not real-world lighting standards.")
