@@ -79,6 +79,106 @@ def reduction_pct(baseline, adaptive):
 
     return 100 * (baseline - adaptive) / baseline
 
+def format_reduction_pct(value):
+    """Format a percentage without hiding undefined or negative values."""
+    return "N/A" if value is None else f"{value:.2f}%"
+
+
+def habitat_summary(frames, point_ids, night_only=True):
+    """Summarise artificial light at equally weighted habitat points.
+
+    Each frame represents an interval of dt_s seconds.
+    Nighttime is based on the scenario's shared day/night schedule.
+
+    Returns None for aggregate lux/exposure when no eligible data exists.
+    """
+    point_ids = list(point_ids)
+
+    if not point_ids:
+        raise ValueError("Select at least one habitat measurement point")
+
+    if len(point_ids) != len(set(point_ids)):
+        raise ValueError("Habitat point IDs must be unique")
+
+    exposure = {point_id: 0.0 for point_id in point_ids}
+    duration_s = 0.0
+
+    for frame in frames:
+        dt_s = frame["dt_s"]
+
+        if dt_s <= 0:
+            raise ValueError("Frame duration must be positive")
+
+        # Current NightWise scenarios use one shared day/night schedule.
+        night_states = {lamp["is_night"] for lamp in frame["lamps"]}
+
+        if len(night_states) != 1:
+            raise ValueError("Expected one shared day/night state per frame")
+
+        if night_only and not next(iter(night_states)):
+            continue
+
+        readings = {}
+
+        for point in frame["lux_readings"]:
+            point_id = point["point_id"]
+
+            if point_id in exposure:
+                if point_id in readings:
+                    raise ValueError(f"Duplicate reading for {point_id}")
+
+                readings[point_id] = point["artificial_lux"]
+
+        missing = set(point_ids) - set(readings)
+
+        if missing:
+            raise ValueError(f"Missing habitat readings: {sorted(missing)}")
+
+        duration_s += dt_s
+
+        for point_id in point_ids:
+            exposure[point_id] += readings[point_id] * dt_s
+
+    point_means = {
+        point_id: (
+            exposure[point_id] / duration_s
+            if duration_s > 0
+            else None
+        )
+        for point_id in point_ids
+    }
+
+    return {
+        "scope": "nighttime_only" if night_only else "full_run",
+        "duration_s": duration_s,
+        "point_count": len(point_ids),
+        "point_weighting": "equal_weight_per_measurement_point",
+        "time_weighting": "interval_duration",
+        "mean_lux": (
+            sum(point_means.values()) / len(point_ids)
+            if duration_s > 0
+            else None
+        ),
+        # Average of individual points' integrated exposures.
+        # This is not an area-integrated quantity.
+        "mean_point_exposure_lux_h": (
+            sum(exposure.values()) / len(point_ids) / 3600
+            if duration_s > 0
+            else None
+        ),
+        "points": [
+            {
+                "point_id": point_id,
+                "mean_lux": point_means[point_id],
+                "exposure_lux_h": (
+                    exposure[point_id] / 3600
+                    if duration_s > 0
+                    else None
+                ),
+            }
+            for point_id in point_ids
+        ],
+    }
 
 def compare_energy(adaptive_frames, baseline_frames):
     """Calculate energy metrics for matching simulation intervals."""

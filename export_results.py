@@ -8,8 +8,11 @@ from pathlib import Path
 
 from comparison import run_comparison
 from scenarios import get_scenario, get_scenarios
-from impact import compare_energy
-
+from impact import (
+    compare_energy,
+    format_reduction_pct,
+    habitat_summary,
+)
 
 def write_csv(path, rows):
     """Write nonempty rows with a consistent field order."""
@@ -47,7 +50,53 @@ def export_scenario(scenario_name, output_root):
                 frame["dt_s"] for frame in comparison["nightwise"]
             ),
             **energy_summary,
+            "savings_pct_display": format_reduction_pct(
+                energy_summary["savings_pct"]
+            ),
+            "savings_pct_status": (
+                "undefined_zero_baseline"
+                if energy_summary["savings_pct"] is None
+                else "defined"
+            ),
+            "energy_difference_definition": "baseline_kwh - adaptive_kwh",
         }],
+    )
+
+    habitat_rows = []
+    for zone in ("habitat_edge", "habitat_corridor"):
+        point_ids = [
+            point["point_id"]
+            for point in comparison["environment"]["measurement_points"]
+            if point["zone"] == zone
+        ]
+
+        if not point_ids:
+            continue
+
+        for policy in ("fixed_baseline", "nightwise"):
+            for night_only in (True, False):
+                summary = habitat_summary(
+                    comparison[policy],
+                    point_ids,
+                    night_only=night_only,
+                )
+
+                habitat_rows.append({
+                    "scenario": scenario_name,
+                    "data_source": "simulated",
+                    "policy": policy,
+                    "zone": zone,
+                    "measurement_point_ids": "|".join(point_ids),
+                    **{
+                        key: value
+                        for key, value in summary.items()
+                        if key != "points"
+                    },
+                })
+
+    write_csv(
+        output_dir / "habitat_summary.csv",
+        habitat_rows,
     )
 
     sensor_rows = []
