@@ -1,0 +1,2 @@
+scenario,data_source,baseline_policy,duration_s,adaptive_kwh,baseline_kwh,saved_kwh,savings_pct
+stale_sensor,simulated,fixed_zone_cap,120.0,0.001341111111111111,0.0032,0.001858888888888889,58.09027777777778

@@ -39,7 +39,8 @@ class SensorInput:
     time_s: float
     motion: bool
     is_night: bool
-    sensor_ok: bool = True
+    sensor_ok: bool = True  # Motion input health; existing field name.
+    daylight_ok: bool = True
 
 
 @dataclass(frozen=True)
@@ -167,6 +168,7 @@ class LightingController:
             reading.motion,
             reading.is_night,
             reading.sensor_ok,
+            reading.daylight_ok,
         )
 
         if any(type(flag) is not bool for flag in flags):
@@ -262,13 +264,21 @@ class LightingController:
         profile = self.profiles[reading.zone]
 
         # The simulation schedule is independent of motion-sensor health.
-        if not reading.is_night:
+        if not reading.daylight_ok:
+            result = (
+                profile.fallback,
+                "fallback",
+                "Day/night input unavailable; configured fallback",
+                None,
+            )
+
+        elif not reading.is_night:
             result = (
                 0,
                 "daylight",
                 "Scheduled daytime: lamp off"
-                if reading.sensor_ok
-                else "Scheduled daytime: lamp off; motion sensor unhealthy",
+                if reading.sensor_ok and reading.daylight_ok
+                else "Scheduled daytime: lamp off; one or more inputs unhealthy",
                 None,
             )
 

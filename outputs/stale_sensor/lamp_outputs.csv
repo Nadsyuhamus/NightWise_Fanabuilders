@@ -507,15 +507,15 @@ stale_sensor,simulated,nightwise,6,1.0,P1,walking_path,30.0,idle,No recent motio
 stale_sensor,simulated,nightwise,6,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
 stale_sensor,simulated,nightwise,6,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
 stale_sensor,simulated,nightwise,6,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
-stale_sensor,simulated,nightwise,7,1.0,P1,walking_path,50.0,fallback,Sensor fault,20.0,5.555555555555556e-06
+stale_sensor,simulated,nightwise,7,1.0,P1,walking_path,50.0,fallback,Motion sensor fault or unavailable sample,20.0,5.555555555555556e-06
 stale_sensor,simulated,nightwise,7,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
 stale_sensor,simulated,nightwise,7,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
 stale_sensor,simulated,nightwise,7,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
-stale_sensor,simulated,nightwise,8,1.0,P1,walking_path,50.0,fallback,Sensor fault,20.0,5.555555555555556e-06
+stale_sensor,simulated,nightwise,8,1.0,P1,walking_path,50.0,fallback,Motion sensor fault or unavailable sample,20.0,5.555555555555556e-06
 stale_sensor,simulated,nightwise,8,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
 stale_sensor,simulated,nightwise,8,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
 stale_sensor,simulated,nightwise,8,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06
-stale_sensor,simulated,nightwise,9,1.0,P1,walking_path,50.0,fallback,Sensor fault,20.0,5.555555555555556e-06
+stale_sensor,simulated,nightwise,9,1.0,P1,walking_path,50.0,fallback,Motion sensor fault or unavailable sample,20.0,5.555555555555556e-06
 stale_sensor,simulated,nightwise,9,1.0,P2,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
 stale_sensor,simulated,nightwise,9,1.0,P3,walking_path,30.0,idle,No recent motion,12.0,3.3333333333333333e-06
 stale_sensor,simulated,nightwise,9,1.0,E1,habitat_edge,10.0,idle,No recent motion,4.0,1.111111111111111e-06

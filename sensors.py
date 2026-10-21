@@ -34,8 +34,9 @@ def create_sensor_reading(
     time_s,
     is_night=True,
     sensor_ok=True,
+    daylight_ok=True,
 ):
-    """Build the input expected by Person 1's controller."""
+    """Build controller input with separate input-health flags."""
     return SensorInput(
         lamp_id=lamp["lamp_id"],
         zone=lamp["zone"],
@@ -43,6 +44,7 @@ def create_sensor_reading(
         motion=detects_motion(lamp, agents, time_s),
         is_night=is_night,
         sensor_ok=sensor_ok,
+        daylight_ok=daylight_ok,
     )
 
 
