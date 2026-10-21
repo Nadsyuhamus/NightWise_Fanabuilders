@@ -1,0 +1,5 @@
+scenario,data_source,policy,zone,measurement_point_ids,scope,duration_s,point_count,point_weighting,time_weighting,mean_lux,mean_point_exposure_lux_h
+animal_edge,simulated,fixed_baseline,habitat_corridor,HABITAT_1|HABITAT_2|HABITAT_3,nighttime_only,120.0,3,equal_weight_per_measurement_point,interval_duration,0.20676626417227362,0.006892208805742454
+animal_edge,simulated,fixed_baseline,habitat_corridor,HABITAT_1|HABITAT_2|HABITAT_3,full_run,120.0,3,equal_weight_per_measurement_point,interval_duration,0.20676626417227362,0.006892208805742454
+animal_edge,simulated,nightwise,habitat_corridor,HABITAT_1|HABITAT_2|HABITAT_3,nighttime_only,120.0,3,equal_weight_per_measurement_point,interval_duration,0.09973018862306109,0.0033243396207687024
+animal_edge,simulated,nightwise,habitat_corridor,HABITAT_1|HABITAT_2|HABITAT_3,full_run,120.0,3,equal_weight_per_measurement_point,interval_duration,0.09973018862306109,0.0033243396207687024

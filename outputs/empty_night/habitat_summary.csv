@@ -1,0 +1,5 @@
+scenario,data_source,policy,zone,measurement_point_ids,scope,duration_s,point_count,point_weighting,time_weighting,mean_lux,mean_point_exposure_lux_h
+empty_night,simulated,fixed_baseline,habitat_corridor,HABITAT_1|HABITAT_2|HABITAT_3,nighttime_only,120.0,3,equal_weight_per_measurement_point,interval_duration,0.20676626417227362,0.006892208805742454
+empty_night,simulated,fixed_baseline,habitat_corridor,HABITAT_1|HABITAT_2|HABITAT_3,full_run,120.0,3,equal_weight_per_measurement_point,interval_duration,0.20676626417227362,0.006892208805742454
+empty_night,simulated,nightwise,habitat_corridor,HABITAT_1|HABITAT_2|HABITAT_3,nighttime_only,120.0,3,equal_weight_per_measurement_point,interval_duration,0.08290135497786798,0.0027633784992622656
+empty_night,simulated,nightwise,habitat_corridor,HABITAT_1|HABITAT_2|HABITAT_3,full_run,120.0,3,equal_weight_per_measurement_point,interval_duration,0.08290135497786798,0.0027633784992622656
