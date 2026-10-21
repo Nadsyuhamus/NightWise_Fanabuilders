@@ -152,6 +152,24 @@
         "y_m": 10
       },
       {
+        "point_id": "EDGE_1",
+        "zone": "habitat_edge",
+        "x_m": 10,
+        "y_m": 20
+      },
+      {
+        "point_id": "EDGE_2",
+        "zone": "habitat_edge",
+        "x_m": 30,
+        "y_m": 20
+      },
+      {
+        "point_id": "EDGE_3",
+        "zone": "habitat_edge",
+        "x_m": 50,
+        "y_m": 20
+      },
+      {
         "point_id": "HABITAT_1",
         "zone": "habitat_corridor",
         "x_m": 10,
@@ -204,6 +222,7 @@
     "fixture_and_shielding": "Identical to NightWise."
   },
   "assumptions": {
+    "habitat_summary": "Mean lux is weighted by interval duration. Exposure_lux_s = sum(artificial_lux * dt_s). Exposure_lux_h = exposure_lux_s / 3600. Peak lux is the maximum eligible interval reading. Zone means use equal weights per configured point; they are not area-weighted habitat estimates. Edge and corridor are summarised separately.",
     "power": "power_w = rated_power_w * brightness_pct / 100",
     "lux": "Sum over lamps: full_output_lux_below * (brightness_pct / 100) * height_m^2 / (height_m^2 + horizontal_distance_m^2) * directional_factor",
     "directional_factor": "habitat_spill_factor for habitat_edge and habitat_corridor points; otherwise 1.",
@@ -232,6 +251,8 @@
     "sensor_inputs": 480,
     "agent_positions": 100,
     "lamp_outputs": 960,
-    "lux_readings": 1440
+    "lux_readings": 2160,
+    "habitat_summary": 8,
+    "habitat_point_summary": 24
   }
 }
