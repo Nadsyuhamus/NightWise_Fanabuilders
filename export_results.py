@@ -8,6 +8,7 @@ from pathlib import Path
 
 from comparison import run_comparison
 from scenarios import get_scenario, get_scenarios
+from impact import compare_energy
 
 
 def write_csv(path, rows):
@@ -30,6 +31,24 @@ def export_scenario(scenario_name, output_root):
 
     output_dir = Path(output_root) / scenario_name
     output_dir.mkdir(parents=True, exist_ok=True)
+
+    energy_summary = compare_energy(
+    comparison["nightwise"],
+    comparison["fixed_baseline"],
+    )
+
+    write_csv(
+        output_dir / "impact_summary.csv",
+        [{
+            "scenario": scenario_name,
+            "data_source": "simulated",
+            "baseline_policy": "fixed_zone_cap",
+            "duration_s": sum(
+                frame["dt_s"] for frame in comparison["nightwise"]
+            ),
+            **energy_summary,
+        }],
+    )
 
     sensor_rows = []
     agent_rows = []
