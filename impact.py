@@ -2,6 +2,7 @@
 
 from copy import deepcopy
 from models import estimate_power_w, estimate_point_lux
+from validation import validate_intervals
 
 def build_baseline_frame(adaptive_frame, environment, profiles):
     """Apply fixed nighttime brightness to the same scenario frame."""
@@ -65,7 +66,9 @@ def build_baseline_frame(adaptive_frame, environment, profiles):
     return frame
 
 def total_energy_kwh(frames):
-    """Integrate power over each logged interval."""
+    """Integrate validated power over continuous logged intervals."""
+    validate_intervals(frames)
+
     return sum(
         frame["total_power_w"] * frame["dt_s"]
         for frame in frames

@@ -6,11 +6,27 @@ from impact import (
     total_energy_kwh,
 )
 from run_simulation import run_scenario
+from scenarios import get_scenario
+from validation import validate_run
 
 
 def run_comparison(scenario_name):
-    """Return matched runs using one shared sequence of sensor inputs."""
+    """Return complete, validated adaptive and fixed runs."""
+    scenario = get_scenario(scenario_name)
     simulation, adaptive_frames = run_scenario(scenario_name)
+
+    validation_options = {
+        "expected_start_s": 0.0,
+        "expected_end_s": float(scenario.duration_s),
+    }
+
+    # Validate before deriving the baseline. Otherwise incomplete
+    # adaptive data could be copied into both policies.
+    validate_run(
+        adaptive_frames,
+        simulation.environment,
+        **validation_options,
+    )
 
     baseline_frames = []
 
@@ -24,6 +40,12 @@ def run_comparison(scenario_name):
                 profiles=simulation.controller.profiles,
             )
         )
+
+    validate_run(
+        baseline_frames,
+        simulation.environment,
+        **validation_options,
+    )
 
     return {
         "environment": simulation.environment,
