@@ -82,3 +82,12 @@ def load_reports(report_type):
         connection.close()
 
     return [json.loads(row[0]) for row in rows]
+
+def clear_reports():
+    """Delete all saved wildlife sightings and lighting feedback."""
+    connection = _connect()
+    try:
+        with connection:
+            connection.execute("DELETE FROM community_reports")
+    finally:
+        connection.close()

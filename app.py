@@ -11,7 +11,6 @@ import sqlite3
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
-
 from nightwise.environment import load_environment
 from nightwise.impact import (
     compare_energy,
@@ -23,7 +22,7 @@ from nightwise.impact import (
 
 import json
 from dataclasses import asdict
-from nightwise.report_store import load_reports, save_report
+from nightwise.report_store import clear_reports, load_reports, save_report
 from nightwise.comparison import run_comparison
 from nightwise.scenarios import get_scenario, get_scenarios
 
@@ -150,9 +149,32 @@ button[kind="primary"],button[data-testid="stBaseButton-primary"],
 button[data-testid="stBaseButton-primaryFormSubmit"]{
 background:var(--tang)!important;border-color:var(--tang)!important;}
 </style>
+
+
 """
 st.markdown(CSS, unsafe_allow_html=True)
 
+st.markdown(
+    """
+    <style>
+    .st-key-btn_clear_demo button {
+        background-color: #261447 !important;
+        color: #ffffff !important;
+        border: 1px solid #261447 !important;
+    }
+
+    .st-key-btn_clear_demo button p {
+        color: #ffffff !important;
+    }
+
+    .st-key-btn_clear_demo button:hover {
+        background-color: #48266f !important;
+        border-color: #48266f !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
 
 # ------------------------------------------------------------- simulation
 
@@ -210,6 +232,27 @@ def style_fig(fig, height=320):
         hoverlabel=dict(bgcolor="white", font_color=AMETH))
     fig.update_xaxes(gridcolor="#ece8d9", zeroline=False)
     fig.update_yaxes(gridcolor="#ece8d9", zeroline=False)
+    fig.update_xaxes(
+    tickfont=dict(color="black"),
+    title_font=dict(color="black"),
+    linecolor="black",
+    showline=True,
+    automargin=True,
+    )
+
+    fig.update_yaxes(
+        tickfont=dict(color="black"),
+        title_font=dict(color="black"),
+        linecolor="black",
+        showline=True,
+        automargin=True,
+    )
+    fig.update_layout(
+    legend=dict(
+        font=dict(color="black"),
+        title=dict(font=dict(color="black")),
+    )
+    )
     return fig
 
 
@@ -569,7 +612,48 @@ st.markdown(
     '<div class="badge">Simulated data</div></div><div class="accent"></div>',
     unsafe_allow_html=True)
 
+def reset_demo():
+    """Clear saved reports and reset the current demo."""
+    try:
+        clear_reports()
+    except (OSError, sqlite3.Error):
+        st.session_state["reset_error"] = (
+            "Could not clear reports. Please try again."
+        )
+        return
+
+    st.session_state.update({
+        "t": 0,
+        "playing": False,
+        "scenario_name": "one_pedestrian",
+        "cfg_applied": "one_pedestrian",
+        "sightings": [],
+        "feedback": [],
+        "reset_success": True,
+    })
+    st.session_state.pop("reset_error", None)
+
+
 ss = st.session_state
+
+st.button(
+    "Clear reports and reset demo",
+    key="btn_clear_demo",
+    on_click=reset_demo,
+    help="Deletes all saved sightings and feedback and resets playback.",
+)
+
+st.caption(
+    "Clear permanently deletes saved reports for this installation. "
+    "Restart only resets playback."
+)
+
+if ss.pop("reset_success", False):
+    st.success("Reports cleared. Demo reset.")
+
+if ss.get("reset_error"):
+    st.error(ss.reset_error)
+
 lamp_ids = [lamp["lamp_id"] for lamp in load_environment()["lamps"]]
 
 scenario_name = st.selectbox(
