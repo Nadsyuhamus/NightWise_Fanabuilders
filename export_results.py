@@ -278,7 +278,10 @@ def export_scenario(scenario_name, output_root):
                 "Edge and corridor are summarised separately."
             ),
             "power": (
-                "power_w = rated_power_w * brightness_pct / 100"
+                "power_w = rated_power_w * brightness_pct / 100. "
+                "Power is assumed proportional to brightness. "
+                "This assumption has not been checked against real lamps. "
+                "Standby, sensor, controller and communication power are excluded."
             ),
             "lux": (
                 "Sum over lamps: full_output_lux_below * "
@@ -287,8 +290,13 @@ def export_scenario(scenario_name, output_root):
                 "* directional_factor"
             ),
             "directional_factor": (
-                "habitat_spill_factor for habitat_edge and "
-                "habitat_corridor points; otherwise 1."
+                "For habitat measurement points, each lamp's calculated light "
+                "is multiplied by its configured habitat_spill_factor. "
+                "This also applies to the habitat-edge lamp. "
+                "For other measurement points, the multiplier is 1. "
+                "This is a simplified assumption based on the point's zone, "
+                "not a measured physical shield or beam direction. "
+                "Both fixed and adaptive lighting use the same multipliers."
             ),
             "sensor_geometry": (
                 "Ideal circular detection range; active agents "

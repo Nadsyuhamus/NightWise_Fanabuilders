@@ -190,6 +190,16 @@ Mean illuminance should use interval-duration weighting when intervals vary. Sta
 - Energy represents **modelled lamp-only consumption**. Sensor, controller, networking, and other auxiliary loads are excluded.
 - The power model assumes power scales linearly with brightness; real fixture behaviour requires calibration.
 - Illuminance and shielding are illustrative model estimates, not calibrated field measurements.
+- The current habitat spill factor is 0.15 for all fixtures. It multiplies
+  every lamp contribution at habitat-edge and habitat-corridor measurement
+  points, including contributions from the habitat-edge lamp.
+- This factor depends on the measurement point's zone, not a physical
+  beam direction or shield geometry. It can introduce abrupt differences
+  between nearby points assigned to different zones.
+- The factor is an illustrative assumption, not measured shielding
+  efficiency. Fixed and adaptive comparisons use identical shielding;
+  their differences therefore evaluate brightness control under that
+  shared assumption, rather than the benefit of installing shields.
 - Brightness percentage is a control setting, not a direct measurement of power or illuminance.
 - Reduced habitat-side illuminance or exposure does not establish ecological recovery.
 

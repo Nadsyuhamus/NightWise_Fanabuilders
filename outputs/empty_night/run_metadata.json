@@ -190,9 +190,9 @@
   },
   "assumptions": {
     "habitat_summary": "Mean lux is weighted by interval duration. Exposure_lux_s = sum(artificial_lux * dt_s). Exposure_lux_h = exposure_lux_s / 3600. Peak lux is the maximum eligible interval reading. Zone means use equal weights per configured point; they are not area-weighted habitat estimates. Edge and corridor are summarised separately.",
-    "power": "power_w = rated_power_w * brightness_pct / 100",
+    "power": "power_w = rated_power_w * brightness_pct / 100. Power is assumed proportional to brightness. This assumption has not been checked against real lamps. Standby, sensor, controller and communication power are excluded.",
     "lux": "Sum over lamps: full_output_lux_below * (brightness_pct / 100) * height_m^2 / (height_m^2 + horizontal_distance_m^2) * directional_factor",
-    "directional_factor": "habitat_spill_factor for habitat_edge and habitat_corridor points; otherwise 1.",
+    "directional_factor": "For habitat measurement points, each lamp's calculated light is multiplied by its configured habitat_spill_factor. This also applies to the habitat-edge lamp. For other measurement points, the multiplier is 1. This is a simplified assumption based on the point's zone, not a measured physical shield or beam direction. Both fixed and adaptive lighting use the same multipliers.",
     "sensor_geometry": "Ideal circular detection range; active agents move continuously. Agent type is not used.",
     "stale_rule": "Unhealthy when no sample exists or sample age exceeds sensor_stale_timeout_s.",
     "agent_logging": "Only active agents have position rows. An absent row means the agent is outside the environment.",

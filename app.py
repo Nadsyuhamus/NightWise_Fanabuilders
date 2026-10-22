@@ -765,6 +765,11 @@ with tab_more:
     "Positive values mean savings; negative values mean extra consumption. "
     "Percentage reduction is N/A when baseline energy is zero."
 )
+    st.caption(
+    "Simulated lamp-only energy. Power is assumed proportional to "
+    "brightness. Fixture behaviour has not been calibrated; standby, "
+    "sensor, controller, and communication loads are excluded."
+)
 
     with st.container(border=True):
         card_title("Power over time", "Smart lamps compared with fixed lighting.")
@@ -857,6 +862,14 @@ with tab_more:
             "Modelled artificial illuminance and exposure",
         )
 
+        st.caption(
+            "Habitat illuminance uses an assumed zone-based spill multiplier "
+            "(currently 0.15 in the configuration). It applies to every lamp's "
+            "contribution at habitat-edge and habitat-corridor points, including "
+            "the habitat-edge lamp. This is not measured shielding efficiency "
+            "or a calibrated beam pattern."
+        )
+
         habitat_zone = st.selectbox(
             "Habitat measurement zone",
             ["habitat_edge", "habitat_corridor"],
@@ -925,18 +938,18 @@ with tab_more:
                     ),
                     (
                         "Smart lamps",
-                        f"{adaptive_habitat['mean_lux']:.3f} lux",
+                        f"{adaptive_habitat['mean_lux']:.2g} lux",
                         "duration-weighted mean; equal point weights",
                     ),
                     (
                         "Fixed baseline",
-                        f"{baseline_habitat['mean_lux']:.3f} lux",
+                        f"{baseline_habitat['mean_lux']:.2g} lux",
                         "same period and measurement points",
                     ),
                     (
                         "Smart exposure",
                         (
-                            f"{adaptive_habitat['mean_point_exposure_lux_h']:.4f}"
+                            f"{adaptive_habitat['mean_point_exposure_lux_h']:.2g}"
                             " lux·h"
                         ),
                         "mean integrated exposure per point",
@@ -944,7 +957,7 @@ with tab_more:
                     (
                         "Baseline exposure",
                         (
-                            f"{baseline_habitat['mean_point_exposure_lux_h']:.4f}"
+                            f"{baseline_habitat['mean_point_exposure_lux_h']:.2g}"
                             " lux·h"
                         ),
                         "mean integrated exposure per point",
@@ -996,8 +1009,15 @@ with tab_more:
                             "Exposure (lux·h)": point["exposure_lux_h"],
                         })
 
+                point_df = pd.DataFrame(point_rows)
+
                 st.dataframe(
-                    pd.DataFrame(point_rows),
+                    point_df.style.format({
+                        "Mean lux": "{:.2g}",
+                        "Peak lux": "{:.2g}",
+                        "Exposure (lux·s)": "{:.2g}",
+                        "Exposure (lux·h)": "{:.2g}",
+                    }),
                     hide_index=True,
                     use_container_width=True,
                 )

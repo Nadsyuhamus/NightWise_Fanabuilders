@@ -1,0 +1,3 @@
+scenario,data_source,policy,scope,route,sample_spacing_m,point_count,duration_s,mean_route_lux,minimum_sampled_lux,worst_sampled_uniformity,validation_status
+empty_night,simulated,fixed_baseline,nighttime_only,x=0..60 m; y=10 m,1.0,61,120.0,7.959693168913958,2.3590943631284214,0.2963800630332975,exploratory_not_compliance_validated
+empty_night,simulated,nightwise,nighttime_only,x=0..60 m; y=10 m,1.0,61,120.0,3.377025043010805,1.0020415662001445,0.29672316711834845,exploratory_not_compliance_validated
