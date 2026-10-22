@@ -1,9 +1,9 @@
 {
   "model_version": "nightwise-simulation-v1",
   "provenance": {
-    "generated_at_utc": "2026-10-22T07:29:18.637269+00:00",
-    "git_commit": "7f2219a8ee05a5a42cf4d0567c16031f6ce0f0ba",
-    "git_worktree_status": "M outputs/empty_night/agent_positions.csv\n M outputs/empty_night/lamp_outputs.csv\n M outputs/empty_night/lux_readings.csv\n M outputs/empty_night/run_metadata.json\n M outputs/empty_night/sensor_inputs.csv\n M outputs/one_pedestrian/agent_positions.csv\n M outputs/one_pedestrian/lamp_outputs.csv\n M outputs/one_pedestrian/lux_readings.csv\n M outputs/one_pedestrian/sensor_inputs.csv\n?? .gitattributes",
+    "generated_at_utc": "2026-10-22T07:34:31.202237+00:00",
+    "git_commit": "1c7c2de8974479d904c20f1308b98ce7b6193cd0",
+    "git_worktree_status": "M outputs/empty_night/agent_positions.csv\n M outputs/empty_night/habitat_point_summary.csv\n M outputs/empty_night/habitat_summary.csv\n M outputs/empty_night/impact_summary.csv\n M outputs/empty_night/lamp_outputs.csv\n M outputs/empty_night/lux_readings.csv\n M outputs/empty_night/path_visibility_summary.csv\n M outputs/empty_night/run_metadata.json\n M outputs/empty_night/sensor_inputs.csv\n M outputs/one_pedestrian/agent_positions.csv\n M outputs/one_pedestrian/habitat_point_summary.csv\n M outputs/one_pedestrian/habitat_summary.csv\n M outputs/one_pedestrian/impact_summary.csv\n M outputs/one_pedestrian/lamp_outputs.csv\n M outputs/one_pedestrian/lux_readings.csv\n M outputs/one_pedestrian/path_visibility_summary.csv\n M outputs/one_pedestrian/sensor_inputs.csv\n M scripts/demo_controller.py\n M scripts/export_results.py",
     "source_sha256": {
       "app.py": "b99c3565d7cd6853b44f235ce8645a3828485b3ad89a1d9ceb005b2874d1d400",
       "config/controller_config.json": "8e3dbc98ed736fef10566d735d10c70b073e367c4b419ad27f95bedd4f5b0757",
@@ -26,9 +26,9 @@
       "requirements.txt": "d138c62be4653fbd49641e5f825a31bd579c5e8e215a732dd6ccef0557d8f984",
       "scripts/__init__.py": "2d707758b086a03bf961b1301eedfe3a2018dc223a67f2de4dfaba3cca3c743a",
       "scripts/demo_conditions.py": "18fe28ae88bad14a6e5ad2be23b68323bb258e960fd17657f6e67418cc21fb09",
-      "scripts/demo_controller.py": "88ac9867103c5dacf131ee8a4ca823fedc78e0a95a6c1343c18f088f99de94f0",
+      "scripts/demo_controller.py": "3e4fa3dd7e8c97355970ed2f4725eccb75f2762270a66570ba14c5c935674127",
       "scripts/demo_stale_sensor.py": "2e0a24c619dbc00244724aaf79e83036856479ddd0a0a957ff0a1fe63c2510a7",
-      "scripts/export_results.py": "43c625435dbbe485782e5ddfad1ada33573b072500c18978cff97a1a402b8651",
+      "scripts/export_results.py": "bfafad0d259c2085b0ca14d8741c4a02cb3fba078a42b016b8d2491819b855d6",
       "scripts/run_simulation.py": "3d33b0f5eef867b88d5eee02a9bd2389808f087c25bcef20c00e497e37cf3cca",
       "tests/__init__.py": "296caa75e697b36128099083a4b5711eb95de1f1acf48898606340728cee0db0",
       "tests/test_comparison_fairness.py": "a3bfb445399e4878054750b5a27b56577094878845e5029c2cfe99e4d2935d5c",
@@ -39,7 +39,7 @@
       "tests/test_simulation.py": "b3bd166dd44c2cf268f13e6610b7783eccb07733a7ad83934409f4e4c2caf60a",
       "tests/test_validation.py": "ec30fd42b87c29a853c0be724dc706bae08771049a31f47e57ead9b14bbcf7bb"
     },
-    "source_manifest_sha256": "16050b701513f8ad44769327e3e8db3179abfc33eb17c718acc035a8aa68cf93",
+    "source_manifest_sha256": "6ef8881c34e9e9119cd461b2ef92d2dcdf54577bf65b0e14f80d871567a7d577",
     "python_version": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
     "platform": "Windows-11-10.0.26200-SP0",
     "dependency_versions": {
@@ -51,14 +51,14 @@
     "note": "Commit identifies the base revision; nonempty worktree status means local changes. Source hashes identify the actual code/configuration used. Null git fields mean Git was unavailable."
   },
   "output_sha256": {
-    "agent_positions.csv": "cd2930925cf088a5c01472cfd2ff7b14f2226ed2e0ace1d98084b30209392dc2",
-    "habitat_point_summary.csv": "4335a295431c003c1a7816286d65f13f4cc2144878029b4200ddf6f6183a1343",
-    "habitat_summary.csv": "532cab773efacab1930f32ee9395a8f0a19532c1e35ff2b549269ccef0f3fcf9",
-    "impact_summary.csv": "a87f4d4cbbab148b0f692bc52fe09e48f97d0b1fa109a3ef348fec5b2e27e86e",
-    "lamp_outputs.csv": "11f4f77a7a0a6142ac899d2c2956c5383f485a78e0d6ee392d9bca6b857e2bf0",
-    "lux_readings.csv": "b82794bc4a022e6934c8118a7ed1a419f4d6417374084daa1014f1f9c3b15f46",
-    "path_visibility_summary.csv": "fb24e2a8d226450aca1e4282348eaad94fefadc9114a53cd1725f51150470390",
-    "sensor_inputs.csv": "e78f8d04d594ec3e8006f1621cd082fba32e1f24c33a3ddc1439eec597eeb528"
+    "agent_positions.csv": "aea555334477bc1f162bfc6522309c10e9bed4e6f6bb690ffc04ae8785bfcf91",
+    "habitat_point_summary.csv": "730e3077b717c64a9e02b7ecce544cb441d2f0c2be54b0ea0db9d4b8cffab061",
+    "habitat_summary.csv": "17df33fbaf89860e92f2a57d54d1981d6dab87a21fee88385e533ed98e216a80",
+    "impact_summary.csv": "9f14a3f2737a7a421397363f5bba54277c006c975eaad3b5dd6ea5dc26426ed8",
+    "lamp_outputs.csv": "56c899122a56d9ee06b83fd449299399d1f883778553f6e571bfbc0bc513c83f",
+    "lux_readings.csv": "d4dfcdabecf43b15cfe9c8de93035a00fc31fc91fb9d4fe6c07b9c04298c752c",
+    "path_visibility_summary.csv": "33f54d93ce727e14b06c9a2fe43e6d6321d7c75febef6da749b4269b79fa7b15",
+    "sensor_inputs.csv": "2127f35f9e8c8cb37a3137aebae3d06c5cdd0ac35355b487d2da8ee74106f677"
   },
   "data_source": "simulated",
   "scenario": {

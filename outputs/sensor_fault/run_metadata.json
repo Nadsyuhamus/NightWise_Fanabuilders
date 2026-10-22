@@ -1,9 +1,9 @@
 {
   "model_version": "nightwise-simulation-v1",
   "provenance": {
-    "generated_at_utc": "2026-10-22T07:29:19.899060+00:00",
-    "git_commit": "7f2219a8ee05a5a42cf4d0567c16031f6ce0f0ba",
-    "git_worktree_status": "M outputs/animal_edge/agent_positions.csv\n M outputs/animal_edge/lamp_outputs.csv\n M outputs/animal_edge/lux_readings.csv\n M outputs/animal_edge/run_metadata.json\n M outputs/animal_edge/sensor_inputs.csv\n M outputs/day_night_cycle/agent_positions.csv\n M outputs/day_night_cycle/lamp_outputs.csv\n M outputs/day_night_cycle/lux_readings.csv\n M outputs/day_night_cycle/run_metadata.json\n M outputs/day_night_cycle/sensor_inputs.csv\n M outputs/empty_night/agent_positions.csv\n M outputs/empty_night/lamp_outputs.csv\n M outputs/empty_night/lux_readings.csv\n M outputs/empty_night/run_metadata.json\n M outputs/empty_night/sensor_inputs.csv\n M outputs/one_pedestrian/agent_positions.csv\n M outputs/one_pedestrian/lamp_outputs.csv\n M outputs/one_pedestrian/lux_readings.csv\n M outputs/one_pedestrian/run_metadata.json\n M outputs/one_pedestrian/sensor_inputs.csv\n M outputs/repeated_movement/agent_positions.csv\n M outputs/repeated_movement/lamp_outputs.csv\n M outputs/repeated_movement/lux_readings.csv\n M outputs/repeated_movement/run_metadata.json\n M outputs/repeated_movement/sensor_inputs.csv\n M outputs/sensor_fault/agent_positions.csv\n M outputs/sensor_fault/lamp_outputs.csv\n M outputs/sensor_fault/lux_readings.csv\n M outputs/sensor_fault/sensor_inputs.csv\n?? .gitattributes",
+    "generated_at_utc": "2026-10-22T07:34:32.414520+00:00",
+    "git_commit": "1c7c2de8974479d904c20f1308b98ce7b6193cd0",
+    "git_worktree_status": "M outputs/animal_edge/agent_positions.csv\n M outputs/animal_edge/habitat_point_summary.csv\n M outputs/animal_edge/habitat_summary.csv\n M outputs/animal_edge/impact_summary.csv\n M outputs/animal_edge/lamp_outputs.csv\n M outputs/animal_edge/lux_readings.csv\n M outputs/animal_edge/path_visibility_summary.csv\n M outputs/animal_edge/run_metadata.json\n M outputs/animal_edge/sensor_inputs.csv\n M outputs/day_night_cycle/agent_positions.csv\n M outputs/day_night_cycle/habitat_point_summary.csv\n M outputs/day_night_cycle/habitat_summary.csv\n M outputs/day_night_cycle/impact_summary.csv\n M outputs/day_night_cycle/lamp_outputs.csv\n M outputs/day_night_cycle/lux_readings.csv\n M outputs/day_night_cycle/path_visibility_summary.csv\n M outputs/day_night_cycle/run_metadata.json\n M outputs/day_night_cycle/sensor_inputs.csv\n M outputs/empty_night/agent_positions.csv\n M outputs/empty_night/habitat_point_summary.csv\n M outputs/empty_night/habitat_summary.csv\n M outputs/empty_night/impact_summary.csv\n M outputs/empty_night/lamp_outputs.csv\n M outputs/empty_night/lux_readings.csv\n M outputs/empty_night/path_visibility_summary.csv\n M outputs/empty_night/run_metadata.json\n M outputs/empty_night/sensor_inputs.csv\n M outputs/one_pedestrian/agent_positions.csv\n M outputs/one_pedestrian/habitat_point_summary.csv\n M outputs/one_pedestrian/habitat_summary.csv\n M outputs/one_pedestrian/impact_summary.csv\n M outputs/one_pedestrian/lamp_outputs.csv\n M outputs/one_pedestrian/lux_readings.csv\n M outputs/one_pedestrian/path_visibility_summary.csv\n M outputs/one_pedestrian/run_metadata.json\n M outputs/one_pedestrian/sensor_inputs.csv\n M outputs/repeated_movement/agent_positions.csv\n M outputs/repeated_movement/habitat_point_summary.csv\n M outputs/repeated_movement/habitat_summary.csv\n M outputs/repeated_movement/impact_summary.csv\n M outputs/repeated_movement/lamp_outputs.csv\n M outputs/repeated_movement/lux_readings.csv\n M outputs/repeated_movement/path_visibility_summary.csv\n M outputs/repeated_movement/run_metadata.json\n M outputs/repeated_movement/sensor_inputs.csv\n M outputs/sensor_fault/agent_positions.csv\n M outputs/sensor_fault/habitat_point_summary.csv\n M outputs/sensor_fault/habitat_summary.csv\n M outputs/sensor_fault/impact_summary.csv\n M outputs/sensor_fault/lamp_outputs.csv\n M outputs/sensor_fault/lux_readings.csv\n M outputs/sensor_fault/path_visibility_summary.csv\n M outputs/sensor_fault/sensor_inputs.csv\n M scripts/demo_controller.py\n M scripts/export_results.py",
     "source_sha256": {
       "app.py": "b99c3565d7cd6853b44f235ce8645a3828485b3ad89a1d9ceb005b2874d1d400",
       "config/controller_config.json": "8e3dbc98ed736fef10566d735d10c70b073e367c4b419ad27f95bedd4f5b0757",
@@ -26,9 +26,9 @@
       "requirements.txt": "d138c62be4653fbd49641e5f825a31bd579c5e8e215a732dd6ccef0557d8f984",
       "scripts/__init__.py": "2d707758b086a03bf961b1301eedfe3a2018dc223a67f2de4dfaba3cca3c743a",
       "scripts/demo_conditions.py": "18fe28ae88bad14a6e5ad2be23b68323bb258e960fd17657f6e67418cc21fb09",
-      "scripts/demo_controller.py": "88ac9867103c5dacf131ee8a4ca823fedc78e0a95a6c1343c18f088f99de94f0",
+      "scripts/demo_controller.py": "3e4fa3dd7e8c97355970ed2f4725eccb75f2762270a66570ba14c5c935674127",
       "scripts/demo_stale_sensor.py": "2e0a24c619dbc00244724aaf79e83036856479ddd0a0a957ff0a1fe63c2510a7",
-      "scripts/export_results.py": "43c625435dbbe485782e5ddfad1ada33573b072500c18978cff97a1a402b8651",
+      "scripts/export_results.py": "bfafad0d259c2085b0ca14d8741c4a02cb3fba078a42b016b8d2491819b855d6",
       "scripts/run_simulation.py": "3d33b0f5eef867b88d5eee02a9bd2389808f087c25bcef20c00e497e37cf3cca",
       "tests/__init__.py": "296caa75e697b36128099083a4b5711eb95de1f1acf48898606340728cee0db0",
       "tests/test_comparison_fairness.py": "a3bfb445399e4878054750b5a27b56577094878845e5029c2cfe99e4d2935d5c",
@@ -39,7 +39,7 @@
       "tests/test_simulation.py": "b3bd166dd44c2cf268f13e6610b7783eccb07733a7ad83934409f4e4c2caf60a",
       "tests/test_validation.py": "ec30fd42b87c29a853c0be724dc706bae08771049a31f47e57ead9b14bbcf7bb"
     },
-    "source_manifest_sha256": "16050b701513f8ad44769327e3e8db3179abfc33eb17c718acc035a8aa68cf93",
+    "source_manifest_sha256": "6ef8881c34e9e9119cd461b2ef92d2dcdf54577bf65b0e14f80d871567a7d577",
     "python_version": "3.13.15 (tags/v3.13.15:4061bc4, Aug  5 2026, 13:05:39) [MSC v.1944 64 bit (AMD64)]",
     "platform": "Windows-11-10.0.26200-SP0",
     "dependency_versions": {
@@ -51,14 +51,14 @@
     "note": "Commit identifies the base revision; nonempty worktree status means local changes. Source hashes identify the actual code/configuration used. Null git fields mean Git was unavailable."
   },
   "output_sha256": {
-    "agent_positions.csv": "83ffde3cdffc64328d8dcfc2581f32dece29a980d8581a5b902370b2e8491f9d",
-    "habitat_point_summary.csv": "53bda24a98c0b9dfaa74bd45033a8e5a2b1a3a5d68df34147e4f8937501d603a",
-    "habitat_summary.csv": "7623315565f848170b83f2ea1df542a9089895ebe706f3dacf90500c12371711",
-    "impact_summary.csv": "1ad63540fad5a3eca4244ee781c0b431599559e8a611f24055c4422814694e1a",
-    "lamp_outputs.csv": "9737bb5eb5d4a893e0b16fdf4c5556ed572598dc2183d5c31274c806d7f92128",
-    "lux_readings.csv": "15f941b3023ea0826fe1198408203b42e989f656021ba4c7d54ac680b6d9285a",
-    "path_visibility_summary.csv": "9a2dc76d58bc9055d5f2ccfd569c001b33be7f58de60603cd739b4df7745a495",
-    "sensor_inputs.csv": "e3505084f639b20a1ff6d4da3a9b9881f80a0ac8f8350122de1be51ea01fb834"
+    "agent_positions.csv": "43b5b32027c212b9267ef29d659cdf3d351f3d6cb0e3f2c37237374d2f5ca452",
+    "habitat_point_summary.csv": "7e6d937ca49667c9cf91039cadf61adaa68143981938f5878b4a32f285854a54",
+    "habitat_summary.csv": "6591ea5fabeb8c33d5f23f83056d27c8829d27fda6d98a5050d797e0ac967855",
+    "impact_summary.csv": "ef52d2aab472230afc016dcb4db2f5b796ce08d9c961c60d81e52a09de3d9425",
+    "lamp_outputs.csv": "710950a19613be1e9790e8932febb614be5175e0efd1ed6b07ebfc5ccf16570c",
+    "lux_readings.csv": "975dd3232b14cb1e367bd97d838a3d54b06394471fd15eb2a840051e39e75bd5",
+    "path_visibility_summary.csv": "aea707ef7b6e477a4370ec57f7bddafeaa075eefbfbc7725608688d30d9393c0",
+    "sensor_inputs.csv": "f488d334333fb2add981f0e4480e8edcbc03d07caa3328bd1b3b5a4bda8f8742"
   },
   "data_source": "simulated",
   "scenario": {

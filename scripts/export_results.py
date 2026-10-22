@@ -27,6 +27,7 @@ def write_csv(path, rows):
         writer = csv.DictWriter(
             file,
             fieldnames=list(rows[0]),
+            lineterminator="\n",
         )
         writer.writeheader()
         writer.writerows(rows)
@@ -241,6 +242,7 @@ def export_scenario(scenario_name, output_root):
                 "y_m",
                 "active",
             ],
+            lineterminator="\n"
         )
         writer.writeheader()
         writer.writerows(agent_rows)
