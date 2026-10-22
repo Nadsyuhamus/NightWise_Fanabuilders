@@ -1,4 +1,5 @@
 from nightwise.paths import LOG_DIR
+from nightwise.report_store import _connect
 """Synthetic inputs for rule-based tests only; no AI training."""
 
 from dataclasses import asdict
@@ -106,7 +107,6 @@ def main():
     print(
         f"\nSaved {len(rows)} decisions to {path.name}"
     )
-
 
 if __name__ == "__main__":
     main()
