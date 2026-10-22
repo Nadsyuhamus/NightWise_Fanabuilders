@@ -7,23 +7,25 @@ All data shown here is simulated.
 """
 import random
 from datetime import datetime
-
+import sqlite3
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from environment import load_environment
-from impact import (
+from nightwise.environment import load_environment
+from nightwise.impact import (
     compare_energy,
-    mean_point_lux,
+    format_reduction_pct,
+    habitat_summary,
     reduction_pct,
+    path_visibility_summary,
 )
 
 import json
 from dataclasses import asdict
-
-from comparison import run_comparison
-from scenarios import get_scenario, get_scenarios
+from nightwise.report_store import load_reports, save_report
+from nightwise.comparison import run_comparison
+from nightwise.scenarios import get_scenario, get_scenarios
 
 # ------------------------------------------------------------------ palette
 SAGE, TAUPE, TANG, FUCH, AMETH = "#c0bda5", "#cc978e", "#f39c6b", "#ff3864", "#261447"
@@ -46,7 +48,7 @@ MODE_STYLE = {  # mode: (pill background, pill text)
 }
 MODE_LABEL = {
     "idle": "Dim (idle)", "occupied": "Brightened", "fading": "Dimming down",
-    "fallback": "Safe mode", "daylight": "Off (daylight)", "protected": "Protected",
+    "fallback": "Fault fallback", "daylight": "Off (daylight)", "protected": "Protected",
 }
 
 st.set_page_config(page_title="NightWise", layout="wide", initial_sidebar_state="collapsed")
@@ -168,16 +170,7 @@ def run(scenario_name):
         for frame in baseline_frames
     ]
 
-    baseline_lux = mean_point_lux(
-        baseline_frames,
-        [
-            point["point_id"]
-            for point in env["measurement_points"]
-        ],
-        night_only=True,
-    )
-
-    return frames, env, baseline_w, baseline_lux
+    return frames, env, baseline_w, baseline_frames
 
 # ---------------------------------------------------------------- helpers
 def kpi_grid(items, wide=False):
@@ -242,7 +235,7 @@ LEGEND = (
     '<div class="legend">'
     f'<span>{svg(f"<circle cx=8 cy=8 r=6 fill={TANG} stroke=white stroke-width=2 />")}Lamp, lit (glow grows with brightness)</span>'
     f'<span>{svg(f"<circle cx=8 cy=8 r=6 fill={SAGE} stroke=white stroke-width=2 />")}Lamp, off</span>'
-    f'<span>{svg(f"<circle cx=8 cy=8 r=6 fill={FUCH} stroke=white stroke-width=2 />")}Lamp in safe mode (sensor problem)</span>'
+    f'<span>{svg(f"<circle cx=8 cy=8 r=6 fill={FUCH} stroke=white stroke-width=2 />")}Lamp in fault fallback (sensor problem) (sensor problem)</span>'
     f'<span>{svg(f"<circle cx=8 cy=8 r=6.5 fill=none stroke={DSAGE} stroke-width=1.4 stroke-dasharray=2,2 />")}Motion sensor range</span>'
     f'<span>{svg(f"<circle cx=8 cy=8 r=6 fill={AMETH} stroke=white stroke-width=2 />")}Resident</span>'
     f'<span>{svg(f"<polygon points=8,1 10,6 15,6.3 11,9.6 12.3,15 8,12 3.7,15 5,9.6 1,6.3 6,6 fill={FUCH} />")}Wild animal</span>'
@@ -395,22 +388,8 @@ def lamp_timeline(frames, t, lamp_ids, day):
 
 
 # ------------------------------------------------- live map + properties
-def dashboard_energy(frames, baseline_w):
-    """Calculate energy savings using matched simulation intervals."""
-    if len(frames) != len(baseline_w):
-        raise ValueError(
-            "Baseline power count differs from frame count"
-        )
-
-    baseline_frames = [
-        {
-            "time_s": frame["time_s"],
-            "dt_s": frame["dt_s"],
-            "total_power_w": power_w,
-        }
-        for frame, power_w in zip(frames, baseline_w)
-    ]
-
+def dashboard_energy(frames, baseline_frames):
+    """Calculate dashboard metrics from complete matched records."""
     return compare_energy(frames, baseline_frames)
 
 def render_live(frames, env, baseline_w, zone_labels, lamp_ids):
@@ -483,9 +462,9 @@ def render_live(frames, env, baseline_w, zone_labels, lamp_ids):
             with st.container(border=True):
                 card_title("Properties", "Live numbers for this moment")
                 live_impact = dashboard_energy(
-                    frames[: t + 1],
-                    baseline_w[: t + 1],
-                )
+                frames[: t + 1],
+                baseline_frames[: t + 1],
+            )
                 saved = live_impact["savings_pct"]
                 lit = sum(1 for r in frame["lamps"] if r["brightness_pct"] > 0)
                 raised = sum(1 for r in frame["lamps"] if r["mode"] == "occupied")
@@ -497,9 +476,13 @@ def render_live(frames, env, baseline_w, zone_labels, lamp_ids):
                         f"fixed baseline: {baseline_w[t]:.2f} W",
                     ),
                     (
-                        "Energy saved",
-                        "n/a" if saved is None else f"{saved:.2f}%",
-                        "vs fixed baseline, so far",
+                        "Energy reduction",
+                        format_reduction_pct(saved),
+                        (
+                            f"fixed − adaptive: "
+                            f"{live_impact['saved_kwh'] * 1000:+.4f} Wh; "
+                            "+ saved, − extra use"
+                        ),
                     ),
                     (
                         "Lights lit",
@@ -582,30 +565,12 @@ def render_live(frames, env, baseline_w, zone_labels, lamp_ids):
 # ------------------------------------------------------------------- page
 st.markdown(
     '<div class="hero"><div><div class="brand">NightWise</div>'
-    '<div class="tagline">Smart township lighting that protects nature</div></div>'
+    '<div class="tagline">Movement-responsive lighting: a simulated township demo</div></div>'
     '<div class="badge">Simulated data</div></div><div class="accent"></div>',
     unsafe_allow_html=True)
 
 ss = st.session_state
 lamp_ids = [lamp["lamp_id"] for lamp in load_environment()["lamps"]]
-
-# Scenario comes from the switches (widget values are already in session state at script start).
-resident = ss.get("sw_resident", True)
-animal = ss.get("sw_animal", False)
-day = ss.get("sw_day", False)
-faulty = tuple(ss.get("faulty", []))
-stale = tuple(ss.get("stale", []))
-window = tuple(ss.get("fault_window", (30, 50)))
-cfg = (resident, animal, day, faulty, stale, window)
-
-ss.setdefault("t", 0)
-ss.setdefault("playing", False)
-ss.setdefault("sightings", [])
-ss.setdefault("feedback", [])
-if ss.get("cfg_applied") != cfg:  # any change to the scenario restarts the replay
-    ss.cfg_applied = cfg
-    ss.t = 0
-    ss.playing = False
 
 scenario_name = st.selectbox(
     "Scenario",
@@ -626,15 +591,15 @@ st.download_button(
 
 ss.setdefault("t", 0)
 ss.setdefault("playing", False)
-ss.setdefault("sightings", [])
-ss.setdefault("feedback", [])
+ss.sightings = load_reports("sighting")
+ss.feedback = load_reports("feedback")
 
 if ss.get("cfg_applied") != scenario_name:
     ss.cfg_applied = scenario_name
     ss.t = 0
     ss.playing = False
 
-frames, env, baseline_w, baseline_lux = run(scenario_name)
+frames, env, baseline_w, baseline_frames = run(scenario_name)
 zone_labels = {z["zone_id"]: z["label"] for z in env.get("zones", [])}
 
 tab_map, tab_comm, tab_more = st.tabs(["Live map", "Community", "Analysis"])
@@ -683,12 +648,22 @@ with tab_map:
 
 # ---- Community
 with tab_comm:
+    pending_count = sum(
+    report.get("status") == "Pending review"
+    for report in ss.sightings + ss.feedback
+    )
+
     kpi_grid([
         ("Wildlife pings", str(len(ss.sightings)), "shown on the Live map"),
         ("Lighting feedback", str(len(ss.feedback)), "too dark or too bright"),
-        ("Reviewed by", "Operator", "reports never control lamps"),
-        ("Data", "Simulated", "demo entries only"),
+        ("Pending review", str(pending_count), "no operator review recorded"),
+        ("Data", "Demo reports", "reports never control lamps"),
     ], wide=True)
+
+    st.caption(
+        "Submissions are saved locally and marked Pending review. "
+        "This prototype does not yet include an operator review screen."
+    )
     col_a, col_b = st.columns(2, gap="large")
     labels = {label: zid for zid, label in zone_labels.items()}
     centres = {z["zone_id"]: (z["bounds_m"][1] + z["bounds_m"][3]) / 2 for z in env.get("zones", [])}
@@ -703,12 +678,28 @@ with tab_comm:
                 if st.form_submit_button("Send ping", type="primary"):
                     zid = labels[where]
                     n = len(ss.sightings)
-                    ss.sightings.append({
-                        "reported_at": datetime.now().strftime("%H:%M:%S"), "species": species,
-                        "zone": zid, "x": float(along), "y": centres.get(zid, 20) + ((n % 3) - 1) * 2.0,
-                        "note": detail})
+
+                    try:
+                        save_report("sighting", {
+                            "species": species,
+                            "zone": zid,
+                            "x": float(along),
+                            "y": centres.get(zid, 20) + ((n % 3) - 1) * 2.0,
+                            "note": detail,
+                        })
+                    except (OSError, sqlite3.Error):
+                        st.error("The wildlife report could not be saved. Please try again.")
+                    else:
+                        st.rerun()
             if ss.sightings:
-                sdf = pd.DataFrame(ss.sightings)[["reported_at", "species", "zone", "note"]]
+                sdf = pd.DataFrame(ss.sightings)[[
+                    "report_id",
+                    "reported_at",
+                    "species",
+                    "zone",
+                    "note",
+                    "status",
+                ]]
                 st.dataframe(sdf, hide_index=True)
                 st.download_button("Download pings CSV", sdf.to_csv(index=False), "pings.csv", "text/csv")
     with col_b:
@@ -719,8 +710,16 @@ with tab_comm:
                 issue = st.radio("How does it feel?", ["Too dark", "Too bright"], horizontal=True)
                 note = st.text_input("Comment (optional)")
                 if st.form_submit_button("Send feedback", type="primary"):
-                    ss.feedback.append({"reported_at": datetime.now().strftime("%H:%M:%S"),
-                                        "lamp_id": lamp, "issue": issue, "comment": note})
+                    try:
+                        save_report("feedback", {
+                            "lamp_id": lamp,
+                            "issue": issue,
+                            "comment": note,
+                        })
+                    except (OSError, sqlite3.Error):
+                        st.error("The lighting feedback could not be saved. Please try again.")
+                    else:
+                        st.rerun()
             if ss.feedback:
                 fdf = pd.DataFrame(ss.feedback)
                 st.dataframe(fdf, hide_index=True)
@@ -728,17 +727,49 @@ with tab_comm:
 
 # ---- Analysis (everything else)
 with tab_more:
-    impact = dashboard_energy(frames, baseline_w)
+    impact = dashboard_energy(frames, baseline_frames)
 
     adaptive_wh = impact["adaptive_kwh"] * 1000
     baseline_wh = impact["baseline_kwh"] * 1000
     saved_all = impact["savings_pct"]
     kpi_grid([
-        ("Energy saved", "n/a" if saved_all is None else f"{saved_all:.2f}%", "whole replay"),
-        ("Smart lamps used", f"{adaptive_wh:.2f} Wh", "adaptive system"),
-        ("Fixed baseline", f"{baseline_wh:.2f} Wh", "walking path 70%; habitat edge 30%; daytime off"),
-        ("Peak power", f"{max(f['total_power_w'] for f in frames):.2f} W", "highest moment, adaptive"),
+    (
+        "Energy reduction",
+        format_reduction_pct(saved_all),
+        "whole replay; N/A when baseline energy is zero",
+    ),
+    (
+        "Energy difference",
+        f"{impact['saved_kwh'] * 1000:+.4f} Wh",
+        "fixed − adaptive; + saved, − extra use",
+    ),
+    (
+        "Smart lamps used",
+        f"{adaptive_wh:.2f} Wh",
+        "adaptive system",
+    ),
+    (
+        "Fixed baseline",
+        f"{baseline_wh:.2f} Wh",
+        "walking path 70%; habitat edge 30%; daytime off",
+    ),
+    (
+        "Peak power",
+        f"{max(f['total_power_w'] for f in frames):.2f} W",
+        "highest moment, adaptive",
+    ),
     ], wide=True)
+
+    st.caption(
+    "Energy difference = fixed baseline − adaptive energy. "
+    "Positive values mean savings; negative values mean extra consumption. "
+    "Percentage reduction is N/A when baseline energy is zero."
+)
+    st.caption(
+    "Simulated lamp-only energy. Power is assumed proportional to "
+    "brightness. Fixture behaviour has not been calibrated; standby, "
+    "sensor, controller, and communication loads are excluded."
+)
 
     with st.container(border=True):
         card_title("Power over time", "Smart lamps compared with fixed lighting.")
@@ -759,49 +790,254 @@ with tab_more:
             "Energy and savings apply only to this simulated replay."
         )
 
-    points = [p for p in env["measurement_points"] if p["zone"] == "habitat_corridor"]
-    night_idx = [i for i, f in enumerate(frames) if f["lamps"][0]["is_night"]]
     with st.container(border=True):
-        card_title("Light reaching the habitat corridor", "Average modelled lux while it is night")
-        if not points or not night_idx:
-            st.markdown('<div class="note">No night-time readings. Switch Daytime off on the Live map.</div>',
-                        unsafe_allow_html=True)
+        card_title(
+            "Pedestrian-route lighting",
+            "Exploratory modelled artificial illuminance",
+        )
+
+        visibility_rows = []
+
+        for label, policy_frames in (
+            ("Fixed baseline", baseline_frames),
+            ("NightWise", frames),
+        ):
+            result = path_visibility_summary(policy_frames, env)
+
+            visibility_rows.append({
+                "Policy": label,
+                "Nighttime duration (s)": result["duration_s"],
+                "Mean route lux": result["mean_route_lux"],
+                "Lowest sampled lux": result["minimum_sampled_lux"],
+                "Worst min/mean ratio": result["worst_sampled_uniformity"],
+            })
+
+        visibility_df = pd.DataFrame(visibility_rows)
+
+        st.dataframe(
+            visibility_df,
+            hide_index=True,
+            column_config={
+                "Mean route lux": st.column_config.NumberColumn(
+                    format="%.3f"
+                ),
+                "Lowest sampled lux": st.column_config.NumberColumn(
+                    format="%.3f"
+                ),
+                "Worst min/mean ratio": st.column_config.NumberColumn(
+                    format="%.3f"
+                ),
+            },
+        )
+
+        st.download_button(
+            "Download route-lighting comparison",
+            visibility_df.to_csv(index=False),
+            "path_visibility_summary.csv",
+            "text/csv",
+            key="path_visibility_download",
+        )
+
+        st.caption(
+            "61 equally weighted samples at 1 m spacing along "
+            "(0, 10) to (60, 10). Scheduled nighttime only. "
+            "Mean route lux is weighted by interval duration. "
+            "Lowest sampled lux includes route entrances and lamp gaps. "
+            "Worst min/mean ratio is calculated separately for each "
+            "interval, then the lowest defined ratio is reported. "
+            "No nighttime data produces unavailable metrics."
+        )
+
+        st.info(
+            "Exploratory results: no pedestrian-lighting target has "
+            "been justified or validated. These centreline samples "
+            "exclude ambient light and do not establish visibility, "
+            "glare performance, or safety compliance. Energy savings "
+            "must be considered alongside lighting service."
+        )
+
+    with st.container(border=True):
+        card_title(
+            "Light reaching habitat",
+            "Modelled artificial illuminance and exposure",
+        )
+
+        st.caption(
+            "Habitat illuminance uses an assumed zone-based spill multiplier "
+            "(currently 0.15 in the configuration). It applies to every lamp's "
+            "contribution at habitat-edge and habitat-corridor points, including "
+            "the habitat-edge lamp. This is not measured shielding efficiency "
+            "or a calibrated beam pattern."
+        )
+
+        habitat_zone = st.selectbox(
+            "Habitat measurement zone",
+            ["habitat_edge", "habitat_corridor"],
+            format_func=lambda zone: {
+                "habitat_edge": "Habitat edge",
+                "habitat_corridor": "Habitat corridor",
+            }[zone],
+            key="habitat_measurement_zone",
+        )
+
+        points = [
+            point
+            for point in env["measurement_points"]
+            if point["zone"] == habitat_zone
+        ]
+
+        scope_label = st.selectbox(
+            "Habitat averaging period",
+            ["Nighttime only", "Full run"],
+            key="habitat_averaging_scope",
+        )
+
+        night_only = scope_label == "Nighttime only"
+
+        if not points:
+            st.info("No measurement points in this habitat zone.")
+
         else:
             point_ids = [point["point_id"] for point in points]
 
-            avg = mean_point_lux(
+            adaptive_habitat = habitat_summary(
                 frames,
                 point_ids,
-                night_only=True,
+                night_only=night_only,
             )
 
-            base = {
-                point_id: baseline_lux[point_id]
-                for point_id in point_ids
-            }
-
-            cut = reduction_pct(
-                sum(base.values()),
-                sum(avg.values()),
+            baseline_habitat = habitat_summary(
+                baseline_frames,
+                point_ids,
+                night_only=night_only,
             )
 
-            kpi_grid([
-                (
-                    "Light spill reduced",
-                    "n/a" if cut is None else f"{cut:.2f}%",
-                    "mean across corridor measurement points",
-                ),
-                ("Smart lamps", f"{sum(avg.values()) / len(avg):.3f} lux", "average at corridor points"),
-                ("Fixed baseline", f"{sum(base.values()) / len(base):.3f} lux", "average at corridor points"),
-                ("Corridor lamps", "0", "none installed"),
-            ], wide=True)
-            fig = go.Figure()
-            fig.add_trace(go.Bar(x=list(base), y=list(base.values()), name="Fixed baseline", marker_color=SAGE))
-            fig.add_trace(go.Bar(x=list(avg), y=list(avg.values()), name="Smart lamps", marker_color=TANG))
-            fig.update_layout(barmode="group")
-            fig.update_yaxes(title="Lux")
-            show(style_fig(fig, 300))
-            st.caption("Modelled artificial light only, from illustrative formulas. Not measured data.")
+            if (
+                adaptive_habitat["duration_s"]
+                != baseline_habitat["duration_s"]
+            ):
+                raise ValueError("Habitat comparison durations differ")
+
+            if adaptive_habitat["duration_s"] == 0:
+                st.info(
+                    "No eligible readings for this period. "
+                    "Choose Full run or a scenario containing nighttime."
+                )
+
+            else:
+                cut = reduction_pct(
+                    baseline_habitat["mean_lux"],
+                    adaptive_habitat["mean_lux"],
+                )
+
+                kpi_grid([
+                    (
+                        "Mean light reduction",
+                        format_reduction_pct(cut),
+                        scope_label,
+                    ),
+                    (
+                        "Smart lamps",
+                        f"{adaptive_habitat['mean_lux']:.2g} lux",
+                        "duration-weighted mean; equal point weights",
+                    ),
+                    (
+                        "Fixed baseline",
+                        f"{baseline_habitat['mean_lux']:.2g} lux",
+                        "same period and measurement points",
+                    ),
+                    (
+                        "Smart exposure",
+                        (
+                            f"{adaptive_habitat['mean_point_exposure_lux_h']:.2g}"
+                            " lux·h"
+                        ),
+                        "mean integrated exposure per point",
+                    ),
+                    (
+                        "Baseline exposure",
+                        (
+                            f"{baseline_habitat['mean_point_exposure_lux_h']:.2g}"
+                            " lux·h"
+                        ),
+                        "mean integrated exposure per point",
+                    ),
+                ], wide=True)
+
+                fig = go.Figure()
+
+                fig.add_trace(go.Bar(
+                    x=point_ids,
+                    y=[
+                        point["mean_lux"]
+                        for point in baseline_habitat["points"]
+                    ],
+                    name="Fixed baseline",
+                    marker_color=SAGE,
+                ))
+
+                fig.add_trace(go.Bar(
+                    x=point_ids,
+                    y=[
+                        point["mean_lux"]
+                        for point in adaptive_habitat["points"]
+                    ],
+                    name="Smart lamps",
+                    marker_color=TANG,
+                ))
+
+                fig.update_layout(barmode="group")
+                fig.update_yaxes(
+                    title=f"Mean artificial lux — {scope_label}"
+                )
+
+                show(style_fig(fig, 300))
+
+                point_rows = []
+
+                for policy_label, summary in (
+                    ("Fixed baseline", baseline_habitat),
+                    ("NightWise", adaptive_habitat),
+                ):
+                    for point in summary["points"]:
+                        point_rows.append({
+                            "Policy": policy_label,
+                            "Point": point["point_id"],
+                            "Mean lux": point["mean_lux"],
+                            "Peak lux": point["peak_lux"],
+                            "Exposure (lux·s)": point["exposure_lux_s"],
+                            "Exposure (lux·h)": point["exposure_lux_h"],
+                        })
+
+                point_df = pd.DataFrame(point_rows)
+
+                st.dataframe(
+                    point_df.style.format({
+                        "Mean lux": "{:.2g}",
+                        "Peak lux": "{:.2g}",
+                        "Exposure (lux·s)": "{:.2g}",
+                        "Exposure (lux·h)": "{:.2g}",
+                    }),
+                    hide_index=True,
+                    use_container_width=True,
+                )
+
+                st.caption(
+                    "Peak lux is the highest modelled interval reading. "
+                    "Exposure is integrated separately at each point."
+                )
+
+                st.caption(
+                    f"Period: {scope_label}. "
+                    f"Included duration: {adaptive_habitat['duration_s']:g} s. "
+                    f"Measurement points: {adaptive_habitat['point_count']}. "
+                    "Means are weighted by interval duration, with equal "
+                    "weight per measurement point. Exposure integrates "
+                    "lux over time. These selected points do not represent "
+                    "an area-weighted habitat survey. Modelled artificial "
+                    "light only; not measured data or proof of ecological "
+                    "recovery."
+                )
 
     with st.container(border=True):
         df = pd.DataFrame([
@@ -846,7 +1082,7 @@ with tab_more:
         st.dataframe(
             summary.rename(columns={"zone": "Zone", "avg": "Average brightness", "peak": "Peak brightness",
                                     "wh": "Energy (Wh)", "active": "Seconds brightened",
-                                    "safe": "Seconds in safe mode"}),
+                                    "safe": "Seconds in fault fallback"}),
             hide_index=True,
             column_config={
                 "Average brightness": st.column_config.ProgressColumn(
@@ -858,6 +1094,12 @@ with tab_more:
     st.info(
         "Use sensor_fault or stale_sensor in the scenario selector "
         "to test motion-input problems."
+    )
+
+    st.caption(
+        "Fault fallback applies a configured brightness when required "
+        "sensor inputs are unavailable or stale. This setting has not "
+        "been validated for pedestrian visibility or safety compliance."
     )
 
 st.caption("Simulated data. Illustrative settings, not real-world lighting standards.")

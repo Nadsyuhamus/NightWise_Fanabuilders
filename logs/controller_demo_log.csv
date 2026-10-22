@@ -1,0 +1,52 @@
+scenario,data_source,lamp_id,zone,time_s,motion,is_night,sensor_ok,daylight_ok,brightness_pct,mode,reason
+empty,synthetic_rule_scenario,P1,walking_path,0,False,True,True,True,30.0,idle,No recent motion
+empty,synthetic_rule_scenario,E1,habitat_edge,0,False,True,True,True,10.0,idle,No recent motion
+empty,synthetic_rule_scenario,H1,habitat_corridor,0,False,True,True,True,0.0,protected,Unlit habitat zone
+empty,synthetic_rule_scenario,P1,walking_path,10,False,True,True,True,30.0,idle,No recent motion
+empty,synthetic_rule_scenario,E1,habitat_edge,10,False,True,True,True,10.0,idle,No recent motion
+empty,synthetic_rule_scenario,H1,habitat_corridor,10,False,True,True,True,0.0,protected,Unlit habitat zone
+hold_and_fade,synthetic_rule_scenario,P1,walking_path,0,True,True,True,True,70.0,occupied,Motion or hold period
+hold_and_fade,synthetic_rule_scenario,E1,habitat_edge,0,True,True,True,True,30.0,occupied,Motion or hold period
+hold_and_fade,synthetic_rule_scenario,H1,habitat_corridor,0,True,True,True,True,0.0,protected,Unlit habitat zone
+hold_and_fade,synthetic_rule_scenario,P1,walking_path,30,False,True,True,True,70.0,occupied,Motion or hold period
+hold_and_fade,synthetic_rule_scenario,E1,habitat_edge,30,False,True,True,True,30.0,occupied,Motion or hold period
+hold_and_fade,synthetic_rule_scenario,H1,habitat_corridor,30,False,True,True,True,0.0,protected,Unlit habitat zone
+hold_and_fade,synthetic_rule_scenario,P1,walking_path,31,False,True,True,True,60.0,fading,Gradual dimming
+hold_and_fade,synthetic_rule_scenario,E1,habitat_edge,31,False,True,True,True,20.0,fading,Gradual dimming
+hold_and_fade,synthetic_rule_scenario,H1,habitat_corridor,31,False,True,True,True,0.0,protected,Unlit habitat zone
+hold_and_fade,synthetic_rule_scenario,P1,walking_path,34,False,True,True,True,30.0,idle,No recent motion
+hold_and_fade,synthetic_rule_scenario,E1,habitat_edge,34,False,True,True,True,10.0,idle,No recent motion
+hold_and_fade,synthetic_rule_scenario,H1,habitat_corridor,34,False,True,True,True,0.0,protected,Unlit habitat zone
+repeated_motion,synthetic_rule_scenario,P1,walking_path,0,True,True,True,True,70.0,occupied,Motion or hold period
+repeated_motion,synthetic_rule_scenario,E1,habitat_edge,0,True,True,True,True,30.0,occupied,Motion or hold period
+repeated_motion,synthetic_rule_scenario,H1,habitat_corridor,0,True,True,True,True,0.0,protected,Unlit habitat zone
+repeated_motion,synthetic_rule_scenario,P1,walking_path,20,True,True,True,True,70.0,occupied,Motion or hold period
+repeated_motion,synthetic_rule_scenario,E1,habitat_edge,20,True,True,True,True,30.0,occupied,Motion or hold period
+repeated_motion,synthetic_rule_scenario,H1,habitat_corridor,20,True,True,True,True,0.0,protected,Unlit habitat zone
+repeated_motion,synthetic_rule_scenario,P1,walking_path,49,False,True,True,True,70.0,occupied,Motion or hold period
+repeated_motion,synthetic_rule_scenario,E1,habitat_edge,49,False,True,True,True,30.0,occupied,Motion or hold period
+repeated_motion,synthetic_rule_scenario,H1,habitat_corridor,49,False,True,True,True,0.0,protected,Unlit habitat zone
+repeated_motion,synthetic_rule_scenario,P1,walking_path,51,False,True,True,True,60.0,fading,Gradual dimming
+repeated_motion,synthetic_rule_scenario,E1,habitat_edge,51,False,True,True,True,20.0,fading,Gradual dimming
+repeated_motion,synthetic_rule_scenario,H1,habitat_corridor,51,False,True,True,True,0.0,protected,Unlit habitat zone
+fault_recovery,synthetic_rule_scenario,P1,walking_path,0,True,True,True,True,70.0,occupied,Motion or hold period
+fault_recovery,synthetic_rule_scenario,E1,habitat_edge,0,True,True,True,True,30.0,occupied,Motion or hold period
+fault_recovery,synthetic_rule_scenario,H1,habitat_corridor,0,True,True,True,True,0.0,protected,Unlit habitat zone
+fault_recovery,synthetic_rule_scenario,P1,walking_path,1,False,True,False,True,50.0,fallback,Motion sensor fault or unavailable sample
+fault_recovery,synthetic_rule_scenario,E1,habitat_edge,1,False,True,False,True,20.0,fallback,Motion sensor fault or unavailable sample
+fault_recovery,synthetic_rule_scenario,H1,habitat_corridor,1,False,True,False,True,0.0,fallback,Motion sensor fault or unavailable sample
+fault_recovery,synthetic_rule_scenario,P1,walking_path,2,False,True,True,True,40.0,fading,Gradual dimming
+fault_recovery,synthetic_rule_scenario,E1,habitat_edge,2,False,True,True,True,10.0,idle,No recent motion
+fault_recovery,synthetic_rule_scenario,H1,habitat_corridor,2,False,True,True,True,0.0,protected,Unlit habitat zone
+fault_recovery,synthetic_rule_scenario,P1,walking_path,5,False,True,True,True,30.0,idle,No recent motion
+fault_recovery,synthetic_rule_scenario,E1,habitat_edge,5,False,True,True,True,10.0,idle,No recent motion
+fault_recovery,synthetic_rule_scenario,H1,habitat_corridor,5,False,True,True,True,0.0,protected,Unlit habitat zone
+day_to_night,synthetic_rule_scenario,P1,walking_path,0,False,False,True,True,0,daylight,Scheduled daytime: lamp off
+day_to_night,synthetic_rule_scenario,E1,habitat_edge,0,False,False,True,True,0,daylight,Scheduled daytime: lamp off
+day_to_night,synthetic_rule_scenario,H1,habitat_corridor,0,False,False,True,True,0.0,daylight,Scheduled daytime: lamp off
+day_to_night,synthetic_rule_scenario,P1,walking_path,1,False,True,True,True,30.0,idle,No recent motion
+day_to_night,synthetic_rule_scenario,E1,habitat_edge,1,False,True,True,True,10.0,idle,No recent motion
+day_to_night,synthetic_rule_scenario,H1,habitat_corridor,1,False,True,True,True,0.0,protected,Unlit habitat zone
+day_to_night,synthetic_rule_scenario,P1,walking_path,2,True,True,True,True,70.0,occupied,Motion or hold period
+day_to_night,synthetic_rule_scenario,E1,habitat_edge,2,True,True,True,True,30.0,occupied,Motion or hold period
+day_to_night,synthetic_rule_scenario,H1,habitat_corridor,2,True,True,True,True,0.0,protected,Unlit habitat zone

@@ -1,5 +1,65 @@
 {
   "model_version": "nightwise-simulation-v1",
+  "provenance": {
+    "generated_at_utc": "2026-10-22T07:12:37.254529+00:00",
+    "git_commit": "dc2039b5a9acfe9c1232b6c1a7bd310d91b65cda",
+    "git_worktree_status": "M outputs/animal_edge/habitat_point_summary.csv\n M outputs/animal_edge/habitat_summary.csv\n M outputs/animal_edge/impact_summary.csv\n M outputs/animal_edge/path_visibility_summary.csv\n M outputs/animal_edge/run_metadata.json\n M outputs/day_night_cycle/habitat_point_summary.csv\n M outputs/day_night_cycle/habitat_summary.csv\n M outputs/day_night_cycle/impact_summary.csv\n M outputs/day_night_cycle/path_visibility_summary.csv\n M outputs/day_night_cycle/run_metadata.json\n M outputs/empty_night/habitat_point_summary.csv\n M outputs/empty_night/habitat_summary.csv\n M outputs/empty_night/impact_summary.csv\n M outputs/empty_night/path_visibility_summary.csv\n M outputs/empty_night/run_metadata.json\n M outputs/one_pedestrian/habitat_point_summary.csv\n M outputs/one_pedestrian/habitat_summary.csv\n M outputs/one_pedestrian/impact_summary.csv\n M outputs/one_pedestrian/path_visibility_summary.csv\n M outputs/one_pedestrian/run_metadata.json\n M outputs/repeated_movement/habitat_point_summary.csv\n M outputs/repeated_movement/habitat_summary.csv\n M outputs/repeated_movement/impact_summary.csv\n M outputs/repeated_movement/path_visibility_summary.csv\n M outputs/repeated_movement/run_metadata.json\n M outputs/sensor_fault/habitat_point_summary.csv\n M outputs/sensor_fault/habitat_summary.csv\n M outputs/sensor_fault/impact_summary.csv\n M outputs/sensor_fault/path_visibility_summary.csv\n M outputs/sensor_fault/run_metadata.json\n M outputs/stale_sensor/habitat_point_summary.csv\n M outputs/stale_sensor/habitat_summary.csv\n M outputs/stale_sensor/impact_summary.csv\n M outputs/stale_sensor/path_visibility_summary.csv",
+    "source_sha256": {
+      "app.py": "b99c3565d7cd6853b44f235ce8645a3828485b3ad89a1d9ceb005b2874d1d400",
+      "config/controller_config.json": "8e3dbc98ed736fef10566d735d10c70b073e367c4b419ad27f95bedd4f5b0757",
+      "config/environment_config.json": "cded0a8b2e6427a2fa92dd6328b2b56cc43b348df7deea55b6944035ee6ea214",
+      "nightwise/__init__.py": "c7b1290ebf2ff34f0c25199205d7a34274668863189bc414cf6fab7a49358442",
+      "nightwise/agents.py": "48ed368a5c25348310d01358bc42e6d043cffa040795e36c6370a91124a05e96",
+      "nightwise/comparison.py": "4065f032dea34cc072e6336548eca7372e7b6ef10f62d6ad7b705854fb06d779",
+      "nightwise/controller.py": "07b93360ef1682509543b40789f3a296910a8415e6042757c9a8a43d54a30e90",
+      "nightwise/environment.py": "1ced0c8d81c20b07e9cf0283cf292bb4ef62eb96d23ae996201997978e664e48",
+      "nightwise/impact.py": "2285aaa9a17ee177bfd1847e3b27e634c9731641c690e544dd102790739e55d0",
+      "nightwise/models.py": "50df794ce6f1a0b7026ad44eba634b62b7b0f90974a058afa52843dc79deb230",
+      "nightwise/paths.py": "808506d32a3a01543c0fd7fe05682670167152a264be2d677a9009a98b802af1",
+      "nightwise/provenance.py": "ed387e274b8b008e5bddcbeb9dca618a5d5bed3086945c983df815522ad70bc3",
+      "nightwise/report_store.py": "9fe0b5b9889ce15c15b8516de32cc0db912dbc3c9208feacb804943c7fa4959d",
+      "nightwise/runner.py": "bd682f06c7f9f51ed8a6079071b2901e78b4a6f9528daaf7f211ea7f3e954097",
+      "nightwise/scenarios.py": "87a26d127d552621d5f2922427d05d9e728d168b1a695698ddee984c270dad9d",
+      "nightwise/sensors.py": "92d4771e49bb05fcae29d958a7f55e4f0fe075fea6d70a0a24a8f95b01aacaa0",
+      "nightwise/simulation.py": "5d13313cc9b47b347deceebc7b41dc53a535fe1007eeae1cd37f2d5fa4bc844d",
+      "nightwise/validation.py": "54bbd919783359d54dfa87967a5050c6bc5f9fb9dd9761f2b04f1285bf141d35",
+      "requirements.txt": "d138c62be4653fbd49641e5f825a31bd579c5e8e215a732dd6ccef0557d8f984",
+      "scripts/__init__.py": "2d707758b086a03bf961b1301eedfe3a2018dc223a67f2de4dfaba3cca3c743a",
+      "scripts/demo_conditions.py": "18fe28ae88bad14a6e5ad2be23b68323bb258e960fd17657f6e67418cc21fb09",
+      "scripts/demo_controller.py": "88ac9867103c5dacf131ee8a4ca823fedc78e0a95a6c1343c18f088f99de94f0",
+      "scripts/demo_stale_sensor.py": "2e0a24c619dbc00244724aaf79e83036856479ddd0a0a957ff0a1fe63c2510a7",
+      "scripts/export_results.py": "43c625435dbbe485782e5ddfad1ada33573b072500c18978cff97a1a402b8651",
+      "scripts/run_simulation.py": "3d33b0f5eef867b88d5eee02a9bd2389808f087c25bcef20c00e497e37cf3cca",
+      "tests/__init__.py": "296caa75e697b36128099083a4b5711eb95de1f1acf48898606340728cee0db0",
+      "tests/test_comparison_fairness.py": "a3bfb445399e4878054750b5a27b56577094878845e5029c2cfe99e4d2935d5c",
+      "tests/test_controller.py": "4a7840544294ce15d89ea03e0273ca052dfe5fa43f79aca4b71c84b613f64070",
+      "tests/test_dashboard.py": "50b993789a6e31c6879d9c326196ed6dbb78cdaa4fe408bf5c24ce8d99b4f78c",
+      "tests/test_impact.py": "086a9d0b21a3813671d69f587e46767e1273ca9cd5db8b74c5d1e4898e5a2be7",
+      "tests/test_provenance.py": "bb6273fa8342b00fb06c705b35c05d5f635a53421acfffcfa1934c7bc5a9d066",
+      "tests/test_simulation.py": "b3bd166dd44c2cf268f13e6610b7783eccb07733a7ad83934409f4e4c2caf60a",
+      "tests/test_validation.py": "ec30fd42b87c29a853c0be724dc706bae08771049a31f47e57ead9b14bbcf7bb"
+    },
+    "source_manifest_sha256": "16050b701513f8ad44769327e3e8db3179abfc33eb17c718acc035a8aa68cf93",
+    "python_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "dependency_versions": {
+      "streamlit": "1.66.1",
+      "pandas": "2.2.3",
+      "plotly": "6.9.0"
+    },
+    "reproduction_command": "python -m scripts.export_results --scenario all",
+    "note": "Commit identifies the base revision; nonempty worktree status means local changes. Source hashes identify the actual code/configuration used. Null git fields mean Git was unavailable."
+  },
+  "output_sha256": {
+    "agent_positions.csv": "83ffde3cdffc64328d8dcfc2581f32dece29a980d8581a5b902370b2e8491f9d",
+    "habitat_point_summary.csv": "7a0548e9223741a58df8b63c2266a7168e1894d13b7af6b4f30eba67ad73a716",
+    "habitat_summary.csv": "978f6d3611e30388416ae43fa71fef22b28c3a57522389fb1f724ca0d3630014",
+    "impact_summary.csv": "d4e12fcd6991d15ff0cd5a3a62a251425bbf9ee202c708a87ae83779f0d61ea1",
+    "lamp_outputs.csv": "c8a3f7d060efb4c86a9c8612f8de293081d6f78cc71bbf97ecb7c2d02f696994",
+    "lux_readings.csv": "c0a2e648a42b7a43a3e3142f538ae3676a84234c70692bbc82d111827fc0be92",
+    "path_visibility_summary.csv": "68c59e9dc1f1bb34599d6306c906620647af8837650c8efca1b3c7bb86169bcb",
+    "sensor_inputs.csv": "4797a17f1fd5ea096d2d5f16938dbb6aee44f17ebdb760f5ec3155e2e592e8a9"
+  },
   "data_source": "simulated",
   "scenario": {
     "name": "stale_sensor",
@@ -125,6 +185,24 @@
         "y_m": 10
       },
       {
+        "point_id": "EDGE_1",
+        "zone": "habitat_edge",
+        "x_m": 10,
+        "y_m": 20
+      },
+      {
+        "point_id": "EDGE_2",
+        "zone": "habitat_edge",
+        "x_m": 30,
+        "y_m": 20
+      },
+      {
+        "point_id": "EDGE_3",
+        "zone": "habitat_edge",
+        "x_m": 50,
+        "y_m": 20
+      },
+      {
         "point_id": "HABITAT_1",
         "zone": "habitat_corridor",
         "x_m": 10,
@@ -169,6 +247,11 @@
     }
   },
   "time_step_s": 1.0,
+  "observed_interval_durations_s": [
+    1.0
+  ],
+  "actual_duration_s": 120.0,
+  "energy_scope": "modelled lamp-only energy; auxiliary loads excluded",
   "interval_convention": "Each frame applies over [time_s, time_s + dt_s).",
   "baseline": {
     "nighttime": "Fixed brightness at each zone's cap.",
@@ -177,9 +260,10 @@
     "fixture_and_shielding": "Identical to NightWise."
   },
   "assumptions": {
-    "power": "power_w = rated_power_w * brightness_pct / 100",
+    "habitat_summary": "Mean lux is weighted by interval duration. Exposure_lux_s = sum(artificial_lux * dt_s). Exposure_lux_h = exposure_lux_s / 3600. Peak lux is the maximum eligible interval reading. Zone means use equal weights per configured point; they are not area-weighted habitat estimates. Edge and corridor are summarised separately.",
+    "power": "power_w = rated_power_w * brightness_pct / 100. Power is assumed proportional to brightness. This assumption has not been checked against real lamps. Standby, sensor, controller and communication power are excluded.",
     "lux": "Sum over lamps: full_output_lux_below * (brightness_pct / 100) * height_m^2 / (height_m^2 + horizontal_distance_m^2) * directional_factor",
-    "directional_factor": "habitat_spill_factor for habitat_edge and habitat_corridor points; otherwise 1.",
+    "directional_factor": "For habitat measurement points, each lamp's calculated light is multiplied by its configured habitat_spill_factor. This also applies to the habitat-edge lamp. For other measurement points, the multiplier is 1. This is a simplified assumption based on the point's zone, not a measured physical shield or beam direction. Both fixed and adaptive lighting use the same multipliers.",
     "sensor_geometry": "Ideal circular detection range; active agents move continuously. Agent type is not used.",
     "stale_rule": "Unhealthy when no sample exists or sample age exceeds sensor_stale_timeout_s.",
     "agent_logging": "Only active agents have position rows. An absent row means the agent is outside the environment.",
@@ -205,6 +289,8 @@
     "sensor_inputs": 480,
     "agent_positions": 0,
     "lamp_outputs": 960,
-    "lux_readings": 1440
+    "lux_readings": 2160,
+    "habitat_summary": 8,
+    "habitat_point_summary": 24
   }
 }

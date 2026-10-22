@@ -1,416 +1,313 @@
 # NightWise: Lighting That Protects Nature
 
-NightWise is a township lighting prototype that aims to reduce unnecessary
-nighttime lighting and light spill while maintaining appropriate visibility
-on pedestrian paths.
+NightWise is a township lighting simulation prototype that explores how movement-responsive lighting could reduce unnecessary nighttime electricity use and artificial light reaching nearby habitat while supporting visibility on pedestrian paths.
 
-The project combines:
-- A simulated township environment with moving agents
-- Simulated movement and lighting sensors
-- A rule-based Python lighting controller
-- A Streamlit dashboard
-- Manual resident feedback and wildlife reports
-- Estimated energy and light-exposure comparisons
+The prototype combines a simulated environment, moving agents, simulated sensors, a rule-based controller, illustrative power and illuminance models, and a Streamlit dashboard. It also supports manual wildlife sightings, lighting feedback, and matched fixed-versus-adaptive lighting comparisons.
 
-Synthetic data is used for rule-based scenario testing only, not AI training.
+**All energy, illuminance, and exposure results are simulated estimates. Pedestrian safety, ecological recovery, and improved night-sky quality have not been demonstrated.** Synthetic data is used for scenario testing, not AI training.
 
-## Current Implementation
+## How It Works
 
-This folder currently contains the lighting controller, configuration,
-standalone demonstration, and automated tests.
+1. Moving agents generate simulated movement and sensor inputs.
+2. The controller determines lamp brightness using zone settings, recent movement, the day/night schedule, and input health.
+3. The simulation estimates lamp power and artificial illuminance.
+4. The dashboard displays movement, lamp states, controller decisions, and impact comparisons.
+5. Community reports provide information for operator attention; they do not directly control lamps.
 
-The controller:
-- Applies different lighting rules to three zones
-- Brightens lamps when movement is detected
-- Holds brightness after the latest movement
-- Gradually dims lamps after the hold expires
-- Enforces zone-specific brightness caps
-- Uses zone-specific fallback settings when sensor data is unusable
-- Turns lamps off during daytime when sensor inputs are healthy
-- Returns a decision reason for dashboard display
+The prototype does not connect to physical sensors or lighting hardware. It does not include CCTV, automatic wildlife recognition, or a trained AI model. Movement sensing does not distinguish people from wildlife.
 
-The simulation environment, dashboard, and impact calculations are separate
-components to be integrated by the team.
+## Lighting Behaviour
 
-No CCTV or automatic wildlife recognition is included in the current version.
-Wildlife sightings will be reported manually by residents.
+Default zone settings are:
+
+| Zone | Idle brightness | Movement/hold brightness | Nighttime motion-input fallback | Maximum brightness |
+|---|---:|---:|---:|---:|
+| Walking path | 30% | 70% | 50% | 70% |
+| Habitat edge | 10% | 30% | 20% | 30% |
+| Habitat corridor | 0% | 0% | 0% | 0% |
+
+- Movement immediately raises brightness to the zone's occupied setting.
+- Brightness remains elevated for 30 seconds after the latest detection. Repeated detections extend the hold period.
+- After the hold period, brightness decreases by 10 percentage points per second until it reaches the idle setting.
+- With usable day/night information, scheduled daytime turns lamps off.
+- Unusable nighttime motion inputs activate the configured zone fallback while the controller continues running.
+- The habitat corridor has no direct lighting, but nearby lamps may still contribute modelled light spill.
+
+These values are illustrative simulation parameters, not approved lighting standards. The nighttime motion-input fallback values above do not define every input-failure case; day/night-input failures must be checked separately against the controller policy.
 
 ## Requirements
 
 - Python 3.10 or newer
-- VS Code is recommended
-- No external Python packages are required for the controller
+- Streamlit, Plotly, and pandas for the dashboard
+- A writable local directory when SQLite report storage is enabled
 
-All imports use Python's standard library.
+The controller uses Python's standard library. The dashboard requires external packages.
 
-## Files
+## Setup
 
-| File | Purpose |
-|---|---|
-| `controller.py` | Input validation, lamp state, and lighting decisions |
-| `controller_config.json` | Zone brightness settings and controller timing |
-| `demo_controller.py` | Five synthetic scenarios across three zones |
-| `test_controller.py` | Thirteen automated controller tests |
-| `README.md` | Setup, behaviour, and integration documentation |
-
-Generated after running the relevant commands:
-
-| File | Purpose |
-|---|---|
-| `controller_demo_log.csv` | Scenario inputs and controller decisions |
-| `controller_test_results.txt` | Saved automated test output |
-
-## Setup in VS Code
-
-1. Clone the repository:
+Clone the repository:
 
 ```bash
-git clone https://github.com/Nadsyuhamus/NightWise_NeoFantic.git
+git clone https://github.com/QihahFirhat/NightWise_NeoFantic.git
 cd NightWise_NeoFantic
 ```
 
-2. Open the repository folder in VS Code.
-
-3. Install the Python extension by Microsoft.
-
-4. Select a Python 3.10 or newer interpreter.
-
-5. Open Terminal → New Terminal.
-
-Check your Python version:
+Create a virtual environment:
 
 ```bash
-python3 --version
+python -m venv .venv
 ```
 
-On systems that use `python` instead of `python3`, substitute that command
-throughout these instructions.
+Activate it in Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+Or activate it on macOS/Linux:
+
+```bash
+source .venv/bin/activate
+```
+
+Install the project dependencies:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+If your checkout does not include `requirements.txt`, install the dashboard packages directly:
+
+```bash
+python -m pip install streamlit plotly pandas
+```
+
+The commands use `python`; use `python3` instead if required by your system.
+
+## Run the Dashboard
+
+```bash
+python -m streamlit run app.py
+```
+
+Open the local address printed in the terminal. The dashboard provides the simulated environment, lamp brightness and operating states, movement and sensor information, energy and habitat-lighting comparisons, and community submission forms.
 
 ## Run the Controller Demonstration
 
 ```bash
-python3 demo_controller.py
+python -m scripts.demo_controller
 ```
 
-The demonstration prints:
-- Scenario name
-- Simulation time
-- Zone
-- Brightness percentage
-- Operating mode
-- Decision reason
+The demonstration prints the scenario, simulation time, zone, brightness, operating mode, and decision reason. It covers:
 
-It runs five scenarios:
-
-1. Empty area
-2. Movement, hold period, and gradual fading
+1. Empty-area operation
+2. Movement, holding, and gradual fading
 3. Repeated movement extending the hold
 4. Sensor failure and recovery
 5. Daytime-to-nighttime transition
 
-Each scenario runs across:
-- Walking path
-- Habitat edge
-- Habitat corridor
+The scenarios demonstrate behaviour across the walking path, habitat edge, and habitat corridor. Controller decisions are exported to `controller_demo_log.csv`.
 
-The demonstration exports 51 decisions to:
+Simulation timestamps do not require waiting in real time. Running `controller.py` directly does not launch the dashboard or demonstration; it defines the controller classes used by other components.
 
-```text
-controller_demo_log.csv
-```
-
-Simulation timestamps do not require waiting in real time.
-
-Running `controller.py` alone does not print a demonstration. It defines the
-classes used by the demo and future integration.
-
-## Run the Tests
+## Run Automated Checks
 
 ```bash
-python3 -m unittest -v
+python -m unittest discover -v
 ```
 
-Expected summary:
-
-```text
-Ran 13 tests
-OK
-```
-
-The tests cover:
-
-1. Empty-area operation
-2. Hold duration and gradual fading
-3. Irregular update intervals
-4. Repeated movement
-5. Sensor faults and recovery
-6. Daytime-to-nighttime transition
-7. Fault handling taking priority over daytime
-8. Habitat-edge and habitat-corridor settings
-9. Independent lamp states
-10. Timestamp validation and scenario reset
-11. Invalid sensor inputs
-12. Preventing zone changes during a run
-13. Custom timing and configuration validation
-
-Save test output for the project handoff:
+A successful run ends with `OK`. Save the output when preparing a test log:
 
 ```bash
-python3 -m unittest -v > controller_test_results.txt 2>&1
+python -m unittest discover -v > test_results.txt 2>&1
 ```
 
-## Controller Configuration
+The test suite covers controller behaviour, simulation behaviour, and impact calculations. Test counts may change as the project develops. A passing suite verifies the cases it exercises; it does not establish hardware reliability, lighting-standard compliance, or ecological outcomes.
 
-Settings are loaded from `controller_config.json`, located beside
-`controller.py`.
+## Repository Layout
 
-### Default Zone Settings
+| Location | Purpose |
+|---|---|
+| `app.py` | Streamlit dashboard entry point |
+| `nightwise/` | Controller, simulation, scenario runner, models, impact, validation and report storage |
+| `config/` | Authoritative controller and environment JSON configuration |
+| `scripts/` | Module entry points for demos, scenario execution and exports |
+| `tests/` | Automatically discovered regression tests |
+| `docs/` | Simulation contract and claims/release documentation |
+| `outputs/` | Authoritative scenario CSVs and metadata |
+| `logs/` | Demo and test logs |
+| `data/` | Local SQLite reports, excluded from Git |
 
-| Zone ID | Idle | Occupied / hold | Fault fallback | Maximum cap |
-|---|---:|---:|---:|---:|
-| `walking_path` | 30% | 70% | 50% | 70% |
-| `habitat_edge` | 10% | 30% | 20% | 30% |
-| `habitat_corridor` | 0% | 0% | 0% | 0% |
+Run commands from the repository root:
 
-These are illustrative simulation settings, not approved real-world
-lighting standards.
-
-The habitat corridor represents an unlit natural area, not a pedestrian route.
-
-### Default Timing
-
-| Parameter | Value | Meaning |
-|---|---:|---|
-| `hold_seconds` | 30 | Hold occupied brightness after the latest movement |
-| `fade_pct_per_second` | 10 | Reduce brightness by 10 percentage points per second after hold expiry |
-
-Brightening is immediate when movement is detected.
-
-At the exact hold-expiry timestamp, the lamp remains at occupied brightness.
-Fading applies to elapsed time after that boundary.
-
-For example, movement at 1 second holds the walking-path lamp at 70% through
-31 seconds. At 32 seconds, it fades to 60%.
-
-### Configuration Rules
-
-The controller validates that:
-- All three supported zones are present
-- Brightness values are finite numbers between 0 and 100
-- `idle <= occupied <= cap`
-- `fallback <= cap`
-- Every habitat-corridor brightness setting is zero
-- Hold duration is finite and nonnegative
-- Fade rate is finite and positive
-
-Edit the JSON settings before creating a controller instance. An existing
-instance does not automatically reload configuration changes.
-
-## Proposed Input Contract
-
-Person 2's environment supplies one `SensorInput` per lamp.
-
-```python
-from controller import SensorInput
-
-reading = SensorInput(
-    lamp_id="P1",
-    zone="walking_path",
-    time_s=0.0,
-    motion=False,
-    is_night=True,
-    sensor_ok=True,
-)
+```bash
+python -m unittest discover -v
+python -m scripts.run_simulation --scenario one_pedestrian
+python -m scripts.export_results --scenario all
+python -m scripts.demo_controller
+python -m streamlit run app.py
 ```
 
-| Field | Type | Meaning |
+Use module commands (`python -m scripts...`) rather than executing files inside
+`scripts/` directly. Configuration, output, log and database paths are anchored
+to the project root in `nightwise/paths.py`. Source provenance includes nested
+Python files and configuration files, identified by their project-relative paths.
+
+## Energy and Habitat-Light Exposure
+
+### Fixed Baseline and Fair Comparison
+
+The fixed baseline operates each zone at its configured maximum brightness during scheduled nighttime and switches off during scheduled daytime.
+
+Fixed and adaptive runs use matching fixtures, fixture specifications, shielding, measurement points, controller configuration, agents, sensor inputs, and simulation intervals. Brightness, power, illuminance, and operating modes may differ because they are policy outputs.
+
+Comparison validation rejects mismatched configurations, measurement geometry, inputs, incomplete records, and inconsistent intervals. The named scenario runner also checks the expected scenario start and end times.
+
+Matched conditions support a controlled policy comparison. They do not establish equivalent pedestrian visibility or lighting-standard compliance.
+
+### Calculations
+
+Energy integrates power over each interval:
+
+```text
+Energy (kWh) = Σ[Power (W) × Interval duration (s)] / 3,600,000
+```
+
+Savings are relative to the declared fixed baseline:
+
+```text
+Savings (%) = (Fixed energy − Adaptive energy) / Fixed energy × 100
+```
+
+If fixed energy is zero, percentage savings are undefined and must be reported as `N/A`. Retain negative savings: they indicate that adaptive operation consumed more energy. Report the absolute energy difference alongside the percentage.
+
+Habitat summaries describe modelled artificial illuminance at configured sampling locations. Identify the locations, habitat zone, and whether each summary covers nighttime only or the full run. Exposure integrates illuminance over time:
+
+```text
+Exposure (lux·h) = Σ[Illuminance (lux) × Interval duration (s)] / 3,600
+```
+
+Mean illuminance should use interval-duration weighting when intervals vary. State the units for mean and peak illuminance (`lux`) and exposure (`lux·h`). These metrics describe modelled light conditions; they do not measure biological effects.
+
+### Modelling Assumptions
+
+- Energy represents **modelled lamp-only consumption**. Sensor, controller, networking, and other auxiliary loads are excluded.
+- The power model assumes power scales linearly with brightness; real fixture behaviour requires calibration.
+- Illuminance and shielding are illustrative model estimates, not calibrated field measurements.
+- The current habitat spill factor is 0.15 for all fixtures. It multiplies
+  every lamp contribution at habitat-edge and habitat-corridor measurement
+  points, including contributions from the habitat-edge lamp.
+- This factor depends on the measurement point's zone, not a physical
+  beam direction or shield geometry. It can introduce abrupt differences
+  between nearby points assigned to different zones.
+- The factor is an illustrative assumption, not measured shielding
+  efficiency. Fixed and adaptive comparisons use identical shielding;
+  their differences therefore evaluate brightness control under that
+  shared assumption, rather than the benefit of installing shields.
+- Brightness percentage is a control setting, not a direct measurement of power or illuminance.
+- Reduced habitat-side illuminance or exposure does not establish ecological recovery.
+
+## Community Reports
+
+Residents can submit wildlife sightings, including species, zone, and an optional note, or lighting feedback identifying an area as too dark or too bright.
+
+Submissions provide information for operator attention. A submission does not demonstrate that a report has been reviewed or resolved. Use **Pending review** unless an actual review action has been recorded.
+
+### Storage
+
+Storage depends on the installed implementation:
+
+| Implementation | Retention |
+|---|---|
+| Original Streamlit session-state storage | Temporary entries; not durable records |
+| SQLite update installed and connected to `app.py` | Persistent local records while the database file remains available |
+
+The SQLite update stores reports in:
+
+```text
+data/community_reports.sqlite3
+```
+
+Each submission receives a unique report ID, a UTC timestamp, and a `Pending review` status. Records survive browser sessions and local app restarts while the database file is retained. Hosted deployments require persistent storage to retain records across redeployments.
+
+Exclude the database from Git. The prototype does not yet include operator authentication, review actions, or a review audit trail.
+
+## Failure Handling and Operational Limits
+
+**Sensor fallback requires the controller to continue running. It does not protect against a total application failure.**
+
+The simulation can evaluate unusable or stale sensor inputs while software execution continues. If the controller process stops, crashes, or loses power, it cannot execute fallback rules or send further commands. The prototype has no demonstrated physical lamp response for that situation.
+
+| Failure | Current boundary |
+|---|---|
+| Motion input fails while the controller runs | Configured fallback can operate according to the controller's day/night and input-health policy. |
+| Sensor updates become stale while the controller runs | Stale-input handling depends on continued controller execution and input-age checks. |
+| Dashboard pauses, closes, or becomes unavailable | Interface state does not establish physical lamp behaviour or prove that a separate controller continues running. |
+| Controller/application crashes | Software fallback cannot execute; physical lamp behaviour is unverified. |
+| Communications fail | No physical communications interface or independently operating lamp fallback has been demonstrated. |
+| Electrical power fails | Software cannot maintain illumination without appropriate backup power. |
+
+Do not describe fallback brightness as a validated safe lighting level. Its suitability requires approved lighting targets and physical assessment.
+
+### Manual Recovery Checks
+
+Perform these checks on a disposable test instance and record the actual outcome. They are a verification checklist, not a claim that the checks have passed.
+
+| Check | Procedure | What to record |
 |---|---|---|
-| `lamp_id` | `str` | Nonempty unique lamp identifier |
-| `zone` | `str` | One of the three supported zone IDs |
-| `time_s` | `float` | Elapsed simulation time in seconds; integers are also accepted |
-| `motion` | `bool` | Whether movement is detected |
-| `is_night` | `bool` | Whether nighttime lighting rules apply |
-| `sensor_ok` | `bool` | Whether required sensor inputs are usable |
+| Application termination | Start a simulation, then terminate the app process. | Processing stops; this does not demonstrate physical lamp fallback. |
+| Restart recovery | Relaunch the application after termination. | Whether startup succeeds and whether the simulation resets or resumes. |
+| Report durability | If SQLite storage is enabled, submit a test report, terminate the app, and restart. | Whether the saved report remains available. |
+| Interrupted results | Stop a run before its intended end and inspect any retained or exportable results. | Whether the actual duration and incomplete status are clear. |
 
-### Input Requirements
+If interrupted results can be mistaken for a completed run, treat that as an unresolved reporting issue before final integration.
 
-- Time must be finite and nonnegative.
-- Time must strictly increase for each lamp.
-- Different lamps may share the same timestamp.
-- A lamp's zone must remain fixed during a run.
-- Sensor flags must be actual booleans, not strings or integers.
-- Call `reset()` before replaying a scenario from time zero.
+### Future Deployment Requirements
 
-The environment must set `sensor_ok=False` when required sensor data is
-missing, faulty, or stale. The controller does not independently detect
-staleness or run a timeout when updates stop arriving.
+A physical deployment would require:
 
-The environment determines `is_night`. The current controller does not
-derive it from a lux measurement.
+- An independently running watchdog or local lamp controller that detects missing controller heartbeats.
+- An agreed timeout and local lighting policy for communications or controller failure.
+- Defined startup, recovery, and power-restoration behaviour.
+- Suitable backup power where required by the deployment requirements.
+- Physical tests for process crashes, disconnected communications, sensor failures, and power loss.
 
-The controller receives movement signals, not agent identities or species
-labels. It does not distinguish people from wildlife.
+A dashboard failure toggle can demonstrate a simulated fault scenario. It does not validate protection against an actual controller crash.
 
-## Output Contract
+## Configuration
 
-```python
-from dataclasses import asdict
-from controller import LightingController, SensorInput
+Edit `config/controller_config.json` to adjust zone brightness settings, hold duration, and fade rate. Edit `config/environment_config.json` to adjust the simulated environment.
 
-controller = LightingController()
+Configuration changes alter the simulation assumptions and may change comparison results. Rerun the relevant tests and regenerate results after making changes.
 
-reading = SensorInput(
-    lamp_id="P1",
-    zone="walking_path",
-    time_s=0.0,
-    motion=False,
-    is_night=True,
-    sensor_ok=True,
-)
+## Results and Integration Handoff
 
-decision = controller.update(reading)
+Use one recorded repository revision and configuration for the final dashboard demonstration, exported results, slides, and video.
 
-print(asdict(decision))
-```
+The final handoff should include:
 
-Example output:
-
-```python
-{
-    "lamp_id": "P1",
-    "zone": "walking_path",
-    "brightness_pct": 30.0,
-    "mode": "idle",
-    "reason": "No recent motion",
-}
-```
-
-| Field | Meaning |
+| Deliverable | Required contents |
 |---|---|
-| `lamp_id` | Lamp receiving the decision |
-| `zone` | Lamp's configured zone |
-| `brightness_pct` | Requested brightness, rounded to two decimal places |
-| `mode` | Current operating mode |
-| `reason` | Human-readable explanation |
+| Impact module | Validated energy, savings, and habitat illuminance/exposure calculations |
+| Results table | Scenario, actual duration, baseline, energy, savings, habitat summaries, units, and simulated-data label |
+| Test log | Commands, environment/dependency versions, outcomes, and unresolved limitations |
+| Integration notes | Commit ID, model/configuration versions, scenario settings, interval convention, setup, and team ownership |
 
-### Operating Modes
+Separate software behaviour demonstrated by tests, impact estimated by the simulation, and expected real-world benefits supported by background research. External research does not validate this prototype's numerical results.
 
-| Mode | Meaning |
-|---|---|
-| `idle` | Lamp has reached the zone's idle brightness |
-| `occupied` | Movement was detected or the hold period is active |
-| `fading` | Lamp is gradually returning to idle brightness |
-| `fallback` | Required sensor inputs are unusable |
-| `daylight` | Lamp is off during daytime |
-| `protected` | Habitat corridor remains unlit at night |
+## Limitations
 
-## Rule Priority
+- Outputs are simulated estimates, not physical measurements.
+- Brightness settings have not been validated against pedestrian-lighting requirements.
+- Movement sensing does not identify species or guarantee detection of stationary people.
+- No direct lighting inside the habitat corridor does not guarantee zero light spill.
+- Power and illuminance models simplify real fixture behaviour.
+- Lamp-only energy excludes auxiliary electrical loads.
+- Habitat exposure summaries do not demonstrate ecological recovery.
+- The prototype does not prove improved resident safety or night-sky quality.
+- Sensor fallback depends on continued software execution; total system failure protection is unverified.
+- Real deployment requires validated lighting targets, suitable hardware and sensor placement, calibrated models, persistent storage where needed, and reviewed failure/recovery behaviour.
 
-The controller applies rules in this order:
+## Claims and release traceability
 
-1. Scheduled daytime → lamp off, regardless of motion-sensor health
-2. Nighttime motion-sensor fault or unavailable sample → zone-specific fallback
-3. Healthy nighttime habitat corridor → remain unlit
-4. Movement or active hold → occupied brightness
-5. Otherwise → gradually return to idle brightness
-
-All outputs are bounded by the zone's brightness cap.
-
-The simulation assumes its day/night schedule is trustworthy and
-independent of motion-sensor health. Daytime motion faults remain
-reported but do not activate lighting. A fault that persists into
-nighttime activates the configured fallback.
-
-Daytime and fault operation clear the previous movement history.
-
-After fault recovery:
-- New movement immediately restores occupied brightness.
-- Without movement, brightness returns toward idle at the configured fade rate.
-
-After daytime ends, the lamp immediately restores at least idle brightness
-on its next healthy nighttime update.
-
-## Simulation Integration
-
-Use one controller instance throughout a scenario:
-
-```python
-from dataclasses import asdict
-from controller import LightingController, SensorInput
-
-controller = LightingController()
-
-events = [
-    SensorInput("P1", "walking_path", 0, False, True),
-    SensorInput("P1", "walking_path", 1, True, True),
-    SensorInput("P1", "walking_path", 32, False, True),
-]
-
-for reading in events:
-    decision = controller.update(reading)
-    print(asdict(decision))
-```
-
-Before replaying:
-
-```python
-controller.reset()
-```
-
-The intended system flow is:
-
-1. Simulated agents move through the environment.
-2. Simulated sensors generate inputs.
-3. The controller returns lamp brightness decisions.
-4. The environment applies those decisions to its lamp models.
-5. The environment calculates modelled lux and power.
-6. The dashboard displays the results.
-7. Impact calculations compare matched baseline and adaptive runs.
-
-Do not create a new controller for every update, because that would erase
-the movement history needed for holding and fading.
-
-## Team Responsibilities
-
-| Person | Responsibility |
-|---|---|
-| Nadsyuha | Lighting rules, configuration, controller tests, and control demonstration |
-| Areesha | Environment, agents, sensors, power/lux models, and scenario logs |
-| Asyura | Dashboard, integration, lighting feedback, and manual wildlife reports |
-| Faqihah | Impact calculations, pitch deck, and demo video |
-
-## Decision Log
-
-`controller_demo_log.csv` contains:
-- Scenario name
-- Synthetic-data label
-- Lamp ID and zone
-- Simulation timestamp
-- Movement, nighttime, and sensor-health inputs
-- Brightness, mode, and decision reason
-
-This is a controller decision log, not a measured energy dataset.
-
-It does not contain power or lux measurements. Person 2 must provide the
-environment's power/lux model and appropriate sampling logs before Person 4
-calculates environmental comparisons.
-
-## Limitations and Future Work
-
-- Brightness percentage is not a lux value or power measurement.
-- Current habitat constraints limit brightness; they do not enforce a
-  habitat-side lux threshold.
-- Shielding, spectrum, fixture geometry, and light spill require separate
-  modelling or physical design.
-- Movement sensing does not identify species or reliably detect stationary people.
-- Simulated outcomes must be labelled in the dashboard, slides, and video.
-- The prototype does not prove resident safety, biodiversity recovery,
-  or improved night-sky quality.
-- Real deployment requires reviewed lighting targets, fallback behaviour,
-  sensor placement, and compatible hardware.
-- Manual resident reports enter operator review and do not directly control lamps.
-- CCTV and computer vision for resident safety are possible future features.
-- Any future AI training must use suitable real data and address privacy.
-
-The next integration step is agreeing on sensor fields, timing, and
-missing-data handling with Person 2.
+See [CLAIMS_AND_RELEASE.md](docs/CLAIMS_AND_RELEASE.md) for presentation wording and release steps. Each regenerated scenario metadata file records source identity, configuration, runtime versions, interval scope, and CSV integrity hashes. A base commit with local changes is not a clean release.
