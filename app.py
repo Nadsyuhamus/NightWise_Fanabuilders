@@ -565,7 +565,7 @@ def render_live(frames, env, baseline_w, zone_labels, lamp_ids):
 # ------------------------------------------------------------------- page
 st.markdown(
     '<div class="hero"><div><div class="brand">NightWise</div>'
-    '<div class="tagline">Smart township lighting that protects nature</div></div>'
+    '<div class="tagline">Movement-responsive lighting: a simulated township demo</div></div>'
     '<div class="badge">Simulated data</div></div><div class="accent"></div>',
     unsafe_allow_html=True)
 

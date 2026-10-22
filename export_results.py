@@ -6,6 +6,7 @@ from dataclasses import asdict
 import json
 from pathlib import Path
 
+from provenance import MODEL_VERSION, source_provenance, sha256
 from comparison import run_comparison
 from scenarios import get_scenario, get_scenarios
 from impact import (
@@ -250,12 +251,17 @@ def export_scenario(scenario_name, output_root):
         controller_config = json.load(file)
 
     metadata = {
-        "model_version": "nightwise-simulation-v1",
+        "model_version": MODEL_VERSION,
+        "provenance": source_provenance(),
+        "output_sha256": {p.name: sha256(p) for p in sorted(output_dir.glob("*.csv"))},
         "data_source": "simulated",
         "scenario": asdict(scenario),
         "environment": comparison["environment"],
         "controller_config": controller_config,
         "time_step_s": 1.0,
+        "observed_interval_durations_s": sorted({f["dt_s"] for f in comparison["nightwise"]}),
+        "actual_duration_s": sum(f["dt_s"] for f in comparison["nightwise"]),
+        "energy_scope": "modelled lamp-only energy; auxiliary loads excluded",
         "interval_convention": (
             "Each frame applies over [time_s, time_s + dt_s)."
         ),

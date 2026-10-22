@@ -303,3 +303,7 @@ Separate software behaviour demonstrated by tests, impact estimated by the simul
 - The prototype does not prove improved resident safety or night-sky quality.
 - Sensor fallback depends on continued software execution; total system failure protection is unverified.
 - Real deployment requires validated lighting targets, suitable hardware and sensor placement, calibrated models, persistent storage where needed, and reviewed failure/recovery behaviour.
+
+## Claims and release traceability
+
+See [CLAIMS_AND_RELEASE.md](CLAIMS_AND_RELEASE.md) for presentation wording and release steps. Each regenerated scenario metadata file records source identity, configuration, runtime versions, interval scope, and CSV integrity hashes. A base commit with local changes is not a clean release.
