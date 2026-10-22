@@ -5,7 +5,7 @@ from impact import (
     compare_energy,
     total_energy_kwh,
 )
-from run_simulation import run_scenario
+from nightwise.run_simulation import run_scenario
 from scenarios import get_scenario
 from validation import validate_run
 

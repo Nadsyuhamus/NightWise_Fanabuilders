@@ -1,0 +1,24 @@
+{
+  "hold_seconds": 30,
+  "fade_pct_per_second": 10,
+  "zones": {
+    "walking_path": {
+      "idle": 30,
+      "occupied": 70,
+      "fallback": 50,
+      "cap": 70
+    },
+    "habitat_edge": {
+      "idle": 10,
+      "occupied": 30,
+      "fallback": 20,
+      "cap": 30
+    },
+    "habitat_corridor": {
+      "idle": 0,
+      "occupied": 0,
+      "fallback": 0,
+      "cap": 0
+    }
+  }
+}

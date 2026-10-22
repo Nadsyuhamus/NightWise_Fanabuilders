@@ -6,7 +6,7 @@ import unittest
 from unittest.mock import patch
 
 import provenance
-from export_results import export_scenario
+from nightwise.export_results import export_scenario
 
 
 class ProvenanceTests(unittest.TestCase):

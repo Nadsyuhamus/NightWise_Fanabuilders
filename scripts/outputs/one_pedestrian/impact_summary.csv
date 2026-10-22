@@ -1,0 +1,2 @@
+scenario,data_source,baseline_policy,duration_s,adaptive_kwh,baseline_kwh,saved_kwh,savings_pct,savings_pct_display,savings_pct_status,energy_difference_definition
+one_pedestrian,simulated,fixed_zone_cap,120.0,0.0019355555555555556,0.0032,0.0012644444444444446,39.513888888888886,39.51%,defined,baseline_kwh - adaptive_kwh

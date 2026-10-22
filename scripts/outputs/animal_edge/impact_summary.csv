@@ -1,0 +1,2 @@
+scenario,data_source,baseline_policy,duration_s,adaptive_kwh,baseline_kwh,saved_kwh,savings_pct,savings_pct_display,savings_pct_status,energy_difference_definition
+animal_edge,simulated,fixed_zone_cap,120.0,0.0014455555555555556,0.0032,0.0017544444444444445,54.82638888888889,54.83%,defined,baseline_kwh - adaptive_kwh

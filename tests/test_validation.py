@@ -3,7 +3,7 @@ from copy import deepcopy
 
 from comparison import run_comparison
 from impact import compare_energy
-from run_simulation import run_scenario
+from nightwise.run_simulation import run_scenario
 from scenarios import get_scenario, get_scenarios
 from validation import validate_run
 

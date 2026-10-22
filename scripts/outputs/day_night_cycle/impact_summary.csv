@@ -1,0 +1,2 @@
+scenario,data_source,baseline_policy,duration_s,adaptive_kwh,baseline_kwh,saved_kwh,savings_pct,savings_pct_display,savings_pct_status,energy_difference_definition
+day_night_cycle,simulated,fixed_zone_cap,120.0,0.0013111111111111112,0.0018666666666666666,0.0005555555555555554,29.761904761904756,29.76%,defined,baseline_kwh - adaptive_kwh
