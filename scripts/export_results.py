@@ -1,3 +1,5 @@
+from nightwise.paths import OUTPUT_DIR
+from nightwise.paths import CONFIG_DIR
 """Export matched NightWise simulations for dashboard and impact work."""
 
 import argparse
@@ -6,10 +8,10 @@ from dataclasses import asdict
 import json
 from pathlib import Path
 
-from provenance import MODEL_VERSION, source_provenance, sha256
-from comparison import run_comparison
-from scenarios import get_scenario, get_scenarios
-from impact import (
+from nightwise.provenance import MODEL_VERSION, source_provenance, sha256
+from nightwise.comparison import run_comparison
+from nightwise.scenarios import get_scenario, get_scenarios
+from nightwise.impact import (
     compare_energy,
     format_reduction_pct,
     habitat_summary,
@@ -243,9 +245,7 @@ def export_scenario(scenario_name, output_root):
         writer.writeheader()
         writer.writerows(agent_rows)
 
-    controller_config_path = Path(__file__).with_name(
-        "controller_config.json"
-    )
+    controller_config_path = (CONFIG_DIR / "controller_config.json")
 
     with controller_config_path.open(encoding="utf-8") as file:
         controller_config = json.load(file)
@@ -370,7 +370,7 @@ def main():
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=Path(__file__).with_name("outputs"),
+        default=OUTPUT_DIR,
     )
     args = parser.parse_args()
 

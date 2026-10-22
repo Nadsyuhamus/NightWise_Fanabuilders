@@ -27,7 +27,7 @@ Release sequence:
 
 1. Apply changes and commit code/configuration. Record that source commit.
 2. Run `python -m unittest discover -v` and save the command/output and dependency versions.
-3. Run `python export_results.py --scenario all` from that source revision.
+3. Run `python -m scripts.export_results --scenario all` from that source revision.
 4. Check every scenario metadata file and CSV hashes. Preserve the source checkout alongside results if local changes exist.
 5. Use only those exports for the results table, slides, and recording. Label the baseline as fixed zone-cap lighting, with identical fixtures/shielding and scheduled daytime off. Do not claim equivalent visibility has been established.
 6. Archive the results and test log together. If committing generated outputs afterward, record both the source commit and artifact commit; do not rewrite the source commit field to the later artifact commit.

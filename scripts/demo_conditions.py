@@ -1,6 +1,6 @@
 """Demonstrate day/night operation and sensor-fault recovery."""
 
-from simulation import Simulation
+from nightwise.simulation import Simulation
 
 
 def is_night_at(time_s):

@@ -1,10 +1,11 @@
+from nightwise.paths import LOG_DIR
 """Synthetic inputs for rule-based tests only; no AI training."""
 
 from dataclasses import asdict
 from pathlib import Path
 import csv
 
-from controller import LightingController, SensorInput
+from nightwise.controller import LightingController, SensorInput
 
 
 # Each event: time_s, motion, is_night, sensor_ok.
@@ -86,10 +87,9 @@ def main():
                     **asdict(decision),
                 })
 
-    path = Path(__file__).with_name(
-        "controller_demo_log.csv"
-    )
+    path = (LOG_DIR / "controller_demo_log.csv")
 
+    path.parent.mkdir(parents=True, exist_ok=True)
     with path.open(
         "w",
         newline="",

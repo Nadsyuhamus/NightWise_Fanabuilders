@@ -2,17 +2,17 @@
 
 import unittest
 
-from agents import Agent
-from comparison import run_comparison, total_energy_kwh
-from environment import load_environment
-from models import (
+from nightwise.agents import Agent
+from nightwise.comparison import run_comparison, total_energy_kwh
+from nightwise.environment import load_environment
+from nightwise.models import (
     estimate_power_w,
     estimate_lamp_lux,
     estimate_point_lux,
 )
-from scenarios import get_scenarios
-from sensors import detects_motion
-from simulation import Simulation
+from nightwise.scenarios import get_scenarios
+from nightwise.sensors import detects_motion
+from nightwise.simulation import Simulation
 
 
 class SimulationTests(unittest.TestCase):

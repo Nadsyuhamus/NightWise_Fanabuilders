@@ -1,11 +1,11 @@
 import unittest
 from copy import deepcopy
 
-from comparison import run_comparison
-from impact import compare_energy
-from nightwise.run_simulation import run_scenario
-from scenarios import get_scenario, get_scenarios
-from validation import validate_run
+from nightwise.comparison import run_comparison
+from nightwise.impact import compare_energy
+from nightwise.runner import run_scenario
+from nightwise.scenarios import get_scenario, get_scenarios
+from nightwise.validation import validate_run
 
 
 class ValidationTests(unittest.TestCase):

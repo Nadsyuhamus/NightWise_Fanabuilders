@@ -1,6 +1,6 @@
 import unittest
 
-from impact import (
+from nightwise.impact import (
     compare_energy,
     format_reduction_pct,
     habitat_summary,

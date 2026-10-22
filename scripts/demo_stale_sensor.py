@@ -1,6 +1,6 @@
 """Demonstrate missing updates, stale detection and recovery."""
 
-from simulation import Simulation
+from nightwise.simulation import Simulation
 
 
 def main():

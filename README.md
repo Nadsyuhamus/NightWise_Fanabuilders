@@ -95,7 +95,7 @@ Open the local address printed in the terminal. The dashboard provides the simul
 ## Run the Controller Demonstration
 
 ```bash
-python demo_controller.py
+python -m scripts.demo_controller
 ```
 
 The demonstration prints the scenario, simulation time, zone, brightness, operating mode, and decision reason. It covers:
@@ -124,30 +124,34 @@ python -m unittest discover -v > test_results.txt 2>&1
 
 The test suite covers controller behaviour, simulation behaviour, and impact calculations. Test counts may change as the project develops. A passing suite verifies the cases it exercises; it does not establish hardware reliability, lighting-standard compliance, or ecological outcomes.
 
-## Main Files
+## Repository Layout
 
-| File | Purpose |
+| Location | Purpose |
 |---|---|
-| `app.py` | Streamlit dashboard and community submission forms |
-| `controller.py` | Lighting decisions, input validation, and lamp state |
-| `controller_config.json` | Zone brightness settings and controller timing |
-| `demo_controller.py` | Standalone controller demonstration |
-| `environment.py` | Environment loading and configuration support |
-| `environment_config.json` | Simulated environment configuration |
-| `agents.py` | Simulated moving agents |
-| `sensors.py` | Simulated sensor behaviour |
-| `models.py` | Illustrative power and illuminance models |
-| `simulation.py` | Simulation execution |
-| `scenarios.py` | Named scenario definitions |
-| `comparison.py` | Matched fixed/adaptive comparisons |
-| `impact.py` | Shared impact calculations |
-| `export_results.py` | Results export |
-| `test_controller.py` | Controller tests |
-| `test_simulation.py` | Simulation tests |
-| `test_impact.py` | Impact calculation tests |
-| `SIMULATION_README.md` | Additional simulation documentation |
+| `app.py` | Streamlit dashboard entry point |
+| `nightwise/` | Controller, simulation, scenario runner, models, impact, validation and report storage |
+| `config/` | Authoritative controller and environment JSON configuration |
+| `scripts/` | Module entry points for demos, scenario execution and exports |
+| `tests/` | Automatically discovered regression tests |
+| `docs/` | Simulation contract and claims/release documentation |
+| `outputs/` | Authoritative scenario CSVs and metadata |
+| `logs/` | Demo and test logs |
+| `data/` | Local SQLite reports, excluded from Git |
 
-The optional SQLite report-storage update adds `report_store.py`.
+Run commands from the repository root:
+
+```bash
+python -m unittest discover -v
+python -m scripts.run_simulation --scenario one_pedestrian
+python -m scripts.export_results --scenario all
+python -m scripts.demo_controller
+python -m streamlit run app.py
+```
+
+Use module commands (`python -m scripts...`) rather than executing files inside
+`scripts/` directly. Configuration, output, log and database paths are anchored
+to the project root in `nightwise/paths.py`. Source provenance includes nested
+Python files and configuration files, identified by their project-relative paths.
 
 ## Energy and Habitat-Light Exposure
 
@@ -272,7 +276,7 @@ A dashboard failure toggle can demonstrate a simulated fault scenario. It does n
 
 ## Configuration
 
-Edit `controller_config.json` to adjust zone brightness settings, hold duration, and fade rate. Edit `environment_config.json` to adjust the simulated environment.
+Edit `config/controller_config.json` to adjust zone brightness settings, hold duration, and fade rate. Edit `config/environment_config.json` to adjust the simulated environment.
 
 Configuration changes alter the simulation assumptions and may change comparison results. Rerun the relevant tests and regenerate results after making changes.
 
@@ -306,4 +310,4 @@ Separate software behaviour demonstrated by tests, impact estimated by the simul
 
 ## Claims and release traceability
 
-See [CLAIMS_AND_RELEASE.md](CLAIMS_AND_RELEASE.md) for presentation wording and release steps. Each regenerated scenario metadata file records source identity, configuration, runtime versions, interval scope, and CSV integrity hashes. A base commit with local changes is not a clean release.
+See [CLAIMS_AND_RELEASE.md](docs/CLAIMS_AND_RELEASE.md) for presentation wording and release steps. Each regenerated scenario metadata file records source identity, configuration, runtime versions, interval scope, and CSV integrity hashes. A base commit with local changes is not a clean release.

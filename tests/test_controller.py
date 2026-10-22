@@ -1,9 +1,10 @@
+from nightwise.paths import CONFIG_DIR
 import json
 from pathlib import Path
 import tempfile
 import unittest
 
-from controller import LightingController, SensorInput
+from nightwise.controller import LightingController, SensorInput
 
 
 class ControllerTests(unittest.TestCase):
@@ -232,9 +233,7 @@ class ControllerTests(unittest.TestCase):
             self.send(1, zone="habitat_edge")
 
     def test_config_validation_and_custom_hold(self):
-        config_path = Path(__file__).with_name(
-            "controller_config.json"
-        )
+        config_path = (CONFIG_DIR / "controller_config.json")
         config = json.loads(config_path.read_text())
 
         with tempfile.TemporaryDirectory() as directory:

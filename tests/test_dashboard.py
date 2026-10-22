@@ -1,18 +1,19 @@
+from nightwise.paths import PROJECT_ROOT
 """Regression checks for energy values actually rendered by the dashboard."""
 import unittest
 from pathlib import Path
 
 from streamlit.testing.v1 import AppTest
 
-from comparison import run_comparison
-from impact import compare_energy, format_reduction_pct
-from scenarios import get_scenarios
+from nightwise.comparison import run_comparison
+from nightwise.impact import compare_energy, format_reduction_pct
+from nightwise.scenarios import get_scenarios
 
 
 class DashboardTests(unittest.TestCase):
     def test_displayed_energy_matches_shared_calculations(self):
         app = AppTest.from_file(
-            str(Path(__file__).with_name("app.py")), default_timeout=30
+            str((PROJECT_ROOT / "app.py")), default_timeout=30
         ).run()
         self.assertEqual(len(app.exception), 0)
 

@@ -12,8 +12,8 @@ import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
 
-from environment import load_environment
-from impact import (
+from nightwise.environment import load_environment
+from nightwise.impact import (
     compare_energy,
     format_reduction_pct,
     habitat_summary,
@@ -23,9 +23,9 @@ from impact import (
 
 import json
 from dataclasses import asdict
-from report_store import load_reports, save_report
-from comparison import run_comparison
-from scenarios import get_scenario, get_scenarios
+from nightwise.report_store import load_reports, save_report
+from nightwise.comparison import run_comparison
+from nightwise.scenarios import get_scenario, get_scenarios
 
 # ------------------------------------------------------------------ palette
 SAGE, TAUPE, TANG, FUCH, AMETH = "#c0bda5", "#cc978e", "#f39c6b", "#ff3864", "#261447"

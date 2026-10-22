@@ -57,13 +57,13 @@ Coordinates and zone assignments are defined in environment_config.json.
 List scenarios:
 
 ```bash
-python scenarios.py
+python -m nightwise.scenarios
 ```
 
 Run one scenario:
 
 ```bash
-python run_simulation.py --scenario one_pedestrian
+python -m scripts.run_simulation --scenario one_pedestrian
 ```
 
 Available scenarios:
@@ -86,8 +86,8 @@ Time windows include their start and exclude their end.
 Use one Simulation instance for a scenario:
 
 ```python
-from scenarios import get_scenario
-from simulation import Simulation
+from nightwise.scenarios import get_scenario
+from nightwise.simulation import Simulation
 
 scenario = get_scenario("one_pedestrian")
 simulation = Simulation(agents=scenario.agents)
@@ -128,7 +128,7 @@ The scenario runner additionally supplies scenario and dt_s fields.
 For a complete replay:
 
 ```python
-from run_simulation import run_scenario
+from nightwise.runner import run_scenario
 
 simulation, frames = run_scenario("one_pedestrian")
 ```
@@ -196,7 +196,7 @@ Spectrum and species-specific effects are not modelled.
 Run:
 
 ```bash
-python comparison.py
+python -m nightwise.comparison
 ```
 
 The fixed baseline uses each zone's configured brightness cap at night:
@@ -226,13 +226,13 @@ and shielding.
 Export one scenario:
 
 ```bash
-python export_results.py --scenario one_pedestrian
+python -m scripts.export_results --scenario one_pedestrian
 ```
 
 Export all scenarios:
 
 ```bash
-python export_results.py --scenario all
+python -m scripts.export_results --scenario all
 ```
 
 Each scenario receives a folder inside outputs/ containing:

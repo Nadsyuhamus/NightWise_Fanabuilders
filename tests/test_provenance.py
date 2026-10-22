@@ -5,8 +5,8 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-import provenance
-from nightwise.export_results import export_scenario
+from nightwise import provenance
+from scripts.export_results import export_scenario
 
 
 class ProvenanceTests(unittest.TestCase):
@@ -18,6 +18,24 @@ class ProvenanceTests(unittest.TestCase):
             with patch.object(provenance, 'ROOT', root):
                 before = provenance.source_provenance()
                 source.write_text('modified')
+                after = provenance.source_provenance()
+            self.assertNotEqual(before['source_manifest_sha256'], after['source_manifest_sha256'])
+
+    def test_nested_sources_are_hashed_with_relative_paths(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for folder in ('nightwise', 'scripts', 'tests', 'config'):
+                (root / folder).mkdir()
+            (root / 'nightwise' / 'same.py').write_text('core')
+            (root / 'scripts' / 'same.py').write_text('cli')
+            (root / 'tests' / 'test_paths.py').write_text('test')
+            (root / 'config' / 'environment_config.json').write_text('{}')
+            with patch.object(provenance, 'ROOT', root):
+                before = provenance.source_provenance()
+                self.assertIn('nightwise/same.py', before['source_sha256'])
+                self.assertIn('scripts/same.py', before['source_sha256'])
+                self.assertIn('config/environment_config.json', before['source_sha256'])
+                (root / 'scripts' / 'same.py').write_text('changed')
                 after = provenance.source_provenance()
             self.assertNotEqual(before['source_manifest_sha256'], after['source_manifest_sha256'])
 

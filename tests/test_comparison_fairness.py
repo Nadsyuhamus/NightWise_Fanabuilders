@@ -1,9 +1,9 @@
 import unittest
 from copy import deepcopy
 
-from comparison import run_comparison
-from impact import compare_energy, total_energy_kwh
-from scenarios import get_scenarios
+from nightwise.comparison import run_comparison
+from nightwise.impact import compare_energy, total_energy_kwh
+from nightwise.scenarios import get_scenarios
 
 
 class ComparisonFairnessTests(unittest.TestCase):

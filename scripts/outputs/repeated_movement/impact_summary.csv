@@ -1,2 +1,0 @@
-scenario,data_source,baseline_policy,duration_s,adaptive_kwh,baseline_kwh,saved_kwh,savings_pct,savings_pct_display,savings_pct_status,energy_difference_definition
-repeated_movement,simulated,fixed_zone_cap,120.0,0.002202222222222222,0.0032,0.000997777777777778,31.18055555555556,31.18%,defined,baseline_kwh - adaptive_kwh
